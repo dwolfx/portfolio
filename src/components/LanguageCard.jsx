@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const LanguageCard = ({ to, flag, langCode, langName, btnText }) => {
+const LanguageCard = ({ to, flag, langCode, langName, btnText, disabled }) => {
+  const CardWrapper = disabled ? 'div' : Link;
+  
   return (
-    <Link to={to} className="card">
+    <CardWrapper to={disabled ? undefined : to} className={`card ${disabled ? 'disabled' : ''}`}>
       <div className="flag-wrapper">
         <img src={flag} alt={langName} />
       </div>
@@ -11,10 +13,10 @@ const LanguageCard = ({ to, flag, langCode, langName, btnText }) => {
         <h3>{langName}</h3>
         <span className="lang-code">{langCode}</span>
         <div className="access-btn">
-          {btnText}
+          {disabled ? 'Em breve...' : btnText}
         </div>
       </div>
-    </Link>
+    </CardWrapper>
   );
 };
 

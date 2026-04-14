@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-
 import Home from './pages/Home';
 import PortfolioPage from './pages/PortfolioPage';
 import EnglishPortfolio from './pages/EnglishPortfolio';
+import PortuguesePortfolio from './pages/PortuguesePortfolio';
 import Footer from './components/Footer';
 
 const LanguageRouter = () => {
     const { lang } = useParams();
     if (lang === 'en') return <EnglishPortfolio />;
+    if (lang === 'pt-br') return <PortuguesePortfolio />;
     return <PortfolioPage />;
 };
 

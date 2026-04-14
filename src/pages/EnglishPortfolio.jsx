@@ -11,7 +11,7 @@ import globo from '../assets/projects/globo_tools.png';
 import design from '../assets/projects/design_system.png';
 
 // Profile Image
-import victorProfile from '../assets/profile/victor.png';
+import victorProfile from '../assets/profile/victor.jpg';
 
 const EnglishPortfolio = () => {
   return (
@@ -20,30 +20,33 @@ const EnglishPortfolio = () => {
 
       {/* Hero Section */}
       <header className="portfolio-hero">
-        <div className="hero-content">
-          <span className="hero-meta">Victor Hugo Nogueira de Morais</span>
-          <h1>Product Designer focused on accelerating value delivery through AI and data.</h1>
-          
-          <blockquote className="hero-quote">
-            "I believe that without a user experience centered on what truly matters, every technical effort is in vain."
-          </blockquote>
+        <div className="hero-inner">
+          <div className="hero-content">
+            <span className="hero-meta">Victor Morais</span>
+            <h1>Product Designer</h1>
+            <p className="hero-subtitle">focused on accelerating value delivery through AI and data.</p>
+            
+            <blockquote className="hero-quote">
+              "I believe that without a user experience centered on what truly matters, every technical effort is in vain."
+            </blockquote>
 
-          <div className="hero-details">
-            <p>With a solid background in <strong>Front-End development</strong>, I move with agility between strategic design and technical implementation. I leverage AI to streamline processes and ensure precision in product decisions.</p>
-            <p>I have extensive experience leading high-impact projects in high-stakes sectors, including <strong>Fintechs</strong> (Vivo and Bradesco), <strong>Betting</strong> (Entain), and <strong>Media</strong> (Globo).</p>
-            <p style={{ marginTop: '24px' }}>👤 <strong>Personality</strong>: ENFP-A</p>
+            <div className="hero-details">
+              <p>With a solid background in <strong>Front-End development</strong>, I move with agility between strategic design and technical implementation. I leverage AI to streamline processes and ensure precision in product decisions.</p>
+              <p>I have extensive experience leading high-impact projects in high-stakes sectors, including <strong>Fintechs</strong> (Vivo and Bradesco), <strong>Betting</strong> (Entain), and <strong>Media</strong> (Globo).</p>
+              <p style={{ marginTop: '20px' }}>👤 <strong>Personality</strong>: ENFP-A</p>
+            </div>
+            
+            <div className="hero-socials">
+              <p style={{ width: '100%', marginBottom: '4px', fontWeight: '700' }}>😃 My contacts:</p>
+              <a href="http://wa.me/5511951565851" target="_blank" className="social-link">WhatsApp</a>
+              <a href="https://br.linkedin.com/in/victorhugon" target="_blank" className="social-link">LinkedIn</a>
+              <a href="https://github.com/dwolfx" target="_blank" className="social-link">GitHub</a>
+              <a href="mailto:victor9009@gmail.com" className="social-link">Email</a>
+            </div>
           </div>
-          
-          <div className="hero-socials">
-            <p style={{ width: '100%', marginBottom: '0px', fontWeight: '700' }}>😃 My contacts:</p>
-            <a href="http://wa.me/5511951565851" target="_blank" className="social-link">WhatsApp</a>
-            <a href="https://br.linkedin.com/in/victorhugon" target="_blank" className="social-link">LinkedIn</a>
-            <a href="https://github.com/dwolfx" target="_blank" className="social-link">GitHub</a>
-            <a href="mailto:victor9009@gmail.com" className="social-link">Email</a>
+          <div className="hero-image-container">
+              <img src={victorProfile} alt="Victor Morais" />
           </div>
-        </div>
-        <div className="hero-image-container">
-            <img src={victorProfile} alt="Victor Morais" />
         </div>
       </header>
 

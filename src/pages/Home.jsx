@@ -23,6 +23,7 @@ const Home = () => {
           langCode="en"
           langName="English"
           btnText="Enter Portfolio →"
+          disabled={true}
         />
         <LanguageCard
           to="/es"
@@ -30,6 +31,7 @@ const Home = () => {
           langCode="es"
           langName="Español"
           btnText="Acceder Portafolio →"
+          disabled={true}
         />
       </main>
     </div>
