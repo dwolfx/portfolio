@@ -510,4 +510,13 @@
   .hero-name { letter-spacing: -3px; }
   .nav-link { display: none; }
   .grid { grid-template-columns: 1fr; }
+  .hero-image-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-image-wrap img {
+    width: 100%;
+    max-width: 100%;
+  }
 }
