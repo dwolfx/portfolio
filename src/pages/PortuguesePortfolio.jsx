@@ -23,14 +23,14 @@ const PortuguesePortfolio = () => {
       category: "Service Design",
       description: "Soluções de negócios escaláveis e gerenciamento de serviços.",
       tags: ["Fintech", "Crédito", "Cartão"],
-      image: "https://images.unsplash.com/photo-1649478443254-b1a21cc9ed96?q=80&w=800"
+      image: b2b
     },
     {
       title: "TC Ecosystem",
       category: "Fintech",
       description: "Redefinindo o cenário digital para a maior comunidade financeira da América Latina.",
       tags: ["Fintech", "Dados"],
-      image: "https://images.unsplash.com/photo-1584472666879-7d92db132958?q=80&w=800"
+      image: ecosystem
     }
   ];
 
@@ -90,7 +90,7 @@ const PortuguesePortfolio = () => {
         <div className="section-container">
           <div className="section-header">
             <h2>Projetos em Destaque</h2>
-            <a href="#all-projects" className="view-all">Ver Todos os Projetos →</a>
+            <span className="view-all" style={{ opacity: 0.4, cursor: 'default' }}>Em breve →</span>
           </div>
 
           <div className="project-filters">
