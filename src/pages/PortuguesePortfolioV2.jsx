@@ -308,8 +308,10 @@ const PortuguesePortfolioV2 = () => {
                   <img src={project.image} alt={project.title} className="v2-project-image" />
                   <div className="v2-project-body">
                     <div className="v2-project-tags">
-                      {project.wip && <span className="v2-project-tag v2-project-tag--wip">Em construção</span>}
-                      {project.tags.map(t => <span key={t} className="v2-project-tag">{t}</span>)}
+                      {project.wip
+                        ? <span className="v2-project-tag v2-project-tag--wip">Em construção</span>
+                        : project.tags.map(t => <span key={t} className="v2-project-tag">{t}</span>)
+                      }
                     </div>
                     <h3 className="v2-project-title">{project.title}</h3>
                     <p className="v2-project-desc">{project.description}</p>
