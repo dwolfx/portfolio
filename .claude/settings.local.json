@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-tree *)",
+      "Bash(git stash *)",
+      "Bash(git pull *)",
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(sed -n '26,72p' src/pages/EnglishPortfolioV2.jsx)",
+      "Bash(sed -n '26,72p' src/pages/SpanishPortfolioV2.jsx)",
+      "Bash(sed -n '98,130p' src/index.css)",
+      "Bash(sed -n '300,370p' src/index.css)",
+      "Bash(git mv *)",
+      "Bash(git restore *)"
+    ]
+  }
+}
