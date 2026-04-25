@@ -350,6 +350,10 @@ footer {
         padding: 30px 15px;
     }
 
+    .cards-container > div {
+        width: 100%;
+    }
+
     .card {
         flex-direction: row;
         width: 100%;
