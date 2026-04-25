@@ -508,6 +508,6 @@
 @media (max-width: 600px) {
   .v2-hero { padding: 140px 20px 80px; }
   .v2-hero-name { letter-spacing: -3px; }
-  .v2-nav-links a:not(.v2-nav-cta) { display: none; }
+  .v2-nav-link { display: none; }
   .v2-grid { grid-template-columns: 1fr; }
 }
