@@ -2,17 +2,17 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import Home from './pages/Home';
 import PortfolioPage from './pages/PortfolioPage';
-import PortuguesePortfolioV2 from './pages/PortuguesePortfolioV2';
-import EnglishPortfolioV2 from './pages/EnglishPortfolioV2';
-import SpanishPortfolioV2 from './pages/SpanishPortfolioV2';
+import PortuguesePortfolio from './pages/PortuguesePortfolio';
+import EnglishPortfolio from './pages/EnglishPortfolio';
+import SpanishPortfolio from './pages/SpanishPortfolio';
 import VivoPay from './pages/cases/VivoPay';
 import Footer from './components/Footer';
 
 const LanguageRouter = () => {
     const { lang } = useParams();
-    if (lang === 'pt-br') return <PortuguesePortfolioV2 />;
-    if (lang === 'en') return <EnglishPortfolioV2 />;
-    if (lang === 'es') return <SpanishPortfolioV2 />;
+    if (lang === 'pt-br') return <PortuguesePortfolio />;
+    if (lang === 'en') return <EnglishPortfolio />;
+    if (lang === 'es') return <SpanishPortfolio />;
     return <PortfolioPage />;
 };
 
