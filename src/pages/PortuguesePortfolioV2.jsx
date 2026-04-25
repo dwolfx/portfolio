@@ -25,12 +25,6 @@ const LOREM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do e
 
 const projects = [
   {
-    title: 'Rede Globo',
-    description: LOREM,
-    tags: ['Mídia', 'Ferramentas'],
-    image: globo
-  },
-  {
     title: 'Vivo',
     description: vivoPayDescription,
     tags: vivoPayTags,
@@ -38,34 +32,46 @@ const projects = [
     link: '/pt-br/cases/vivo-pay'
   },
   {
+    title: 'Rede Globo',
+    description: LOREM,
+    tags: ['Mídia', 'Ferramentas'],
+    image: globo,
+    wip: true
+  },
+  {
     title: 'SportingBet (Entain)',
     description: LOREM,
     tags: ['Betting', 'UI/UX'],
-    image: globo
+    image: globo,
+    wip: true
   },
   {
     title: 'TradersClub',
     description: LOREM,
     tags: ['Fintech', 'Dados'],
-    image: ecosystem
+    image: ecosystem,
+    wip: true
   },
   {
     title: 'Gen (General Shopping)',
     description: LOREM,
     tags: ['Varejo', 'UX'],
-    image: b2b
+    image: b2b,
+    wip: true
   },
   {
     title: 'Porto Seguro (Sciensa)',
     description: LOREM,
     tags: ['Seguros', 'B2B'],
-    image: ecosystem
+    image: ecosystem,
+    wip: true
   },
   {
     title: 'CV-Fácil',
     description: LOREM,
     tags: ['SaaS', 'RH'],
-    image: b2b
+    image: b2b,
+    wip: true
   }
 ];
 
@@ -302,6 +308,7 @@ const PortuguesePortfolioV2 = () => {
                   <img src={project.image} alt={project.title} className="v2-project-image" />
                   <div className="v2-project-body">
                     <div className="v2-project-tags">
+                      {project.wip && <span className="v2-project-tag v2-project-tag--wip">Em construção</span>}
                       {project.tags.map(t => <span key={t} className="v2-project-tag">{t}</span>)}
                     </div>
                     <h3 className="v2-project-title">{project.title}</h3>

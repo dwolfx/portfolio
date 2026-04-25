@@ -432,6 +432,11 @@
   border-radius: 4px;
 }
 
+.v2-project-tag--wip {
+  color: #b45309;
+  background: #fef3c7;
+}
+
 .v2-project-title {
   font-size: 22px;
   font-weight: 800;

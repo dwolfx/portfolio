@@ -24,13 +24,13 @@ const LOREM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do e
 const VISIBLE_LIMIT = 9;
 
 const projects = [
-  { title: 'Rede Globo',             description: LOREM, tags: ['Medios', 'Herramientas'], image: globo     },
   { title: 'Vivo',                   description: 'Consolidación de servicios financieros en el ecosistema Vivo, enfocada en simplificar jornadas complejas y garantizar la entrega de valor real a los clientes.', tags: ['B2C', 'API', 'Tarjeta de crédito', 'Fintech'],    image: vivo,      link: '/es/cases/vivo-pay' },
-  { title: 'SportingBet (Entain)',   description: LOREM, tags: ['Apuestas', 'UI/UX'],      image: globo     },
-  { title: 'TradersClub',           description: LOREM, tags: ['Fintech', 'Datos'],        image: ecosystem },
-  { title: 'Gen (General Shopping)', description: LOREM, tags: ['Retail', 'UX'],           image: b2b       },
-  { title: 'Porto Seguro (Sciensa)', description: LOREM, tags: ['Seguros', 'B2B'],         image: ecosystem },
-  { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'RRHH'],            image: b2b       },
+  { title: 'Rede Globo',             description: LOREM, tags: ['Medios', 'Herramientas'], image: globo,     wip: true },
+  { title: 'SportingBet (Entain)',   description: LOREM, tags: ['Apuestas', 'UI/UX'],      image: globo,     wip: true },
+  { title: 'TradersClub',           description: LOREM, tags: ['Fintech', 'Datos'],        image: ecosystem, wip: true },
+  { title: 'Gen (General Shopping)', description: LOREM, tags: ['Retail', 'UX'],           image: b2b,       wip: true },
+  { title: 'Porto Seguro (Sciensa)', description: LOREM, tags: ['Seguros', 'B2B'],         image: ecosystem, wip: true },
+  { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'RRHH'],            image: b2b,       wip: true },
 ];
 
 const SpanishPortfolioV2 = () => {
@@ -181,7 +181,10 @@ const SpanishPortfolioV2 = () => {
                 <motion.div key={project.title} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} transition={{ type: 'tween', duration: 0.25, ease: 'easeOut' }} className={`v2-project-card ${project.link ? 'v2-project-card--linked' : ''}`} onClick={project.link ? () => navigate(project.link) : undefined}>
                   <img src={project.image} alt={project.title} className="v2-project-image" />
                   <div className="v2-project-body">
-                    <div className="v2-project-tags">{project.tags.map(t => <span key={t} className="v2-project-tag">{t}</span>)}</div>
+                    <div className="v2-project-tags">
+                      {project.wip && <span className="v2-project-tag v2-project-tag--wip">Próximamente</span>}
+                      {project.tags.map(t => <span key={t} className="v2-project-tag">{t}</span>)}
+                    </div>
                     <h3 className="v2-project-title">{project.title}</h3>
                     <p className="v2-project-desc">{project.description}</p>
                     {project.link && <span className="v2-project-cta">Ver caso completo →</span>}
