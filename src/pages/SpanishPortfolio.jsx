@@ -42,6 +42,8 @@ const SpanishPortfolio = () => {
   const contactRef = useRef(null);
   const langRef = useRef(null);
 
+  useEffect(() => { document.title = 'Victor Morais | Portfolio'; }, []);
+
   useEffect(() => {
     if (!isContactOpen) return;
     const handle = (e) => { if (contactRef.current && !contactRef.current.contains(e.target)) setIsContactOpen(false); };

@@ -38,7 +38,7 @@ const VivoPay = () => {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const langRef = useRef(null);
 
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => { window.scrollTo(0, 0); document.title = 'Victor Morais | Case Vivo Pay'; }, []);
 
   useEffect(() => {
     if (!isLangOpen) return;
