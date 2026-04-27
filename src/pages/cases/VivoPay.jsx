@@ -10,7 +10,7 @@ import vivoHero from '../../assets/cases/vivo/hero.png';
 import vivoV0 from '../../assets/cases/vivo/v0 idea.png';
 import vivoVirtualPdf from '../../assets/cases/vivo/virtual+pdf.png';
 import vivoValidation from '../../assets/cases/vivo/validation.png';
-import vivoCardHome from '../../assets/cases/vivo/cartão home.png';
+import vivoCardHome from '../../assets/cases/vivo/home.png';
 import vivoBiometria from '../../assets/cases/vivo/Biometria.png';
 import vivoFatura from '../../assets/cases/vivo/fatura.png';
 import vivoFaturaTotal from '../../assets/cases/vivo/faturaTotal.png';
