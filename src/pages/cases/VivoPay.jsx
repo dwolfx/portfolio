@@ -138,9 +138,6 @@ const VivoPay = () => {
             <h2>O Desafio</h2>
             <p>A Vivo possuía soluções financeiras robustas, mas fragmentadas. O usuário que tinha o cartão VivoPay Itaú precisava sair do app da Vivo e acessar o app do Itaú para gerenciar seu cartão. Era uma <b>fricção</b> que custava à Vivo o controle sobre a experiência e a retenção dentro do seu ecossistema.</p>
             <p style={{ marginTop: 16 }}>O desafio não era resolver uma dor explícita do usuário, mas algo mais sofisticado: criar uma <b>experiência tão completa</b> dentro do app Vivo que ele não precisasse mais sair.</p>
-            <div style={{ marginTop: 32 }}>
-              <Img label="[ IMAGEM — benchmark / contexto ]" className="case-img-placeholder--wide" />
-            </div>
           </div>
         </InView>
 
@@ -173,9 +170,6 @@ const VivoPay = () => {
             <span className="case-eyebrow">03 · Discovery</span>
             <h2>Descobrindo o caminho certo</h2>
             <p>O <b>processo de discovery</b> revelou que o modelo white-label, padrão adotado por outros parceiros do Itaú, não entregaria o <b>SuperApp que a Vivo buscava.</b> Identifiquei isso no benchmark e levei para a mesa: chegamos a conclusão que a integração via API (third-party app) era o melhor caminho e que garantiria controle total da interface e manteria o usuário dentro do ecossistema.</p>
-            <div style={{ marginTop: 32 }}>
-              <Img label="[ IMAGEM — benchmark / análise de concorrentes ]" className="case-img-placeholder--wide" />
-            </div>
             <div className="case-decision-alt">
               <span className="case-decision-alt-label">A decisão estratégica</span>
               <p>Nesse primeiro momento, as especificações técnicas das APIs eram definidas pelo Itaú, enquanto isso conduzi dinâmicas internas para responder: o que nossa solução precisa ser?<br />O resultado foi o <b>escopo do MVP</b>: Extrato, dados do cartão e pagamento de fatura.</p>
