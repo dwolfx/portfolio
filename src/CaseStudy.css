@@ -622,8 +622,7 @@
   width: 100%;
   border-radius: 16px;
   display: block;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* ─── SCREENSHOTS GRID ──────────────────── */
