@@ -437,6 +437,16 @@
   background: #fef3c7;
 }
 
+.project-tag--clickable {
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.project-tag--clickable:hover {
+  background: #6366f1;
+  color: #fff;
+}
+
 .project-title {
   font-size: 22px;
   font-weight: 800;

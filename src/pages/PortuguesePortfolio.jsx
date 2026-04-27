@@ -3,15 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Portfolio.css';
 
-import ecosystem from '../assets/projects/ecosystem.png';
-import b2b from '../assets/projects/b2b_portal.png';
-import globo from '../assets/projects/globo_tools.png';
-import vivo from '../assets/projects/vivo.png';
 import victorProfile from '../assets/profile/victor.jpg';
 import brFlag from '../assets/flags/br_flag.jpg';
-import { vivoPayTags, vivoPayDescription } from '../data/vivoPayData';
 import ukFlag from '../assets/flags/uk_flag.jpg';
 import esFlag from '../assets/flags/es_flag.jpg';
+import { projectsPtBr } from '../data/projectsData';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -20,61 +16,6 @@ const fadeUp = {
     transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94], delay }
   })
 };
-
-const LOREM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-
-const projects = [
-  {
-    title: 'Vivo',
-    description: vivoPayDescription,
-    tags: vivoPayTags,
-    image: vivo,
-    link: '/pt-br/cases/vivo-pay'
-  },
-  {
-    title: 'Rede Globo',
-    description: LOREM,
-    tags: ['Mídia', 'Ferramentas'],
-    image: globo,
-    wip: true
-  },
-  {
-    title: 'SportingBet (Entain)',
-    description: LOREM,
-    tags: ['Betting', 'UI/UX'],
-    image: globo,
-    wip: true
-  },
-  {
-    title: 'TradersClub',
-    description: LOREM,
-    tags: ['Fintech', 'Dados'],
-    image: ecosystem,
-    wip: true
-  },
-  {
-    title: 'Gen (General Shopping)',
-    description: LOREM,
-    tags: ['Varejo', 'UX'],
-    image: b2b,
-    wip: true
-  },
-  {
-    title: 'Porto Seguro (Sciensa)',
-    description: LOREM,
-    tags: ['Seguros', 'B2B'],
-    image: ecosystem,
-    wip: true
-  },
-  {
-    title: 'CV-Fácil',
-    description: LOREM,
-    tags: ['SaaS', 'RH'],
-    image: b2b,
-    wip: true
-  }
-];
-
 
 const VISIBLE_LIMIT = 9;
 
@@ -103,7 +44,8 @@ const PortuguesePortfolio = () => {
     return () => document.removeEventListener('mousedown', handle);
   }, [isLangOpen]);
 
-  const allTags = [...new Set(projects.flatMap(p => p.tags))];
+  const projects = projectsPtBr;
+  const allTags = [...new Set(projects.filter(p => !p.wip).flatMap(p => p.tags))];
   const filtered = activeTag ? projects.filter(p => p.tags.includes(activeTag)) : projects;
   const visible = (!showAll && filtered.length > VISIBLE_LIMIT) ? filtered.slice(0, VISIBLE_LIMIT) : filtered;
   const hasMore = !showAll && filtered.length > VISIBLE_LIMIT;
@@ -312,7 +254,9 @@ const PortuguesePortfolio = () => {
                     <div className="project-tags">
                       {project.wip
                         ? <span className="project-tag project-tag--wip">Em construção</span>
-                        : project.tags.map(t => <span key={t} className="project-tag">{t}</span>)
+                        : project.tags.map(t => (
+                            <span key={t} className="project-tag project-tag--clickable" onClick={(e) => { e.stopPropagation(); setActiveTag(t); }}>{t}</span>
+                          ))
                       }
                     </div>
                     <h3 className="project-title">{project.title}</h3>

@@ -3,14 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Portfolio.css';
 
-import ecosystem from '../assets/projects/ecosystem.png';
-import b2b from '../assets/projects/b2b_portal.png';
-import globo from '../assets/projects/globo_tools.png';
-import vivo from '../assets/projects/vivo.png';
 import victorProfile from '../assets/profile/victor.jpg';
 import brFlag from '../assets/flags/br_flag.jpg';
 import ukFlag from '../assets/flags/uk_flag.jpg';
 import esFlag from '../assets/flags/es_flag.jpg';
+import { projectsEn } from '../data/projectsData';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -20,18 +17,7 @@ const fadeUp = {
   })
 };
 
-const LOREM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 const VISIBLE_LIMIT = 9;
-
-const projects = [
-  { title: 'Vivo',                   description: 'Consolidation of financial services in the Vivo ecosystem, focused on simplifying complex journeys and ensuring real value delivery to customers.', tags: ['B2C', 'API', 'Credit Card', 'Fintech'], image: vivo,     link: '/en/cases/vivo-pay' },
-  { title: 'Rede Globo',             description: LOREM, tags: ['Media', 'Tools'],    image: globo,     wip: true },
-  { title: 'SportingBet (Entain)',   description: LOREM, tags: ['Betting', 'UI/UX'],  image: globo,     wip: true },
-  { title: 'TradersClub',           description: LOREM, tags: ['Fintech', 'Data'],    image: ecosystem, wip: true },
-  { title: 'Gen (General Shopping)', description: LOREM, tags: ['Retail', 'UX'],      image: b2b,       wip: true },
-  { title: 'Porto Seguro (Sciensa)', description: LOREM, tags: ['Insurance', 'B2B'],  image: ecosystem, wip: true },
-  { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'HR'],         image: b2b,       wip: true },
-];
 
 const EnglishPortfolio = () => {
   const navigate = useNavigate();
@@ -58,7 +44,8 @@ const EnglishPortfolio = () => {
     return () => document.removeEventListener('mousedown', handle);
   }, [isLangOpen]);
 
-  const allTags = [...new Set(projects.flatMap(p => p.tags))];
+  const projects = projectsEn;
+  const allTags = [...new Set(projects.filter(p => !p.wip).flatMap(p => p.tags))];
   const filtered = activeTag ? projects.filter(p => p.tags.includes(activeTag)) : projects;
   const visible = (!showAll && filtered.length > VISIBLE_LIMIT) ? filtered.slice(0, VISIBLE_LIMIT) : filtered;
   const hasMore = !showAll && filtered.length > VISIBLE_LIMIT;
@@ -186,7 +173,9 @@ const EnglishPortfolio = () => {
                     <div className="project-tags">
                       {project.wip
                         ? <span className="project-tag project-tag--wip">Coming soon</span>
-                        : project.tags.map(t => <span key={t} className="project-tag">{t}</span>)
+                        : project.tags.map(t => (
+                            <span key={t} className="project-tag project-tag--clickable" onClick={(e) => { e.stopPropagation(); setActiveTag(t); }}>{t}</span>
+                          ))
                       }
                     </div>
                     <h3 className="project-title">{project.title}</h3>
