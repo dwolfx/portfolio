@@ -7,6 +7,8 @@ import brFlag from '../../assets/flags/br_flag.jpg';
 import ukFlag from '../../assets/flags/uk_flag.jpg';
 import esFlag from '../../assets/flags/es_flag.jpg';
 import vivoHero from '../../assets/cases/vivo/hero.png';
+import vivoV0 from '../../assets/cases/vivo/v0 idea.png';
+import vivoValidation from '../../assets/cases/vivo/validation.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -188,8 +190,8 @@ const VivoPay = () => {
             <h2>Do conceito à realidade</h2>
             <p>A ideia inicial era um cartão grande e impactante dentro do app. Ao alinhar com o time de DesignOps, identifiquei que alterações estruturais no Design System global da Telefônica levariam meses de aprovação. Tomei a decisão de trabalhar dentro dos componentes existentes — priorizando time-to-market sem gerar débito técnico de design.</p>
             <div className="case-two-col" style={{ marginTop: 32 }}>
-              <Img label="[ IMAGEM — rascunho v0 conceito ]" className="case-img-placeholder--square" />
-              <Img label="[ IMAGEM — rascunho v0 com DS ]" className="case-img-placeholder--square" />
+              <img src={vivoV0} alt="Rascunho v0 — conceito inicial" className="case-section-img" />
+              <img src={vivoValidation} alt="Rascunho v0 — com Design System" className="case-section-img" />
             </div>
           </div>
         </InView>

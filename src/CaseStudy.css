@@ -431,6 +431,13 @@
   display: block;
   margin-top: 48px;
 }
+
+.case-section-img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
 .case-img-placeholder--wide { aspect-ratio: 16 / 7; }
 .case-img-placeholder--square { aspect-ratio: 4 / 3; }
 .case-img-placeholder--screen { aspect-ratio: 9 / 16; max-width: 260px; }
