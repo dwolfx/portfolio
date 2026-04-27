@@ -184,8 +184,14 @@ const VivoPay = () => {
             <h2>Do conceito à realidade</h2>
             <p>A ideia inicial era um cartão grande e impactante dentro do app. Ao alinhar com o time de DesignOps, identifiquei que alterações estruturais no Design System global da Telefônica levariam meses de aprovação. Tomei a decisão de trabalhar dentro dos componentes existentes — priorizando time-to-market sem gerar débito técnico de design.</p>
             <div className="case-two-col" style={{ marginTop: 32 }}>
-              <img src={vivoV0} alt="Rascunho v0 — conceito inicial" className="case-section-img" />
-              <img src={vivoValidation} alt="Rascunho v0 — com Design System" className="case-section-img" />
+              <figure className="case-figure">
+                <img src={vivoV0} alt="Imaginação inicial da home" className="case-section-img" />
+                <figcaption>Imaginação inicial da home</figcaption>
+              </figure>
+              <figure className="case-figure">
+                <img src={vivoValidation} alt="Tela final após validação de DesignOps" className="case-section-img" />
+                <figcaption>Tela final após validação de DesignOps</figcaption>
+              </figure>
             </div>
           </div>
         </InView>
