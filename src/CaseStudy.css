@@ -618,9 +618,13 @@
   display: block;
 }
 
-.case-figma-embed-icon { font-size: 32px; }
-.case-figma-embed h4 { font-size: 15px; font-weight: 700; color: #0d1117; margin: 0; }
-.case-figma-embed p { font-size: 13px; margin: 0; }
+.case-screen-img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
 
 /* ─── SCREENSHOTS GRID ──────────────────── */
 .case-screenshots {

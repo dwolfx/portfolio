@@ -10,6 +10,10 @@ import vivoHero from '../../assets/cases/vivo/hero.png';
 import vivoV0 from '../../assets/cases/vivo/v0 idea.png';
 import vivoVirtualPdf from '../../assets/cases/vivo/virtual+pdf.png';
 import vivoValidation from '../../assets/cases/vivo/validation.png';
+import vivoCardHome from '../../assets/cases/vivo/cartão home.png';
+import vivoBiometria from '../../assets/cases/vivo/Biometria.png';
+import vivoFatura from '../../assets/cases/vivo/fatura.png';
+import vivoFaturaTotal from '../../assets/cases/vivo/faturaTotal.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -237,9 +241,22 @@ const VivoPay = () => {
             </div>
 
             <div className="case-screenshots" style={{ marginTop: 32 }}>
-              {['Home cartão', 'KYC', 'Fatura', 'Pagamento'].map(s => (
-                <Img key={s} label={`[ TELA — ${s} ]`} className="case-img-placeholder--screen" />
-              ))}
+              <figure className="case-figure">
+                <img src={vivoCardHome} alt="Home do cartão" className="case-screen-img" />
+                <figcaption>Home cartão</figcaption>
+              </figure>
+              <figure className="case-figure">
+                <img src={vivoBiometria} alt="KYC — Biometria" className="case-screen-img" />
+                <figcaption>KYC</figcaption>
+              </figure>
+              <figure className="case-figure">
+                <img src={vivoFaturaTotal} alt="Fatura completa" className="case-screen-img" />
+                <figcaption>Fatura</figcaption>
+              </figure>
+              <figure className="case-figure">
+                <img src={vivoFatura} alt="Pagamento da fatura" className="case-screen-img" />
+                <figcaption>Pagamento</figcaption>
+              </figure>
             </div>
           </div>
         </InView>
