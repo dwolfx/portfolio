@@ -620,9 +620,11 @@
 
 .case-screen-img {
   width: 100%;
+  min-height: 100%;
   border-radius: 16px;
   display: block;
   object-fit: contain;
+  border: 1px solid #eef0f4;
 }
 
 /* ─── SCREENSHOTS GRID ──────────────────── */
