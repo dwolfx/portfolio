@@ -58,14 +58,14 @@ const VivoPay = () => {
         <Link to="/" className="case-nav-logo">Victor Morais</Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <Link to={`/${lang}`} className="case-back">{backLabel}</Link>
-          <div className="v2-contact-wrap" ref={langRef}>
-            <button className="v2-lang-btn" onClick={() => setIsLangOpen(o => !o)}>
+          <div className="contact-wrap" ref={langRef}>
+            <button className="lang-btn" onClick={() => setIsLangOpen(o => !o)}>
               <img src={langMeta[lang]?.flag} alt={lang} /> ▾
             </button>
             {isLangOpen && (
-              <div className="v2-contact-dropdown">
+              <div className="contact-dropdown">
                 {otherLangs.map(([l, meta]) => (
-                  <Link key={l} to={`/${l}/cases/vivo-pay`} className="v2-contact-item" onClick={() => setIsLangOpen(false)}>
+                  <Link key={l} to={`/${l}/cases/vivo-pay`} className="contact-item" onClick={() => setIsLangOpen(false)}>
                     <img src={meta.flag} alt={meta.label} /> {meta.label}
                   </Link>
                 ))}
