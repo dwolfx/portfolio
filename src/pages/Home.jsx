@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import LanguageCard from '../components/LanguageCard';
@@ -22,6 +22,7 @@ const headerVariants = {
 };
 
 const Home = () => {
+  useEffect(() => { document.title = 'Victor Morais | Portfolio'; }, []);
   return (
     <div className="content-wrapper">
       <motion.div variants={headerVariants} initial="hidden" animate="visible">
