@@ -186,7 +186,9 @@ const SpanishPortfolio = () => {
                     <div className="project-tags">
                       {project.wip
                         ? <span className="project-tag project-tag--wip">Próximamente</span>
-                        : project.tags.map(t => <span key={t} className="project-tag">{t}</span>)
+                        : project.tags.map(t => (
+                            <span key={t} className="project-tag project-tag--clickable" onClick={(e) => { e.stopPropagation(); setActiveTag(t); }}>{t}</span>
+                          ))
                       }
                     </div>
                     <h3 className="project-title">{project.title}</h3>
