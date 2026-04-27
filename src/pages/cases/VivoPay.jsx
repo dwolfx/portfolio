@@ -8,7 +8,7 @@ import ukFlag from '../../assets/flags/uk_flag.jpg';
 import esFlag from '../../assets/flags/es_flag.jpg';
 import vivoHero from '../../assets/cases/vivo/hero.png';
 import vivoV0 from '../../assets/cases/vivo/v0 idea.png';
-import vivoValidation from '../../assets/cases/vivo/validation.png';
+import vivoValidation from '../../assets/cases/vivo/virtual+pdf.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -182,7 +182,7 @@ const VivoPay = () => {
           <div className="case-section">
             <span className="case-eyebrow">04 · Conceituação</span>
             <h2>Do conceito à realidade</h2>
-            <p>A ideia inicial era um cartão grande e impactante dentro do app. Ao alinhar com o time de DesignOps, identifiquei que alterações estruturais no Design System global da Telefônica levariam meses de aprovação. Tomei a decisão de trabalhar dentro dos componentes existentes — priorizando time-to-market sem gerar débito técnico de design.</p>
+            <p>A ideia inicial era um cartão grande e impactante dentro do app. Ao alinhar com o time de <b>DesignOps</b>, identifiquei que alterações estruturais no Design System global da Telefônica levariam meses para aprovação. Tomamos a decisão de trabalhar dentro dos componentes existentes, priorizando <b>time-to-market</b> sem gerar débito técnico de design.</p>
             <div className="case-two-col" style={{ marginTop: 32 }}>
               <figure className="case-figure">
                 <img src={vivoV0} alt="Imaginação inicial da home" className="case-section-img" />
@@ -202,15 +202,15 @@ const VivoPay = () => {
             <span className="case-eyebrow">05 · Validação</span>
             <h2>Testamos, ouvimos, ajustamos</h2>
             <p style={{ fontWeight: 600, color: '#0d1117', marginBottom: 8 }}>Rodada 1 de testes</p>
-            <p>Com a V0 pronta, levamos ao público. Os testes revelaram que os usuários queriam mais do que apenas visualizar dados — dois pontos críticos emergiram: a necessidade de Cartão Virtual e de exportação da fatura em PDF.</p>
+            <p>Com a V0 pronta, levamos ao público. Os testes <b>revelaram</b> que os usuários queriam mais do que apenas visualizar dados e <b>dois pontos críticos</b> emergiram: a necessidade de <b>Cartão Virtual</b> e de <b>exportação da fatura em PDF</b>.</p>
             <div className="case-feedback-grid">
               <div className="case-feedback-card">
                 <h4>💳 Cartão Virtual</h4>
-                <p>O Itaú não conseguiria entregar a API a tempo. Implementamos um disclaimer estratégico no fluxo — na segunda rodada de testes, os usuários já não questionavam sobre a funcionalidade, eliminando frustração.</p>
+                <p>O Itaú não conseguiria entregar a API a tempo. Implementamos um disclaimer estratégico no fluxo, com isso, na segunda rodada de testes, os usuários já não questionavam sobre a funcionalidade, eliminando frustração.</p>
               </div>
               <div className="case-feedback-card">
                 <h4>📄 Exportação em PDF</h4>
-                <p>Articulamos com o Itaú a inclusão na API ainda para o MVP. O usuário nem perguntava — simplesmente usava. Sinal claro de que era esperado.</p>
+                <p>Articulamos com o Itaú a inclusão na API ainda para o MVP. O usuário nem perguntava, simplesmente usava. Sinal claro de que era esperado.</p>
               </div>
             </div>
             <div style={{ marginTop: 32 }}>
