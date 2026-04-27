@@ -33,7 +33,7 @@ const projects = [
   { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'HR'],         image: b2b,       wip: true },
 ];
 
-const EnglishPortfolioV2 = () => {
+const EnglishPortfolio = () => {
   const navigate = useNavigate();
   const [activeTag, setActiveTag] = useState(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -204,4 +204,4 @@ const EnglishPortfolioV2 = () => {
   );
 };
 
-export default EnglishPortfolioV2;
+export default EnglishPortfolio;

@@ -78,7 +78,7 @@ const projects = [
 
 const VISIBLE_LIMIT = 9;
 
-const PortuguesePortfolioV2 = () => {
+const PortuguesePortfolio = () => {
   const navigate = useNavigate();
   const [activeTag, setActiveTag] = useState(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -343,4 +343,4 @@ const PortuguesePortfolioV2 = () => {
   );
 };
 
-export default PortuguesePortfolioV2;
+export default PortuguesePortfolio;

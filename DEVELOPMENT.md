@@ -13,7 +13,7 @@
 | ESLint | 9.9.0 | Linting |
 
 ```bash
-npm run dev      # dev server
+npm run dev      # dev server (porta 5173)
 npm run build    # gera dist/
 npm run preview  # preview do build
 npm run lint     # ESLint
@@ -32,18 +32,18 @@ src/
 │   └── projects/       b2b_portal.png, design_system.png, ecosystem.png, globo_tools.png, vivo.png
 ├── components/
 │   ├── Footer.jsx      global — montado no App.jsx fora das routes
-│   ├── Header.jsx      só na Home
+│   ├── Header.jsx      só na Home (estático)
 │   └── LanguageCard.jsx
 ├── data/
-│   └── vivoPayData.js  exporta: vivoPayTags[], vivoPayDescription
+│   └── vivoPayData.js  exporta: vivoPayTags[], vivoPayDescription (só usado pelo PT-BR)
 ├── pages/
 │   ├── cases/
 │   │   └── VivoPay.jsx
 │   ├── Home.jsx
-│   ├── PortfolioPage.jsx       fallback para langs desconhecidas
-│   ├── PortuguesePortfolio.jsx
-│   ├── EnglishPortfolio.jsx
-│   └── SpanishPortfolio.jsx
+│   ├── PortfolioPage.jsx       fallback para langs desconhecidas (dead code em produção)
+│   ├── PortuguesePortfolio.jsx  (export: PortuguesePortfolioV2)
+│   ├── EnglishPortfolio.jsx     (export: EnglishPortfolioV2)
+│   └── SpanishPortfolio.jsx     (export: SpanishPortfolioV2)
 ├── App.jsx
 ├── main.jsx
 ├── index.css
@@ -70,15 +70,17 @@ src/
 </Router>
 ```
 
-`LanguageRouter`: usa `useParams()` → `pt-br` → PortuguesePortfolio / `en` → EnglishPortfolio / `es` → SpanishPortfolio / demais → PortfolioPage.
+`LanguageRouter` (inline em App.jsx): `useParams()` → `pt-br` → PortuguesePortfolio / `en` → EnglishPortfolio / `es` → SpanishPortfolio / demais → PortfolioPage (fallback).
 
-**Ordem importa:** `/:lang/cases/vivo-pay` deve vir antes de `/:lang` no array.
+**Ordem importa:** `/:lang/cases/vivo-pay` deve vir antes de `/:lang`.
 
 ---
 
 ## Componentes em detalhe
 
-### `PortuguesePortfolio.jsx` (e versões EN/ES — mesma estrutura)
+### `PortuguesePortfolio.jsx` / `EnglishPortfolio.jsx` / `SpanishPortfolio.jsx`
+
+Mesma estrutura. Export name tem sufixo V2 (ex: `PortuguesePortfolioV2`) — artefato de refactor, não afeta funcionamento.
 
 State:
 ```jsx
@@ -98,17 +100,49 @@ const hasMore = !showAll && filtered.length > VISIBLE_LIMIT;
 ```
 
 Array `projects`: `{ title, description, tags[], image, link?, wip? }`
-- Cards com `wip: true` mostram só tag "Em construção"
-- Só Vivo tem `link` ativo (`/pt-br/cases/vivo-pay`)
+- Cards com `wip: true` mostram apenas 1 tag "Em construção" / "Coming soon" / "Próximamente"
+- Só Vivo tem `link` ativo
+- Clique no card usa `useNavigate(project.link)` — toda a div é clicável
+- PT-BR usa `vivoPayTags` e `vivoPayDescription` de `vivoPayData.js`. EN e ES têm descrições e tags inline próprias.
+
+Diferença de delays nas animações do hero:
+- PT-BR: tagline 0.22, chips 0.27, bio 0.32, links 0.34 (mais espaçado)
+- EN/ES: tagline 0.08, chips 0.14, bio 0.20, links 0.26 (mais rápido)
 
 ### `VivoPay.jsx`
 
-- `useEffect(() => { window.scrollTo(0, 0); }, [])` — scroll to top ao montar
-- `useParams()` → `lang` (pt-br, en, es)
+```jsx
+useEffect(() => { window.scrollTo(0, 0); }, []);  // scroll to top ao montar
+```
+
+- `useParams()` → `lang` (default: 'pt-br')
 - `langMeta`: `{ 'pt-br': { flag, label }, 'en': {...}, 'es': {...} }`
 - `backLabel` por idioma: "← Projetos" / "← Projects" / "← Proyectos"
-- `Img` component local: placeholder com classe CSS para dimensionamento
+- `otherLangs`: filtra `langMeta` excluindo o lang atual para o dropdown
+- `Img` component local: `<div className="case-img-placeholder {className}">{label}</div>`
 - `InView` component local: wrapper Framer Motion para scroll animations
+- **Conteúdo em PT-BR apenas.** O `lang` param só muda labels de nav e links de volta/idioma.
+- Hero gradient Vivo Pay definido via `style={}` inline, sobrescreve o default do `.case-hero`.
+
+---
+
+## Problema conhecido — v2-* classes no VivoPay
+
+O nav do VivoPay usa classes com prefixo `v2-`:
+```jsx
+<div className="v2-contact-wrap" ref={langRef}>
+  <button className="v2-lang-btn">
+    <img src={...} /> ▾
+  </button>
+  <div className="v2-contact-dropdown">
+    <Link className="v2-contact-item">
+```
+
+Essas classes **não existem em CaseStudy.css**. O Portfolio.css define `.contact-wrap`, `.lang-btn`, etc. (sem prefixo), mas só é importado pelas portfolio pages, não pelo VivoPay. O `case-nav` também tem `overflow: hidden`, o que cliparia qualquer dropdown.
+
+**Resultado:** o botão seletor de idioma no VivoPay aparece sem estilo algum.
+
+**Fix necessário:** adicionar as classes `v2-*` em CaseStudy.css (ou mudar o markup para usar `.lang-btn` etc. e mudar `case-nav` para `overflow: visible`).
 
 ---
 
@@ -151,4 +185,5 @@ Sem Redux, sem Context. Tudo `useState` local — escopo pequeno não justifica.
 
 - `dist/` e `node_modules/` no `.gitignore`
 - Vite resolve imports de imagens automaticamente
-- Sem TypeScript no código — só `@types/react` como devDependency para DX
+- Sem TypeScript — só `@types/react` como devDependency para DX
+- `type: "module"` no package.json
