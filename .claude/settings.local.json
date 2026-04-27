@@ -13,7 +13,9 @@
       "Bash(sed -n '98,130p' src/index.css)",
       "Bash(sed -n '300,370p' src/index.css)",
       "Bash(git mv *)",
-      "Bash(git restore *)"
+      "Bash(git restore *)",
+      "Bash(git -C /c/Sites/portfolio log --oneline --no-merges)",
+      "Bash(git *)"
     ]
   }
 }
