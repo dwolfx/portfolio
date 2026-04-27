@@ -438,6 +438,12 @@
   display: block;
   object-fit: cover;
 }
+
+.case-two-col .case-section-img {
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #660099;
+}
 .case-img-placeholder--wide { aspect-ratio: 16 / 7; }
 .case-img-placeholder--square { aspect-ratio: 4 / 3; }
 .case-img-placeholder--screen { aspect-ratio: 9 / 16; max-width: 260px; }
