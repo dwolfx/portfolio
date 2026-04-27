@@ -8,7 +8,7 @@ import ukFlag from '../../assets/flags/uk_flag.jpg';
 import esFlag from '../../assets/flags/es_flag.jpg';
 import vivoHero from '../../assets/cases/vivo/hero.png';
 import vivoV0 from '../../assets/cases/vivo/v0 idea.png';
-import vivoValidation from '../../assets/cases/vivo/virtual+pdf.png';
+import vivoVirtualPdf from '../../assets/cases/vivo/virtual+pdf.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -189,7 +189,7 @@ const VivoPay = () => {
                 <figcaption>Imaginação inicial da home</figcaption>
               </figure>
               <figure className="case-figure">
-                <img src={vivoValidation} alt="Tela final após validação de DesignOps" className="case-section-img" />
+                <Img label="[ IMAGEM — tela final após DesignOps ]" className="case-img-placeholder--square" />
                 <figcaption>Tela final após validação de DesignOps</figcaption>
               </figure>
             </div>
@@ -214,7 +214,7 @@ const VivoPay = () => {
               </div>
             </div>
             <div style={{ marginTop: 32 }}>
-              <Img label="[ IMAGEM — telas da v1 com disclaimer e PDF ]" className="case-img-placeholder--wide" />
+              <img src={vivoVirtualPdf} alt="Telas da v1 — Cartão Virtual e PDF" className="case-section-img" />
             </div>
           </div>
         </InView>
