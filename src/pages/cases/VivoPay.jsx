@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../../CaseStudy.css';
 import { vivoPayTags } from '../../data/vivoPayData';
+import { vivoPayLocales } from '../../data/vivoPayLocales';
 import brFlag from '../../assets/flags/br_flag.jpg';
 import ukFlag from '../../assets/flags/uk_flag.jpg';
 import esFlag from '../../assets/flags/es_flag.jpg';
@@ -57,6 +58,8 @@ const VivoPay = () => {
 
   const otherLangs = Object.entries(langMeta).filter(([l]) => l !== lang);
   const backLabel = lang === 'en' ? '← Projects' : lang === 'es' ? '← Proyectos' : '← Projetos';
+  const t = vivoPayLocales[lang] || vivoPayLocales['pt-br'];
+  const pdfLang = lang === 'pt-br' ? 'pt' : lang;
 
   return (
     <div className="case">
@@ -87,7 +90,7 @@ const VivoPay = () => {
       <header className="case-hero" style={{ background: 'linear-gradient(135deg, #0a0010 0%, #1a0033 35%, #440066 65%, #660099 100%)' }}>
         <div className="case-hero-inner">
           <motion.span className="case-hero-tag" initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            Estudo de Caso · VivoPay × ItaúCard
+            {t.hero.tag}
           </motion.span>
 
           <motion.h1 initial="hidden" animate="visible" variants={fadeUp} custom={0.08}>
@@ -95,17 +98,17 @@ const VivoPay = () => {
           </motion.h1>
 
           <motion.div className="case-tags" style={{ justifyContent: 'center' }} initial="hidden" animate="visible" variants={fadeUp} custom={0.14}>
-            {vivoPayTags.map(t => (
-              <span key={t} className="case-tag">{t}</span>
+            {t.hero.tags.map(tag => (
+              <span key={tag} className="case-tag">{tag}</span>
             ))}
           </motion.div>
 
           <motion.p className="case-hero-subtitle" initial="hidden" animate="visible" variants={fadeUp} custom={0.18}>
-            Como estruturei do zero a vertical financeira da Vivo e conduzi a integração do cartão de crédito em parceria com o Itaú
+            {t.hero.subtitle}
           </motion.p>
 
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0.24} style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
-            <a href="/vivo-pay-case.pdf" download className="case-hero-btn">⬇ Baixar apresentação completa</a>
+            <a href={`/vivo-pay-case-${pdfLang}.pdf`} download className="case-hero-btn">{t.hero.downloadBtn}</a>
           </motion.div>
 
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0.28}>
@@ -117,14 +120,7 @@ const VivoPay = () => {
       {/* ─── VISÃO GERAL ─── */}
       <div className="case-overview">
         <div className="case-overview-inner">
-          {[
-            { label: 'Empresa', value: 'Vivo (Telefônica Brasil)' },
-            { label: 'Meu papel', value: 'Product Designer Especialista' },
-            { label: 'Parceiro', value: 'Banco Itaú' },
-            { label: 'Plataforma', value: 'iOS e Android (apps nativos)' },
-            { label: 'Período', value: 'Fev/2023 – Jul/2024' },
-            { label: 'Ferramentas', value: 'Figma · GA4 · Maze' },
-          ].map(item => (
+          {t.overview.items.map(item => (
             <div key={item.label} className="case-overview-item">
               <div className="case-overview-label">{item.label}</div>
               <div className="case-overview-value">{item.value}</div>
@@ -139,26 +135,22 @@ const VivoPay = () => {
         {/* DESAFIO */}
         <InView>
           <div className="case-section">
-            <span className="case-eyebrow">01 · Contexto</span>
-            <h2>O Desafio</h2>
-            <p>A Vivo possuía soluções financeiras robustas, mas fragmentadas. O usuário que tinha o cartão VivoPay Itaú precisava sair do app da Vivo e acessar o app do Itaú para gerenciar seu cartão. Era uma <b>fricção</b> que custava à Vivo o controle sobre a experiência e a retenção dentro do seu ecossistema.</p>
-            <p style={{ marginTop: 16 }}>O desafio não era resolver uma dor explícita do usuário, mas algo mais sofisticado: criar uma <b>experiência tão completa</b> dentro do app Vivo que ele não precisasse mais sair.</p>
+            <span className="case-eyebrow">{t.context.eyebrow}</span>
+            <h2>{t.context.title}</h2>
+            <p>{t.context.p1}</p>
+            <p style={{ marginTop: 16 }}>{t.context.p2}</p>
           </div>
         </InView>
 
         {/* MEU PAPEL */}
         <InView>
           <div className="case-section">
-            <span className="case-eyebrow">02 · Papel</span>
-            <h2>Fui contratado para construir uma área que não existia</h2>
-            <p>Entrei como um dos primeiros Product Designers Especialistas da vertical financeira da Vivo. Coube a mim estruturar os ritos de design, definir o modelo de colaboração com parceiros externos e conduzir três jornadas críticas: <b>Cartão de Crédito (Itaú), Seguros (Porto Seguro) e Conta Digital.</b></p>
-            <p style={{ marginTop: 16 }}>Neste case, apresento a jornada de <b>Cartão de Crédito</b> que foi a mais complexa, pois exigiu negociação técnica direta com o banco Itaú para viabilizar uma integração que nenhum outro parceiro havia feito.</p>
+            <span className="case-eyebrow">{t.role.eyebrow}</span>
+            <h2>{t.role.title}</h2>
+            <p>{t.role.p1}</p>
+            <p style={{ marginTop: 16 }}>{t.role.p2}</p>
             <div className="case-highlights">
-              {[
-                { icon: '🔗', title: 'Ponte Estratégica', desc: 'Interface direta entre negócio da Vivo, engenharia do Itaú e stakeholders' },
-                { icon: '⚙️', title: 'Workflow de Design', desc: 'Estabeleci os ritos do zero: discovery, exploração, handoff' },
-                { icon: '🛡️', title: 'Guardião da Experiência', desc: 'Garanti identidade Vivo mesmo usando APIs e jornada de KYC de terceiros' },
-              ].map(b => (
+              {t.role.highlights.map(b => (
                 <div key={b.title} className="case-highlight">
                   <div className="case-highlight-icon">{b.icon}</div>
                   <h4>{b.title}</h4>
@@ -172,12 +164,12 @@ const VivoPay = () => {
         {/* DISCOVERY */}
         <InView>
           <div className="case-section">
-            <span className="case-eyebrow">03 · Discovery</span>
-            <h2>Descobrindo o caminho certo</h2>
-            <p>O <b>processo de discovery</b> revelou que o modelo white-label, padrão adotado por outros parceiros do Itaú, não entregaria o <b>SuperApp que a Vivo buscava.</b> Identifiquei isso no benchmark e levei para a mesa: chegamos a conclusão que a integração via API (third-party app) era o melhor caminho e que garantiria controle total da interface e manteria o usuário dentro do ecossistema.</p>
+            <span className="case-eyebrow">{t.discovery.eyebrow}</span>
+            <h2>{t.discovery.title}</h2>
+            <p>{t.discovery.p1}</p>
             <div className="case-decision-alt">
-              <span className="case-decision-alt-label">A decisão estratégica</span>
-              <p>Nesse primeiro momento, as especificações técnicas das APIs eram definidas pelo Itaú, enquanto isso conduzi dinâmicas internas para responder: o que nossa solução precisa ser?<br />O resultado foi o <b>escopo do MVP</b>: Extrato, dados do cartão e pagamento de fatura.</p>
+              <span className="case-decision-alt-label">{t.discovery.decisionLabel}</span>
+              <p>{t.discovery.decisionP}</p>
             </div>
           </div>
         </InView>
@@ -185,17 +177,17 @@ const VivoPay = () => {
         {/* PRIMEIROS RASCUNHOS */}
         <InView>
           <div className="case-section">
-            <span className="case-eyebrow">04 · Conceituação</span>
-            <h2>Do conceito à realidade</h2>
-            <p>A ideia inicial era um cartão grande e impactante dentro do app. Ao alinhar com o time de <b>DesignOps</b>, identifiquei que alterações estruturais no Design System global da Telefônica levariam meses para aprovação. Tomamos a decisão de trabalhar dentro dos componentes existentes, priorizando <b>time-to-market</b> sem gerar débito técnico de design.</p>
+            <span className="case-eyebrow">{t.concept.eyebrow}</span>
+            <h2>{t.concept.title}</h2>
+            <p>{t.concept.p1}</p>
             <div className="case-two-col" style={{ marginTop: 32 }}>
               <figure className="case-figure">
-                <img src={vivoV0} alt="Imaginação inicial da home" className="case-section-img" />
-                <figcaption>Imaginação inicial da home</figcaption>
+                <img src={vivoV0} alt={t.concept.captions[0]} className="case-section-img" />
+                <figcaption>{t.concept.captions[0]}</figcaption>
               </figure>
               <figure className="case-figure">
-                <img src={vivoValidation} alt="Tela final após validação de DesignOps" className="case-section-img" />
-                <figcaption>Tela final após validação de DesignOps</figcaption>
+                <img src={vivoValidation} alt={t.concept.captions[1]} className="case-section-img" />
+                <figcaption>{t.concept.captions[1]}</figcaption>
               </figure>
             </div>
           </div>
@@ -204,22 +196,20 @@ const VivoPay = () => {
         {/* VALIDAÇÕES */}
         <InView>
           <div className="case-section">
-            <span className="case-eyebrow">05 · Validação</span>
-            <h2>Testamos, ouvimos, ajustamos</h2>
-            <p style={{ fontWeight: 600, color: '#0d1117', marginBottom: 8 }}>Rodada 1 de testes</p>
-            <p>Com a V0 pronta, levamos ao público. Os testes <b>revelaram</b> que os usuários queriam mais do que apenas visualizar dados e <b>dois pontos críticos</b> emergiram: a necessidade de <b>Cartão Virtual</b> e de <b>exportação da fatura em PDF</b>.</p>
+            <span className="case-eyebrow">{t.validation.eyebrow}</span>
+            <h2>{t.validation.title}</h2>
+            <p style={{ fontWeight: 600, color: '#0d1117', marginBottom: 8 }}>{t.validation.round}</p>
+            <p>{t.validation.p1}</p>
             <div className="case-feedback-grid">
-              <div className="case-feedback-card">
-                <h4>💳 Cartão Virtual</h4>
-                <p>O Itaú não conseguiria entregar a API a tempo. Implementamos um disclaimer estratégico no fluxo, com isso, na segunda rodada de testes, os usuários já não questionavam sobre a funcionalidade, eliminando frustração.</p>
-              </div>
-              <div className="case-feedback-card">
-                <h4>📄 Exportação em PDF</h4>
-                <p>Articulamos com o Itaú a inclusão na API ainda para o MVP. O usuário nem perguntava, simplesmente usava. Sinal claro de que era esperado.</p>
-              </div>
+              {t.validation.cards.map(c => (
+                <div key={c.title} className="case-feedback-card">
+                  <h4>{c.title}</h4>
+                  <p>{c.desc}</p>
+                </div>
+              ))}
             </div>
             <div style={{ marginTop: 32 }}>
-              <img src={vivoVirtualPdf} alt="Telas da v1 — Cartão Virtual e PDF" className="case-section-img" />
+              <img src={vivoVirtualPdf} alt={t.validation.imgAlt} className="case-section-img" />
             </div>
           </div>
         </InView>
@@ -227,9 +217,9 @@ const VivoPay = () => {
         {/* JORNADA COMPLETA */}
         <InView>
           <div className="case-section">
-            <span className="case-eyebrow">06 · Entrega</span>
-            <h2>A jornada final</h2>
-            <p>O produto entregue cobria o fluxo completo: acesso pelo menu Pay → identificação do cartão → KYC → home do cartão → fatura → pagamento.</p>
+            <span className="case-eyebrow">{t.delivery.eyebrow}</span>
+            <h2>{t.delivery.title}</h2>
+            <p>{t.delivery.p1}</p>
 
             <div className="case-figma-embed">
               <iframe
@@ -242,20 +232,20 @@ const VivoPay = () => {
 
             <div className="case-screenshots" style={{ marginTop: 32 }}>
               <figure className="case-figure">
-                <img src={vivoCardHome} alt="Home do cartão" className="case-screen-img" />
-                <figcaption>Home cartão</figcaption>
+                <img src={vivoCardHome} alt={t.delivery.captions[0]} className="case-screen-img" />
+                <figcaption>{t.delivery.captions[0]}</figcaption>
               </figure>
               <figure className="case-figure">
-                <img src={vivoBiometria} alt="KYC — Biometria" className="case-screen-img" />
-                <figcaption>KYC</figcaption>
+                <img src={vivoBiometria} alt={t.delivery.captions[1]} className="case-screen-img" />
+                <figcaption>{t.delivery.captions[1]}</figcaption>
               </figure>
               <figure className="case-figure">
-                <img src={vivoFaturaTotal} alt="Fatura completa" className="case-screen-img" />
-                <figcaption>Fatura</figcaption>
+                <img src={vivoFaturaTotal} alt={t.delivery.captions[2]} className="case-screen-img" />
+                <figcaption>{t.delivery.captions[2]}</figcaption>
               </figure>
               <figure className="case-figure">
-                <img src={vivoFatura} alt="Pagamento da fatura" className="case-screen-img" />
-                <figcaption>Pagamento</figcaption>
+                <img src={vivoFatura} alt={t.delivery.captions[3]} className="case-screen-img" />
+                <figcaption>{t.delivery.captions[3]}</figcaption>
               </figure>
             </div>
           </div>
@@ -264,15 +254,11 @@ const VivoPay = () => {
         {/* MÉTRICAS */}
         <InView>
           <div className="case-section">
-            <span className="case-eyebrow">07 · Resultados</span>
-            <h2>Garantindo que o produto nascesse rastreável</h2>
-            <p>Sem dados de longo prazo disponíveis no período do projeto, priorizei que o produto não fosse ao ar às cegas. Todos os pontos de clique foram instrumentados com triggers no GA4. Nos testes com Maze, a segunda rodada validou que todos os pontos críticos da V0 foram sanados. A adoção foi gradual e controlada pela Vivo, permitindo monitoramento de comportamento real sem ruído.</p>
+            <span className="case-eyebrow">{t.results.eyebrow}</span>
+            <h2>{t.results.title}</h2>
+            <p>{t.results.p1}</p>
             <div className="case-metrics-grid">
-              {[
-                { icon: '✅', value: '100% dos pontos críticos da V0 sanados na V1' },
-                { icon: '📊', value: 'Tracking completo via GA4 em todos os touchpoints' },
-                { icon: '🔍', value: 'Sessões monitoradas via Maze em adoção gradual' },
-              ].map(m => (
+              {t.results.metrics.map(m => (
                 <div key={m.value} className="case-metric">
                   <span className="case-metric-icon">{m.icon}</span>
                   <div className="case-metric-value">{m.value}</div>
@@ -285,15 +271,10 @@ const VivoPay = () => {
         {/* PRÓXIMOS PASSOS */}
         <InView>
           <div className="case-section">
-            <span className="case-eyebrow">08 · Visão de Futuro</span>
-            <h2>O que vem depois</h2>
+            <span className="case-eyebrow">{t.future.eyebrow}</span>
+            <h2>{t.future.title}</h2>
             <ul className="case-next-list">
-              {[
-                'Cartão Virtual dentro do app',
-                'Pagamento direto via PIX ou conta Vivo',
-                'Contratação de novo cartão ou adicional',
-                'Parcelamento de faturas',
-              ].map(item => <li key={item}>{item}</li>)}
+              {t.future.items.map(item => <li key={item}>{item}</li>)}
             </ul>
           </div>
         </InView>
@@ -303,11 +284,11 @@ const VivoPay = () => {
       {/* ─── CTA FINAL ─── */}
       <InView>
         <section className="case-cta">
-          <h2>Quer ver mais detalhes?</h2>
-          <p>Acesse a apresentação completa do case ou entre em contato.</p>
+          <h2>{t.cta.title}</h2>
+          <p>{t.cta.p1}</p>
           <div className="case-cta-buttons">
-            <a href="/vivo-pay-case.pdf" download className="case-cta-btn-primary">⬇ Baixar apresentação</a>
-            <a href="mailto:victor9009@gmail.com" className="case-cta-btn-secondary">Falar comigo</a>
+            <a href={`/vivo-pay-case-${pdfLang}.pdf`} download className="case-cta-btn-primary">{t.cta.btnDown}</a>
+            <a href="mailto:victor9009@gmail.com" className="case-cta-btn-secondary">{t.cta.btnTalk}</a>
           </div>
         </section>
       </InView>

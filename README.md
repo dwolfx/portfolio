@@ -25,7 +25,7 @@ SPA multi-idioma (PT-BR, EN, ES) com seletor de idioma na home e case studies de
 /pt-br                     → Portfolio em Português
 /en                        → Portfolio em Inglês
 /es                        → Portfolio em Espanhol
-/:lang/cases/vivo-pay      → Case Study Vivo Pay (pt-br, en, es — conteúdo só em PT-BR)
+/:lang/cases/vivo-pay      → Case Study Vivo Pay (pt-br, en, es)
 /:lang (desconhecido)      → PortfolioPage.jsx — fallback, efetivamente dead code
 ```
 
@@ -53,7 +53,7 @@ Mesma estrutura em PT-BR, EN e ES — conteúdo traduzido:
 - **Overview** — grid 6 células: Empresa, Meu papel, Parceiro, Plataforma, Período, Ferramentas
 - **Seções:** 01 Contexto · 02 Papel · 03 Discovery · 04 Conceituação · 05 Validação · 06 Entrega · 07 Resultados · 08 Visão de Futuro
 - **CTA Final** — download PDF + contato
-- **Conteúdo:** todo em PT-BR independente do `lang` param. Só navegação muda de idioma.
+- **Conteúdo:** Totalmente internacionalizado via `vivoPayLocales.jsx`. Estrutura unificada para os 3 idiomas.
 
 ---
 
@@ -86,15 +86,24 @@ Nota: PT-BR usa `vivoPayTags` de `vivoPayData.js`. EN e ES têm tags inline pró
 
 - **Bug — lang button no VivoPay sem estilo:** nav usa classes `v2-contact-wrap`, `v2-lang-btn`, `v2-contact-dropdown`, `v2-contact-item` que não existem em CaseStudy.css. Dropdown está sem CSS.
 - **case-nav com overflow: hidden:** clipa dropdowns (razão provável do bug acima).
-- **VivoPay em PT-BR apenas:** o `lang` param muda só os labels de navegação, o conteúdo do case é sempre português.
 
 ---
 
 ## O que falta
 
 - Imagens reais no Vivo Pay (todos os `<Img>` são placeholders cinza)
-- PDF linkado (`/vivo-pay-case.pdf` não existe ainda)
-- Embed Figma na seção 06 (placeholder comentado no JSX)
 - Case studies dos 6 projetos WIP
 - Deploy / hospedagem
-- Tradução do conteúdo do VivoPay para EN e ES
+
+---
+
+## Scripts Adicionais
+
+### Geração Estática de PDFs dos Cases
+Para gerar versões PDF contínuas e selecionáveis de todos os idiomas para um case:
+1. Certifique-se de que o servidor dev está rodando (`npm run dev`)
+2. Execute o script passando o slug do case:
+   ```bash
+   node scripts/generate-pdfs.js vivo-pay
+   ```
+O script usará o Puppeteer para navegar pela página, ocultar elementos de navegação/embeds e exportar as folhas para `public/vivo-pay-case-*.pdf`.
