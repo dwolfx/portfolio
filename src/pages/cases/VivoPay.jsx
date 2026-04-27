@@ -227,12 +227,13 @@ const VivoPay = () => {
             <h2>A jornada final</h2>
             <p>O produto entregue cobria o fluxo completo: acesso pelo menu Pay → identificação do cartão → KYC → home do cartão → fatura → pagamento.</p>
 
-            {/* Figma embed placeholder */}
             <div className="case-figma-embed">
-              <div className="case-figma-embed-icon">🎨</div>
-              <h4>Embed — Handoff Figma</h4>
-              <p>Substituir pelo iframe do Figma quando disponível</p>
-              {/* <iframe src="URL_DO_FIGMA" width="100%" height="100%" allowFullScreen /> */}
+              <iframe
+                src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/9rwTUpw3f90660cHvW65ox/Jornada-Carta%CC%83o-Itau%CC%81---App-novo?node-id=7452-105144%26p=f%26t=jNxowsggK4qG99pX-11"
+                width="100%"
+                height="100%"
+                allowFullScreen
+              />
             </div>
 
             <div className="case-screenshots" style={{ marginTop: 32 }}>
