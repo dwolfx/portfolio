@@ -4,7 +4,16 @@ Ordem: mais recente primeiro.
 
 ---
 
-## [dev] Setup de branch e documentação — Abr/2026
+## [dev] Internacionalização de Cases e Automação de PDF — Abr/2026
+
+- Criado `src/data/vivoPayLocales.jsx` para suportar idiomas (PT-BR, EN, ES) de maneira unificada no case.
+- Modificado `VivoPay.jsx` para mapear conteúdo via objeto `t`.
+- Adicionado script `scripts/generate-pdfs.js` usando `puppeteer` para geração contínua de PDF dos cases, omitindo seções interativas e injetando avisos de confidencialidade.
+- Tags do projeto adaptadas por idioma via arquivo `vivoPayLocales.jsx`.
+
+---
+
+## [atual] Setup de branch e documentação — Abr/2026
 
 - Branch `react` excluída (local e remote) — não refletia o projeto atual
 - Branch `dev` criada a partir de `main` — branch de trabalho ativa

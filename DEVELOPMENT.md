@@ -103,7 +103,7 @@ Array `projects`: `{ title, description, tags[], image, link?, wip? }`
 - Cards com `wip: true` mostram apenas 1 tag "Em construção" / "Coming soon" / "Próximamente"
 - Só Vivo tem `link` ativo
 - Clique no card usa `useNavigate(project.link)` — toda a div é clicável
-- PT-BR usa `vivoPayTags` e `vivoPayDescription` de `vivoPayData.js`. EN e ES têm descrições e tags inline próprias.
+- Os 3 idiomas (PT-BR, EN, ES) usam descrições e tags inline exportadas de `projectsData.js`.
 
 Diferença de delays nas animações do hero:
 - PT-BR: tagline 0.22, chips 0.27, bio 0.32, links 0.34 (mais espaçado)
@@ -121,28 +121,10 @@ useEffect(() => { window.scrollTo(0, 0); }, []);  // scroll to top ao montar
 - `otherLangs`: filtra `langMeta` excluindo o lang atual para o dropdown
 - `Img` component local: `<div className="case-img-placeholder {className}">{label}</div>`
 - `InView` component local: wrapper Framer Motion para scroll animations
-- **Conteúdo em PT-BR apenas.** O `lang` param só muda labels de nav e links de volta/idioma.
+- **Conteúdo multi-idioma.** `t` mapeia de `vivoPayLocales.jsx` usando o parâmetro `lang`.
 - Hero gradient Vivo Pay definido via `style={}` inline, sobrescreve o default do `.case-hero`.
 
----
 
-## Problema conhecido — v2-* classes no VivoPay
-
-O nav do VivoPay usa classes com prefixo `v2-`:
-```jsx
-<div className="v2-contact-wrap" ref={langRef}>
-  <button className="v2-lang-btn">
-    <img src={...} /> ▾
-  </button>
-  <div className="v2-contact-dropdown">
-    <Link className="v2-contact-item">
-```
-
-Essas classes **não existem em CaseStudy.css**. O Portfolio.css define `.contact-wrap`, `.lang-btn`, etc. (sem prefixo), mas só é importado pelas portfolio pages, não pelo VivoPay. O `case-nav` também tem `overflow: hidden`, o que cliparia qualquer dropdown.
-
-**Resultado:** o botão seletor de idioma no VivoPay aparece sem estilo algum.
-
-**Fix necessário:** adicionar as classes `v2-*` em CaseStudy.css (ou mudar o markup para usar `.lang-btn` etc. e mudar `case-nav` para `overflow: visible`).
 
 ---
 
