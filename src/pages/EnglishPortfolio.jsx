@@ -189,7 +189,7 @@ const EnglishPortfolio = () => {
                 role: 'Product Designer Specialist',
                 start: 'Aug 2024',
                 end: 'Jan 2026',
-                desc: "I tropicalized SportingBet's global platform for the Brazilian market. I was responsible for the KYC and Onboarding design that secured Brazil's first governmental approval for a betting house, balancing regulatory compliance with high-conversion UX.",
+                desc: "I tropicalized SportingBet's global platform for the Brazilian market. I was one of those responsible for the KYC and Onboarding design that secured Brazil's first governmental approval for a betting house, balancing regulatory compliance with high-conversion UX.",
                 link: '/en/cases/sportingbet'
               },
               {
@@ -197,7 +197,7 @@ const EnglishPortfolio = () => {
                 role: 'Product Designer Specialist',
                 start: 'Mar 2023',
                 end: 'Jun 2024',
-                desc: "I was one of the founding designers of Vivo Fintech, built VivoPay from scratch, acted as a UX bridge in the Vivo + Itaú integration, and designed trust journeys (LGPD) to convert telecom customers into financial services users.",
+                desc: "One of the founding designers of Vivo Fintech, responsible for credit card, insurance, and digital account products. We built VivoPay from scratch! I acted as a UX bridge in the Vivo + Itaú integration and designed trust journeys following LGPD guidelines.",
                 link: '/en/cases/vivo-pay'
               },
               {
