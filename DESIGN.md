@@ -64,6 +64,8 @@ Tag accent bg:        #eef2ff  /  text #6366f1
 Tag WIP bg:           #fef3c7  /  text #b45309
 Decision text:        #3730a3
 Placeholder cinza:    #e5e5ea  /  text #6e6e73
+Case button bg:      rgba(99, 102, 241, 0.06)
+Case button border:  rgba(99, 102, 241, 0.15)
 ```
 
 ---
@@ -130,6 +132,11 @@ border: 1px solid rgba(255,255,255,0.3); border-radius: 18px;
 padding: 0 28px;
 box-shadow: 0 4px 16px rgba(0,0,0,0.08), inset 0 -1px 0 rgba(255,255,255,0.2);
 overflow: visible;  /* necessário para dropdowns */
+```
+
+### Smooth Scroll (Global)
+```css
+html { scroll-behavior: smooth; }
 ```
 
 ### Nav sticky (Case Study)
@@ -298,7 +305,7 @@ src/assets/
 ├── flags/     br_flag.jpg, es_flag.jpg, uk_flag.jpg
 ├── logo/      logo.png (importado mas não aparece no código atual)
 ├── profile/   victor.jpg
-└── projects/  b2b_portal.png, design_system.png, ecosystem.png, globo_tools.png, vivo.png
+└── projects/  b2b_portal.png, ecosystem.png, globo_tools.png, vivo.png, wip-placeholder.png
 ```
 
-Projetos WIP usam imagens reutilizadas: Globo e SportingBet → `globo.png`; TradersClub e Porto Seguro → `ecosystem.png`; Gen e CV-Fácil → `b2b.png`.
+Projetos WIP usam a imagem `wip-placeholder.png` (render 3D minimalista claro de um laptop) para consistência visual e discrição em fundos claros.

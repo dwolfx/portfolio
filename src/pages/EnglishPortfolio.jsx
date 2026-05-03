@@ -57,6 +57,12 @@ const EnglishPortfolio = () => {
         <Link to="/" className="nav-logo">Victor Morais</Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
           <a href="#projects" className="nav-link">Projects</a>
+          <a href="/Victor-Morais-en.pdf" download className="nav-cv-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Resume
+          </a>
           <div className="contact-wrap" ref={contactRef}>
             <button className="nav-cta" onClick={() => setIsContactOpen(o => !o)}>Contact ▾</button>
             {isContactOpen && (
@@ -131,6 +137,12 @@ const EnglishPortfolio = () => {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4H2C.9 4 0 4.9 0 6V18C0 19.1.9 20 2 20H22C23.1 20 24 19.1 24 18V6C24 4.9 23.1 4.01 22 4.01V4ZM22 8L12 14.5L2 8V6L12 12.5L22 6V8Z" /></svg>
                 Email
               </a>
+              <a href="/Victor-Morais-en.pdf" download className="social-link social-link--cv">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download CV
+              </a>
             </motion.div>
           </div>
           <motion.div className="hero-image-wrap" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}>
@@ -147,6 +159,119 @@ const EnglishPortfolio = () => {
           <motion.p className="statement-text" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.15 }}>
             I believe the designer's role is to be the <strong>bridge</strong> between what the user needs and what the business seeks.<br />Rather than just designing interfaces, I design paths that deliver <strong>real value</strong> at every stage of the journey.
           </motion.p>
+        </div>
+      </section>
+
+      {/* ─── EXPERIENCE ─── */}
+      <section className="experience">
+        <div className="experience-inner">
+          <div className="experience-header">
+            <motion.p
+              className="eyebrow"
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.4 }}
+            >
+              Experience
+            </motion.p>
+            <motion.h2
+              className="section-title"
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.08 }}
+            >
+              Work History
+            </motion.h2>
+          </div>
+
+          <div className="experience-timeline">
+            {[
+              {
+                company: 'Entain (SportingBet)',
+                role: 'Product Designer Specialist',
+                start: 'Aug 2024',
+                end: 'Jan 2026',
+                desc: "I tropicalized SportingBet's global platform for the Brazilian market. I was responsible for the KYC and Onboarding design that secured Brazil's first governmental approval for a betting house, balancing regulatory compliance with high-conversion UX."
+              },
+              {
+                company: 'Vivo (Telefônica)',
+                role: 'Product Designer Specialist',
+                start: 'Mar 2023',
+                end: 'Jun 2024',
+                desc: "I was one of the founding designers of Vivo Fintech, built VivoPay from scratch, acted as a UX bridge in the Vivo + Itaú integration, and designed trust journeys (LGPD) to convert telecom customers into financial services users.",
+                link: '/en/cases/vivo-pay'
+              },
+              {
+                company: 'Bradesco',
+                role: 'Senior Product Designer',
+                start: 'Dec 2022',
+                end: 'Feb 2023',
+                desc: 'A project-based engagement via a third party. I led the redesign of Autoline, a B2B vehicle financing tool for dealerships, simplifying complex registration forms without compromising banking compliance.'
+              },
+              {
+                company: 'Gen (General Shopping)',
+                role: 'Senior Product Designer',
+                start: 'Jul 2022',
+                end: 'Dec 2022',
+                desc: 'I led the rebranding of the B2B merchant management platform. I introduced and standardized the Ant Design System, conducted research with merchants to eliminate operational bottlenecks, and collaborated with engineering for scalable adoption.'
+              },
+              {
+                company: 'TradersClub',
+                role: 'Product Designer',
+                start: 'Mar 2021',
+                end: 'Jun 2022',
+                desc: 'Hybrid role (design + React code): I built the Design System for B2B and B2C and developed an automation system that reduced report creation time from weeks to just 15 minutes.'
+              },
+              {
+                company: 'Rede Globo',
+                role: 'Product Designer Jr, Front-end Specialist',
+                start: 'Mar 2017',
+                end: 'Sep 2020',
+                desc: 'Where I transitioned into the field. I worked at the intersection of design and front-end for G1, GE, GShow, and Globo.com. I created the Parallax and FlyCarpet formats, adopted by Google as market standards, with a 20% increase in CTR via data-driven design.'
+              },
+            ].map((item, i, arr) => (
+              <motion.div
+                key={item.company}
+                className="experience-item"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.1 }}
+              >
+                <div className="experience-period">
+                  <span className="experience-period-start">{item.start}</span>
+                  <span className="experience-period-end">{item.end}</span>
+                </div>
+                <div className="experience-connector">
+                  <div className="experience-dot-bullet" />
+                  {i < arr.length - 1 && <div className="experience-connector-line" />}
+                </div>
+                <div className="experience-body">
+                  <div className="experience-company">{item.company}</div>
+                  <div className="experience-role">{item.role}</div>
+                  <p className="experience-desc">{item.desc}</p>
+                  {item.link && (
+                    <button onClick={() => navigate(item.link)} className="experience-case-btn">
+                      View full case →
+                    </button>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="experience-cta"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.25 }}
+          >
+            <a href="/Victor-Morais-en.pdf" download className="cv-download-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Full CV
+            </a>
+          </motion.div>
         </div>
       </section>
 

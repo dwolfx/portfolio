@@ -66,13 +66,13 @@ Mesma estrutura em PT-BR, EN e ES — conteúdo traduzido:
 
 | Projeto | Tags PT-BR | Tags EN | Tags ES | Status |
 |---|---|---|---|---|
-| Vivo | Fintech, Cartão de crédito, B2C, Mobile, App | B2C, API, Credit Card, Fintech | B2C, API, Tarjeta de crédito, Fintech | ✅ Case completo |
-| Rede Globo | Mídia, Ferramentas | Media, Tools | Medios, Herramientas | 🚧 WIP |
-| SportingBet (Entain) | Betting, UI/UX | Betting, UI/UX | Apuestas, UI/UX | 🚧 WIP |
-| TradersClub | Fintech, Dados | Fintech, Data | Fintech, Datos | 🚧 WIP |
-| Gen (General Shopping) | Varejo, UX | Retail, UX | Retail, UX | 🚧 WIP |
-| Porto Seguro (Sciensa) | Seguros, B2B | Insurance, B2B | Seguros, B2B | 🚧 WIP |
-| CV-Fácil | SaaS, RH | SaaS, HR | SaaS, RRHH | 🚧 WIP |
+| VivoPay | Fintech, Cartão de crédito, B2C, Mobile, App | B2C, API, Credit Card, Fintech | B2C, API, Tarjeta de crédito, Fintech | ✅ Case completo |
+| Rede Globo | Mídia, Ferramentas | Media, Tools | Medios, Herramientas | 🚧 WIP (Placeholder) |
+| SportingBet (Entain) | Betting, UI/UX | Betting, UI/UX | Apuestas, UI/UX | 🚧 WIP (Placeholder) |
+| TradersClub | Fintech, Dados | Fintech, Data | Fintech, Datos | 🚧 WIP (Placeholder) |
+| Gen (General Shopping) | Varejo, UX | Retail, UX | Retail, UX | 🚧 WIP (Placeholder) |
+| Porto Seguro (Sciensa) | Seguros, B2B | Insurance, B2B | Seguros, B2B | 🚧 WIP (Placeholder) |
+| CV-Fácil | SaaS, RH | SaaS, HR | SaaS, RRHH | 🚧 WIP (Placeholder) |
 
 Dados centralizados em `src/data/projectsData.js` (exporta `projectsPtBr`, `projectsEn`, `projectsEs`).
 
