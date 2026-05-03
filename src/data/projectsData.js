@@ -1,6 +1,3 @@
-import ecosystem from '../assets/projects/ecosystem.png';
-import b2b from '../assets/projects/b2b_portal.png';
-import globo from '../assets/projects/globo_tools.png';
 import vivo from '../assets/projects/vivo.png';
 import sportingbet from '../assets/projects/sportingbet.png';
 import wipPlaceholder from '../assets/projects/wip-placeholder.png';
