@@ -66,7 +66,7 @@ const VivoPay = () => {
 
       {/* ─── NAV ─── */}
       <nav className="case-nav">
-        <Link to="/" className="case-nav-logo">Victor Morais</Link>
+        <Link to={`/${lang}`} className="case-nav-logo">Victor Morais</Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <Link to={`/${lang}`} className="case-back">{backLabel}</Link>
           <div className="contact-wrap" ref={langRef}>
