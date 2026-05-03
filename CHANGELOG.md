@@ -4,12 +4,19 @@ Ordem: mais recente primeiro.
 
 ---
 
-## [dev] Internacionalização de Cases e Automação de PDF — Abr/2026
+## [dev] VivoPay completo + internacionalização — Abr/2026
 
-- Criado `src/data/vivoPayLocales.jsx` para suportar idiomas (PT-BR, EN, ES) de maneira unificada no case.
-- Modificado `VivoPay.jsx` para mapear conteúdo via objeto `t`.
-- Adicionado script `scripts/generate-pdfs.js` usando `puppeteer` para geração contínua de PDF dos cases, omitindo seções interativas e injetando avisos de confidencialidade.
-- Tags do projeto adaptadas por idioma via arquivo `vivoPayLocales.jsx`.
+- **Imagens reais** em todas as seções do VivoPay: hero, conceituação (v0 idea + validation), validação (virtual+pdf), entrega (home, Biometria, fatura, faturaTotal)
+- **Embed Figma** real na seção 06 Entrega (iframe com allowFullScreen)
+- **Internacionalização completa** — `src/data/vivoPayLocales.jsx` com PT-BR, EN e ES unificados
+- **Lang dropdown no case** funcionando com classes corretas (`contact-wrap`, `lang-btn`, etc.) — bug v2-* classes resolvido
+- **Favicon** aplicado (`public/favicon.png` + link no `index.html`)
+- **Dados centralizados** — `src/data/projectsData.js` único source of truth para os 3 idiomas
+- Tags do grid derivadas só de projetos não-WIP (sem poluição do filtro)
+- Tags clicáveis nos cards de projeto (filtram o grid via stopPropagation)
+- `overflow: visible` no case-nav para dropdown não ser cortado
+- `object-fit: contain` nas screenshots para não cortar imagens
+- Script Puppeteer para geração de PDFs em `scripts/generate-pdfs.js`
 
 ---
 
@@ -17,10 +24,7 @@ Ordem: mais recente primeiro.
 
 - Branch `react` excluída (local e remote) — não refletia o projeto atual
 - Branch `dev` criada a partir de `main` — branch de trabalho ativa
-- Todos os `.md` reescritos com base em leitura completa do código:
-  - Documentados problemas conhecidos (v2-* classes, VivoPay PT-BR only)
-  - Corrigidas imprecisões (delays de animação, export names V2, tags por idioma)
-  - Adicionadas observações de build e estrutura que faltavam
+- Todos os `.md` reescritos com base em leitura completa do código
 
 ---
 
@@ -71,16 +75,17 @@ Marco principal: redesign completo.
 | Decisão | Razão |
 |---|---|
 | Branch `dev` como ativa | Isola trabalho de `main` estável |
-| Prefixo `v2` removido dos arquivos | Não há mais v1 em paralelo — mas export names mantêm V2 (artefato) |
-| `overflow: visible` no nav das portfolio pages | Dropdowns estavam sendo cortados |
-| `overflow: hidden` no case-nav | Sem dropdown próprio (mas cria bug no lang button — v2-* classes) |
+| Prefixo `v2` removido dos arquivos | Não há mais v1 em paralelo |
+| `overflow: visible` no nav | Dropdowns estavam sendo cortados |
 | Cards WIP mostram só tag de construção | Tags reais em cards sem case confundiam |
 | Vivo primeiro no grid | Único case ativo — destaque natural |
 | `dist/` e `node_modules/` no `.gitignore` | Estavam versionados por engano |
 | Accent dual: Home #4F46E5 / Portfolio #6366f1 | Diferenciação visual de contexto |
-| CSS puro sem Tailwind | Preferência do Victor — arquivos separados por contexto |
+| CSS puro sem Tailwind | Preferência do Victor |
 | Framer Motion (não CSS transitions) | Necessário para sequências complexas e stagger |
 | `useState` local sem Redux/Context | Escopo pequeno não justifica |
-| VivoPay conteúdo só em PT-BR | Case ainda em construção — tradução pendente |
-| Tags inline por idioma (EN/ES) vs `vivoPayData.js` (PT-BR) | Inconsistência a unificar futuramente |
-| Hero gradient Vivo Pay inline no JSX | Override do default do `.case-hero` — permite personalização por case |
+| `projectsData.js` centralizado | Evita drift entre os 3 idiomas |
+| `vivoPayLocales.jsx` unificado | Um arquivo para os 3 idiomas — sem duplicação |
+| `object-fit: contain` nas screenshots | Sem corte — imagens de tamanhos diferentes |
+| Hero gradient Vivo Pay inline no JSX | Override por case — permite personalização |
+| Push só sob demanda explícita | Regra de workflow combinada com Victor |
