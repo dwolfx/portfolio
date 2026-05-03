@@ -1,5 +1,12 @@
 # Desenvolvimento — Portfolio Victor Morais
 
+## Arquivos de Contexto
+- `README.md` — Visão geral e roadmap
+- `DESIGN.md` — Tokens, paleta e componentes
+- `DEVELOPMENT.md` — Stack e estrutura de arquivos
+- `CASES-PATTERN.md` — Guia de implementação de novos cases
+- `CHANGELOG.md` — Histórico de mudanças
+
 ---
 
 ## Stack
@@ -38,7 +45,8 @@ src/
 │   └── vivoPayData.js  exporta: vivoPayTags[], vivoPayDescription (só usado pelo PT-BR)
 ├── pages/
 │   ├── cases/
-│   │   └── VivoPay.jsx
+│   │   ├── VivoPay.jsx
+│   │   └── Sportingbet.jsx
 │   ├── Home.jsx
 │   ├── PortfolioPage.jsx       fallback para langs desconhecidas (dead code em produção)
 │   ├── PortuguesePortfolio.jsx  (export: PortuguesePortfolioV2)

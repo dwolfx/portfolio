@@ -54,7 +54,7 @@ Texto médio:          #64748b
 Texto suave:          #475569
 Accent portfolio:     #6366f1
 Accent hover:         #4f46e5
-Nav logo / back:      #9faaba
+Nav logo:              #777aff
 Nav hover text:       #cbd5e1
 Background cards:     #f8f9fb
 Border cards:         #eef0f4
@@ -66,6 +66,7 @@ Decision text:        #3730a3
 Placeholder cinza:    #e5e5ea  /  text #6e6e73
 Case button bg:      rgba(99, 102, 241, 0.06)
 Case button border:  rgba(99, 102, 241, 0.15)
+Case back button:    Indigo glass style (translucent bg + blur)
 ```
 
 ---
