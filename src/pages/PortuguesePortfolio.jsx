@@ -232,7 +232,8 @@ const PortuguesePortfolio = () => {
                 role: 'Product Designer Especialista',
                 start: 'Ago 2024',
                 end: 'Jan 2026',
-                desc: 'Tropicalizei a plataforma global da SportingBet para o mercado brasileiro. Fui responsável pelo design do KYC e Onboarding que garantiu a primeira homologação governamental de uma casa de apostas no Brasil, equilibrando compliance regulatório com UX de alta conversão.'
+                desc: 'Tropicalizei a plataforma global da SportingBet para o mercado brasileiro. Fui responsável pelo design do KYC e Onboarding que garantiu a primeira homologação governamental de uma casa de apostas no Brasil, equilibrando compliance regulatório com UX de alta conversão.',
+                link: '/pt-br/cases/sportingbet'
               },
               {
                 company: 'Vivo (Telefônica)',
