@@ -45,15 +45,20 @@ Mesma estrutura em PT-BR, EN e ES — conteúdo traduzido:
 - **Nav sticky** glassmorphism — logo, link Projetos (oculto ≤600px), dropdown Contato, seletor de idioma
 - **Hero** dark gradient — nome com `.` accent, tagline, chips, bio 2 parágrafos, social links, foto (420px)
 - **Statement** — blockquote com borda esquerda + parágrafo filosofia
-- **Projects** — filtros por tag, grid 3 colunas, AnimatePresence, "Ver mais" (limite 9)
+- **Projects** — filtros por tag, grid 3 colunas, AnimatePresence, "Ver mais" (limite 9). Tags derivadas apenas de projetos não-WIP. Clique na tag do card filtra o grid.
 
 ### Case Study Vivo Pay (`/:lang/cases/vivo-pay`)
-- **Nav** — logo + botão voltar + seletor de idioma (dropdown com v2-* classes — ver Problemas Conhecidos)
-- **Hero** — gradient roxo/magenta inline, tag monospace, título, subtitle, CTA download PDF, placeholder hero image
+- **Nav** — logo + botão voltar + seletor de idioma (dropdown com classes `contact-wrap`, `lang-btn`, `contact-dropdown`, `contact-item`)
+- **Hero** — gradient roxo/magenta inline, tag monospace, título, subtitle, CTA download PDF, imagem hero real
 - **Overview** — grid 6 células: Empresa, Meu papel, Parceiro, Plataforma, Período, Ferramentas
-- **Seções:** 01 Contexto · 02 Papel · 03 Discovery · 04 Conceituação · 05 Validação · 06 Entrega · 07 Resultados · 08 Visão de Futuro
+- **Seções:**
+  - 01 Contexto · 02 Papel (com highlights) · 03 Discovery (com decision block)
+  - 04 Conceituação — 2 imagens reais: `v0 idea.png` + `validation.png`
+  - 05 Validação — 2 feedback cards + imagem `virtual+pdf.png`
+  - 06 Entrega — embed Figma (iframe) + 4 screenshots reais: `home.png`, `Biometria.png`, `fatura.png`, `faturaTotal.png`
+  - 07 Resultados (métricas) · 08 Visão de Futuro
 - **CTA Final** — download PDF + contato
-- **Conteúdo:** Totalmente internacionalizado via `vivoPayLocales.jsx`. Estrutura unificada para os 3 idiomas.
+- **Conteúdo:** Totalmente internacionalizado via `src/data/vivoPayLocales.jsx` (PT-BR, EN, ES)
 
 ---
 
@@ -69,7 +74,7 @@ Mesma estrutura em PT-BR, EN e ES — conteúdo traduzido:
 | Porto Seguro (Sciensa) | Seguros, B2B | Insurance, B2B | Seguros, B2B | 🚧 WIP |
 | CV-Fácil | SaaS, RH | SaaS, HR | SaaS, RRHH | 🚧 WIP |
 
-Nota: PT-BR usa `vivoPayTags` de `vivoPayData.js`. EN e ES têm tags inline próprias.
+Dados centralizados em `src/data/projectsData.js` (exporta `projectsPtBr`, `projectsEn`, `projectsEs`).
 
 ---
 
@@ -82,18 +87,11 @@ Nota: PT-BR usa `vivoPayTags` de `vivoPayData.js`. EN e ES têm tags inline pró
 
 ---
 
-## Problemas Conhecidos
-
-- **Bug — lang button no VivoPay sem estilo:** nav usa classes `v2-contact-wrap`, `v2-lang-btn`, `v2-contact-dropdown`, `v2-contact-item` que não existem em CaseStudy.css. Dropdown está sem CSS.
-- **case-nav com overflow: hidden:** clipa dropdowns (razão provável do bug acima).
-
----
-
 ## O que falta
 
-- Imagens reais no Vivo Pay (todos os `<Img>` são placeholders cinza)
-- Case studies dos 6 projetos WIP
+- Case studies dos 6 projetos WIP (próximo: TradersClub)
 - Deploy / hospedagem
+- PDFs dos cases (script em `scripts/generate-pdfs.js` com Puppeteer — requer `npm run dev` ativo)
 
 ---
 
