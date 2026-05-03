@@ -57,6 +57,12 @@ const SpanishPortfolio = () => {
         <Link to="/" className="nav-logo">Victor Morais</Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
           <a href="#projects" className="nav-link">Proyectos</a>
+          <a href="/Victor-Morais-es.pdf" download className="nav-cv-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Currículum
+          </a>
           <div className="contact-wrap" ref={contactRef}>
             <button className="nav-cta" onClick={() => setIsContactOpen(o => !o)}>Contacto ▾</button>
             {isContactOpen && (
@@ -131,6 +137,12 @@ const SpanishPortfolio = () => {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4H2C.9 4 0 4.9 0 6V18C0 19.1.9 20 2 20H22C23.1 20 24 19.1 24 18V6C24 4.9 23.1 4.01 22 4.01V4ZM22 8L12 14.5L2 8V6L12 12.5L22 6V8Z" /></svg>
                 Email
               </a>
+              <a href="/Victor-Morais-es.pdf" download className="social-link social-link--cv">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Descargar Currículum
+              </a>
             </motion.div>
           </div>
           <motion.div className="hero-image-wrap" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}>
@@ -147,6 +159,99 @@ const SpanishPortfolio = () => {
           <motion.p className="statement-text" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.15 }}>
             Creo que el papel del diseñador es ser el <strong>puente</strong> entre lo que el usuario necesita y lo que el negocio busca.<br />En lugar de solo diseñar interfaces, proyecto caminos que entregan <strong>valor real</strong> en cada etapa del recorrido.
           </motion.p>
+        </div>
+      </section>
+
+      {/* ─── EXPERIENCE ─── */}
+      <section className="experience">
+        <div className="experience-inner">
+          <div className="experience-header">
+            <motion.p
+              className="eyebrow"
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.4 }}
+            >
+              Experiencia
+            </motion.p>
+            <motion.h2
+              className="section-title"
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.08 }}
+            >
+              Historial Profesional
+            </motion.h2>
+          </div>
+
+          <div className="experience-timeline">
+            {[
+              {
+                company: 'Entain (SportingBet)',
+                role: 'Product Designer Senior',
+                start: '2024',
+                end: 'Presente',
+                desc: 'Diseño de producto para la experiencia de apuestas deportivas digitales, abarcando onboarding, depósitos y la jornada de apuestas en app móvil y web.'
+              },
+              {
+                company: 'Vivo (Telefônica)',
+                role: 'Product Designer Especialista',
+                start: 'Feb 2023',
+                end: 'Jul 2024',
+                desc: 'Lideró el diseño de Vivo Pay — solución de crédito y pagos digitales integrada en el super app de la operadora, desde el discovery hasta la entrega final.'
+              },
+              {
+                company: 'Rede Globo',
+                role: 'Product Designer',
+                start: '2021',
+                end: '2023',
+                desc: 'Desarrolló herramientas y productos digitales para el mayor grupo de medios de Brasil, con foco en UX editorial y soluciones de contenido.'
+              },
+              {
+                company: 'Bradesco',
+                role: 'UX Designer',
+                start: '2019',
+                end: '2021',
+                desc: 'Proyectos de UX para productos bancarios digitales, contribuyendo a la jornada de clientes personales y empresariales.'
+              },
+            ].map((item, i, arr) => (
+              <motion.div
+                key={item.company}
+                className="experience-item"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.1 }}
+              >
+                <div className="experience-period">
+                  <span className="experience-period-start">{item.start}</span>
+                  <span className="experience-period-end">{item.end}</span>
+                </div>
+                <div className="experience-connector">
+                  <div className="experience-dot-bullet" />
+                  {i < arr.length - 1 && <div className="experience-connector-line" />}
+                </div>
+                <div className="experience-body">
+                  <div className="experience-company">{item.company}</div>
+                  <div className="experience-role">{item.role}</div>
+                  <p className="experience-desc">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="experience-cta"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.25 }}
+          >
+            <a href="/Victor-Morais-es.pdf" download className="cv-download-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Descargar Currículum Completo
+            </a>
+          </motion.div>
         </div>
       </section>
 
