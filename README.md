@@ -26,6 +26,7 @@ SPA multi-idioma (PT-BR, EN, ES) com seletor de idioma na home e case studies de
 /en                        → Portfolio em Inglês
 /es                        → Portfolio em Espanhol
 /:lang/cases/vivo-pay      → Case Study Vivo Pay (pt-br, en, es)
+/:lang/cases/sportingbet   → Case Study Sportingbet (pt-br, en, es)
 /:lang (desconhecido)      → PortfolioPage.jsx — fallback, efetivamente dead code
 ```
 
@@ -67,8 +68,8 @@ Mesma estrutura em PT-BR, EN e ES — conteúdo traduzido:
 | Projeto | Tags PT-BR | Tags EN | Tags ES | Status |
 |---|---|---|---|---|
 | VivoPay | Fintech, Cartão de crédito, B2C, Mobile, App | B2C, API, Credit Card, Fintech | B2C, API, Tarjeta de crédito, Fintech | ✅ Case completo |
+| SportingBet (Entain) | Betting, Regulamentação, KYC, UI/UX, Mobile | Betting, Regulation, KYC, UI/UX, Mobile | Betting, Regulación, KYC, UI/UX, Mobile | ✅ Case completo |
 | Rede Globo | Mídia, Ferramentas | Media, Tools | Medios, Herramientas | 🚧 WIP (Placeholder) |
-| SportingBet (Entain) | Betting, UI/UX | Betting, UI/UX | Apuestas, UI/UX | 🚧 WIP (Placeholder) |
 | TradersClub | Fintech, Dados | Fintech, Data | Fintech, Datos | 🚧 WIP (Placeholder) |
 | Gen (General Shopping) | Varejo, UX | Retail, UX | Retail, UX | 🚧 WIP (Placeholder) |
 | Porto Seguro (Sciensa) | Seguros, B2B | Insurance, B2B | Seguros, B2B | 🚧 WIP (Placeholder) |
@@ -89,9 +90,9 @@ Dados centralizados em `src/data/projectsData.js` (exporta `projectsPtBr`, `proj
 
 ## O que falta
 
-- Case studies dos 6 projetos WIP (próximo: TradersClub)
+- Case studies dos 5 projetos WIP (próximo: TradersClub)
 - Deploy / hospedagem
-- PDFs dos cases (script em `scripts/generate-pdfs.js` com Puppeteer — requer `npm run dev` ativo)
+- Manutenção dos padrões definidos em `CASES-PATTERN.md`
 
 ---
 
@@ -103,5 +104,6 @@ Para gerar versões PDF contínuas e selecionáveis de todos os idiomas para um 
 2. Execute o script passando o slug do case:
    ```bash
    node scripts/generate-pdfs.js vivo-pay
+   node scripts/generate-pdfs.js sportingbet
    ```
-O script usará o Puppeteer para navegar pela página, ocultar elementos de navegação/embeds e exportar as folhas para `public/vivo-pay-case-*.pdf`.
+O script usará o Puppeteer para navegar pela página e exportar os arquivos para `public/`. Consulte `CASES-PATTERN.md` para o guia completo de exportação.

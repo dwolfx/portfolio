@@ -22,6 +22,17 @@ Projetos WIP usam a imagem `wip-placeholder.png` para consistência visual.
 
 ---
 
+## [2026-05-03] - Sportingbet e Padronização de UI
+- **Case Sportingbet Completo**: Implementação de `Sportingbet.jsx` e `sportingbetLocales.jsx` com suporte completo a PT-BR, EN e ES.
+- **Padronização de Botões**: Redesign do botão `.case-back` nos cases para seguir o estilo premium Indigo, com fundo translúcido e hover dinâmico.
+- **Identidade Visual**: Logo "Victor Morais" padronizado com a cor `#777aff` em todos os headers (home e cases) para maior unidade visual.
+- **Geração de PDFs**: Script `generate-pdfs.js` aprimorado com camada de texto invisível (pesquisável) e correção de visibilidade para Framer Motion.
+- **Refinamento de Texto**: Atualização estratégica das descrições de experiência da **Vivo Fintech** e **Sportingbet** no currículo de todos os idiomas.
+- **Documentação de Padrões**: Criação do `CASES-PATTERN.md` estabelecendo as diretrizes de design, código e exportação para futuros estudos de caso.
+- **Ajuste de Pontuação**: Regra estabelecida para substituir travessões por vírgulas coladas ao texto nos metadados de PDF, garantindo compatibilidade de encoding.
+
+---
+
 ## [2026-05-02] - Agnes
 - Criação da estrutura de documentação do projeto (CLAUDE, DESIGN, DEVELOPMENT, CHANGELOG, README).
 - Implementação da página Home multilíngue com animações Framer Motion.
