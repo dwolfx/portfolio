@@ -189,7 +189,8 @@ const EnglishPortfolio = () => {
                 role: 'Product Designer Specialist',
                 start: 'Aug 2024',
                 end: 'Jan 2026',
-                desc: "I tropicalized SportingBet's global platform for the Brazilian market. I was responsible for the KYC and Onboarding design that secured Brazil's first governmental approval for a betting house, balancing regulatory compliance with high-conversion UX."
+                desc: "I tropicalized SportingBet's global platform for the Brazilian market. I was responsible for the KYC and Onboarding design that secured Brazil's first governmental approval for a betting house, balancing regulatory compliance with high-conversion UX.",
+                link: '/en/cases/sportingbet'
               },
               {
                 company: 'Vivo (Telefônica)',
