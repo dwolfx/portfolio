@@ -270,8 +270,9 @@ Texto completo da seção...
 
 > ⚠️ **Restrição de encoding**: pdf-lib usa Helvetica (WinAnsi/Latin-1).
 > - ✅ Permitido: letras com acento (ã, ç, ê, ó, ú), `.`, `,`, `:`, `-`, `(`, `)`
-> - ❌ Proibido: `—` (em dash U+2014), `–` (en dash U+2013), `→` (U+2192), emojis, caracteres Unicode > U+00FF
-> - Substitua `—` por ` - `, `–` por `-`, `→` por `->`.
+> - ❌ Proibido: `—` (travessão U+2014), `–` (en dash U+2013), `→` (seta U+2192), emojis, caracteres Unicode > U+00FF
+> - Substitua `—` ou `–` por `,` (vírgula), garantindo que ela esteja colada na palavra anterior (ex: "texto, continuação").
+> - Substitua `→` por `->`.
 > Essa camada é invisível no PDF mas permite busca e seleção de texto.
 
 ---
