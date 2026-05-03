@@ -186,31 +186,46 @@ const EnglishPortfolio = () => {
             {[
               {
                 company: 'Entain (SportingBet)',
-                role: 'Senior Product Designer',
-                start: '2024',
-                end: 'Present',
-                desc: 'Product design for the digital sports betting experience, covering onboarding, deposits, and the full betting journey on mobile app and web.'
+                role: 'Product Designer Specialist',
+                start: 'Aug 2024',
+                end: 'Jan 2026',
+                desc: "I tropicalized SportingBet's global platform for the Brazilian market. I was responsible for the KYC and Onboarding design that secured Brazil's first governmental approval for a betting house, balancing regulatory compliance with high-conversion UX."
               },
               {
                 company: 'Vivo (Telefônica)',
                 role: 'Product Designer Specialist',
-                start: 'Feb 2023',
-                end: 'Jul 2024',
-                desc: 'Led the design of Vivo Pay — a digital credit and payments solution integrated into the carrier\'s super app, from discovery to final delivery.'
-              },
-              {
-                company: 'Rede Globo',
-                role: 'Product Designer',
-                start: '2021',
-                end: '2023',
-                desc: 'Developed digital tools and products for Brazil\'s largest media group, focusing on editorial UX and content solutions.'
+                start: 'Mar 2023',
+                end: 'Jun 2024',
+                desc: "I was one of the founding designers of Vivo Fintech, built VivoPay from scratch, acted as a UX bridge in the Vivo + Itaú integration, and designed trust journeys (LGPD) to convert telecom customers into financial services users.",
+                link: '/en/cases/vivo-pay'
               },
               {
                 company: 'Bradesco',
-                role: 'UX Designer',
-                start: '2019',
-                end: '2021',
-                desc: 'UX projects for digital banking products, contributing to the journeys of individual and business customers.'
+                role: 'Senior Product Designer',
+                start: 'Dec 2022',
+                end: 'Feb 2023',
+                desc: 'A project-based engagement via a third party. I led the redesign of Autoline, a B2B vehicle financing tool for dealerships, simplifying complex registration forms without compromising banking compliance.'
+              },
+              {
+                company: 'Gen (General Shopping)',
+                role: 'Senior Product Designer',
+                start: 'Jul 2022',
+                end: 'Dec 2022',
+                desc: 'I led the rebranding of the B2B merchant management platform. I introduced and standardized the Ant Design System, conducted research with merchants to eliminate operational bottlenecks, and collaborated with engineering for scalable adoption.'
+              },
+              {
+                company: 'TradersClub',
+                role: 'Product Designer',
+                start: 'Mar 2021',
+                end: 'Jun 2022',
+                desc: 'Hybrid role (design + React code): I built the Design System for B2B and B2C and developed an automation system that reduced report creation time from weeks to just 15 minutes.'
+              },
+              {
+                company: 'Rede Globo',
+                role: 'Product Designer Jr, Front-end Specialist',
+                start: 'Mar 2017',
+                end: 'Sep 2020',
+                desc: 'Where I transitioned into the field. I worked at the intersection of design and front-end for G1, GE, GShow, and Globo.com. I created the Parallax and FlyCarpet formats, adopted by Google as market standards, with a 20% increase in CTR via data-driven design.'
               },
             ].map((item, i, arr) => (
               <motion.div
@@ -233,6 +248,11 @@ const EnglishPortfolio = () => {
                   <div className="experience-company">{item.company}</div>
                   <div className="experience-role">{item.role}</div>
                   <p className="experience-desc">{item.desc}</p>
+                  {item.link && (
+                    <button onClick={() => navigate(item.link)} className="experience-case-btn">
+                      View full case →
+                    </button>
+                  )}
                 </div>
               </motion.div>
             ))}

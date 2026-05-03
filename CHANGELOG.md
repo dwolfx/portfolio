@@ -14,9 +14,29 @@ Ordem: mais recente primeiro.
 - **Dados centralizados** — `src/data/projectsData.js` único source of truth para os 3 idiomas
 - Tags do grid derivadas só de projetos não-WIP (sem poluição do filtro)
 - Tags clicáveis nos cards de projeto (filtram o grid via stopPropagation)
-- `overflow: visible` no case-nav para dropdown não ser cortado
-- `object-fit: contain` nas screenshots para não cortar imagens
-- Script Puppeteer para geração de PDFs em `scripts/generate-pdfs.js`
+- **Estrutura de Assets:**
+  ├── profile/   victor.jpg
+  └── projects/  b2b_portal.png, ecosystem.png, globo_tools.png, vivo.png, wip-placeholder.png
+
+Projetos WIP usam a imagem `wip-placeholder.png` para consistência visual.
+
+---
+
+## [2026-05-02] - Agnes
+- Criação da estrutura de documentação do projeto (CLAUDE, DESIGN, DEVELOPMENT, CHANGELOG, README).
+- Implementação da página Home multilíngue com animações Framer Motion.
+- Finalização da página `PortuguesePortfolio.jsx` com seção de experiência e projetos.
+- Sincronização e tradução da seção de experiência (currículo) nas páginas `EnglishPortfolio.jsx` e `SpanishPortfolio.jsx`.
+- Ajuste das descrições para a 1ª pessoa, refletindo fielmente a versão em português.
+- Correção de cargos e detalhes técnicos para maior precisão em EN e ES.
+- Adição do botão "Ver case completo →" nos itens de experiência que possuem link (ex: VivoPay).
+- Redesign do botão de case para torná-lo mais visível (estilo botão secundário com fundo e hover).
+- Implementação de **Smooth Scroll** global para links de âncora via CSS.
+- Padronização do nome **VivoPay** (removendo espaço) em todo o projeto e metadados.
+- Geração e implementação de **Paleta de Design**:
+  Placeholder cinza:    #e5e5ea  /  text #6e6e73
+  Case button bg:      rgba(99, 102, 241, 0.06)
+  Case button border:  rgba(99, 102, 241, 0.15)
 
 ---
 
@@ -36,6 +56,7 @@ Ordem: mais recente primeiro.
 - `49c8507` fix: link "Projetos" escondido no nav em mobile (`@media 600px`)
 - `6e35e41` fix: cards de idioma com largura igual no mobile
 - `8d24c8b` fix: cards em construção mostram apenas a tag "Em construção"
+- `750c901` fix: `html { scroll-behavior: smooth; }`
 - `750c901` fix: `overflow: visible` no nav das portfolio pages para dropdowns não serem cortados
 - `e5a2681` feat: Vivo primeiro nos cards; tag "Em construção" nos demais
 

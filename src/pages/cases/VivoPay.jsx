@@ -112,7 +112,7 @@ const VivoPay = () => {
           </motion.div>
 
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0.28}>
-            <img src={vivoHero} alt="A Jornada Vivo Pay" className="case-hero-img" />
+            <img src={vivoHero} alt="A Jornada VivoPay" className="case-hero-img" />
           </motion.div>
         </div>
       </header>

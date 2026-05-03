@@ -2,6 +2,7 @@ import ecosystem from '../assets/projects/ecosystem.png';
 import b2b from '../assets/projects/b2b_portal.png';
 import globo from '../assets/projects/globo_tools.png';
 import vivo from '../assets/projects/vivo.png';
+import wipPlaceholder from '../assets/projects/wip-placeholder.png';
 import { vivoPayTags, vivoPayDescription } from './vivoPayData';
 
 const LOREM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
@@ -14,12 +15,12 @@ export const projectsPtBr = [
     image: vivo,
     link: '/pt-br/cases/vivo-pay',
   },
-  { title: 'Rede Globo',             description: LOREM, tags: ['Mídia', 'Ferramentas'],  image: globo,     wip: true },
-  { title: 'SportingBet (Entain)',   description: LOREM, tags: ['Betting', 'UI/UX'],       image: globo,     wip: true },
-  { title: 'TradersClub',           description: LOREM, tags: ['Fintech', 'Dados'],        image: ecosystem, wip: true },
-  { title: 'Gen (General Shopping)', description: LOREM, tags: ['Varejo', 'UX'],           image: b2b,       wip: true },
-  { title: 'Porto Seguro (Sciensa)', description: LOREM, tags: ['Seguros', 'B2B'],         image: ecosystem, wip: true },
-  { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'RH'],              image: b2b,       wip: true },
+  { title: 'Rede Globo',             description: LOREM, tags: ['Mídia', 'Ferramentas'],  image: wipPlaceholder, wip: true },
+  { title: 'SportingBet (Entain)',   description: LOREM, tags: ['Betting', 'UI/UX'],       image: wipPlaceholder, wip: true },
+  { title: 'TradersClub',           description: LOREM, tags: ['Fintech', 'Dados'],        image: wipPlaceholder, wip: true },
+  { title: 'Gen (General Shopping)', description: LOREM, tags: ['Varejo', 'UX'],           image: wipPlaceholder, wip: true },
+  { title: 'Porto Seguro (Sciensa)', description: LOREM, tags: ['Seguros', 'B2B'],         image: wipPlaceholder, wip: true },
+  { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'RH'],              image: wipPlaceholder, wip: true },
 ];
 
 export const projectsEn = [
@@ -30,12 +31,12 @@ export const projectsEn = [
     image: vivo,
     link: '/en/cases/vivo-pay',
   },
-  { title: 'Rede Globo',             description: LOREM, tags: ['Media', 'Tools'],      image: globo,     wip: true },
-  { title: 'SportingBet (Entain)',   description: LOREM, tags: ['Betting', 'UI/UX'],    image: globo,     wip: true },
-  { title: 'TradersClub',           description: LOREM, tags: ['Fintech', 'Data'],      image: ecosystem, wip: true },
-  { title: 'Gen (General Shopping)', description: LOREM, tags: ['Retail', 'UX'],        image: b2b,       wip: true },
-  { title: 'Porto Seguro (Sciensa)', description: LOREM, tags: ['Insurance', 'B2B'],    image: ecosystem, wip: true },
-  { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'HR'],           image: b2b,       wip: true },
+  { title: 'Rede Globo',             description: LOREM, tags: ['Media', 'Tools'],      image: wipPlaceholder, wip: true },
+  { title: 'SportingBet (Entain)',   description: LOREM, tags: ['Betting', 'UI/UX'],    image: wipPlaceholder, wip: true },
+  { title: 'TradersClub',           description: LOREM, tags: ['Fintech', 'Data'],      image: wipPlaceholder, wip: true },
+  { title: 'Gen (General Shopping)', description: LOREM, tags: ['Retail', 'UX'],        image: wipPlaceholder, wip: true },
+  { title: 'Porto Seguro (Sciensa)', description: LOREM, tags: ['Insurance', 'B2B'],    image: wipPlaceholder, wip: true },
+  { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'HR'],           image: wipPlaceholder, wip: true },
 ];
 
 export const projectsEs = [
@@ -46,10 +47,10 @@ export const projectsEs = [
     image: vivo,
     link: '/es/cases/vivo-pay',
   },
-  { title: 'Rede Globo',             description: LOREM, tags: ['Medios', 'Herramientas'], image: globo,     wip: true },
-  { title: 'SportingBet (Entain)',   description: LOREM, tags: ['Apuestas', 'UI/UX'],      image: globo,     wip: true },
-  { title: 'TradersClub',           description: LOREM, tags: ['Fintech', 'Datos'],        image: ecosystem, wip: true },
-  { title: 'Gen (General Shopping)', description: LOREM, tags: ['Retail', 'UX'],           image: b2b,       wip: true },
-  { title: 'Porto Seguro (Sciensa)', description: LOREM, tags: ['Seguros', 'B2B'],         image: ecosystem, wip: true },
-  { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'RRHH'],            image: b2b,       wip: true },
+  { title: 'Rede Globo',             description: LOREM, tags: ['Medios', 'Herramientas'], image: wipPlaceholder, wip: true },
+  { title: 'SportingBet (Entain)',   description: LOREM, tags: ['Apuestas', 'UI/UX'],      image: wipPlaceholder, wip: true },
+  { title: 'TradersClub',           description: LOREM, tags: ['Fintech', 'Datos'],        image: wipPlaceholder, wip: true },
+  { title: 'Gen (General Shopping)', description: LOREM, tags: ['Retail', 'UX'],           image: wipPlaceholder, wip: true },
+  { title: 'Porto Seguro (Sciensa)', description: LOREM, tags: ['Seguros', 'B2B'],         image: wipPlaceholder, wip: true },
+  { title: 'CV-Fácil',              description: LOREM, tags: ['SaaS', 'RRHH'],            image: wipPlaceholder, wip: true },
 ];

@@ -64,20 +64,21 @@
 }
 
 .nav-link {
-  color: #9faaba;
+  color: #374151;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 10px;
-  border: 1.5px solid rgba(159, 170, 186, 0.4);
+  border: 1.5px solid rgba(55, 65, 81, 0.2);
+  background: rgba(255, 255, 255, 0.55);
   transition: all 0.2s ease;
 }
 
 .nav-link:hover {
-  color: #cbd5e1;
-  border-color: rgba(159, 170, 186, 0.7);
-  background: rgba(255, 255, 255, 0.1);
+  color: #6366f1;
+  border-color: rgba(99, 102, 241, 0.4);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .nav-cta {
@@ -509,22 +510,21 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #9faaba;
+  color: #6366f1;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 10px;
-  border: 1.5px solid rgba(99, 102, 241, 0.35);
-  background: rgba(99, 102, 241, 0.06);
+  border: 1.5px solid #6366f1;
+  background: #fff;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .nav-cv-btn:hover {
-  color: #c7d2fe;
-  border-color: rgba(99, 102, 241, 0.65);
-  background: rgba(99, 102, 241, 0.14);
+  background: #6366f1;
+  color: #fff;
 }
 
 /* ─── HERO CV SOCIAL LINK VARIANT ───── */
@@ -651,6 +651,31 @@
   color: #64748b;
   line-height: 1.7;
   margin: 0;
+}
+
+.experience-case-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.experience-case-btn:hover {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+  gap: 12px;
 }
 
 .experience-cta {
