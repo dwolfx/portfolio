@@ -5,6 +5,9 @@ import '../../CaseStudy.css';
 import { vivoPayTags } from '../../data/vivoPayData';
 import { vivoPayLocales } from '../../data/vivoPayLocales';
 import CaseHeader from '../../components/CaseHeader';
+import CaseHero from '../../components/CaseHero';
+import CaseOverview from '../../components/CaseOverview';
+import CaseCTA from '../../components/CaseCTA';
 import vivoHero from '../../assets/cases/vivo/hero.png';
 import vivoV0 from '../../assets/cases/vivo/v0 idea.png';
 import vivoVirtualPdf from '../../assets/cases/vivo/virtual+pdf.png';
@@ -14,10 +17,6 @@ import vivoBiometria from '../../assets/cases/vivo/Biometria.png';
 import vivoFatura from '../../assets/cases/vivo/fatura.png';
 import vivoFaturaTotal from '../../assets/cases/vivo/faturaTotal.png';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (d = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94], delay: d } })
-};
 
 const InView = ({ children, delay = 0 }) => (
   <motion.div
@@ -48,47 +47,21 @@ const VivoPay = () => {
       <CaseHeader lang={lang} caseSlug="vivo-pay" />
 
       {/* ─── HERO ─── */}
-      <header className="case-hero" style={{ background: 'linear-gradient(135deg, #0a0010 0%, #1a0033 35%, #440066 65%, #660099 100%)' }}>
-        <div className="case-hero-inner">
-          <motion.span className="case-hero-tag" initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            {t.hero.tag}
-          </motion.span>
-
-          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} custom={0.08}>
-            Vivo<span>Pay</span>
-          </motion.h1>
-
-          <motion.div className="case-tags" style={{ justifyContent: 'center' }} initial="hidden" animate="visible" variants={fadeUp} custom={0.14}>
-            {t.hero.tags.map(tag => (
-              <span key={tag} className="case-tag">{tag}</span>
-            ))}
-          </motion.div>
-
-          <motion.p className="case-hero-subtitle" initial="hidden" animate="visible" variants={fadeUp} custom={0.18}>
-            {t.hero.subtitle}
-          </motion.p>
-
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0.24} style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
-            <a href={`/vivo-pay-case-${pdfLang}.pdf`} download className="case-hero-btn">{t.hero.downloadBtn}</a>
-          </motion.div>
-
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0.28}>
-            <img src={vivoHero} alt="A Jornada VivoPay" className="case-hero-img" />
-          </motion.div>
-        </div>
-      </header>
+      <CaseHero
+        gradient="linear-gradient(135deg, #0a0010 0%, #1a0033 35%, #440066 65%, #660099 100%)"
+        tag={t.hero.tag}
+        titlePrefix="Vivo"
+        titleHighlight="Pay"
+        tags={t.hero.tags}
+        subtitle={t.hero.subtitle}
+        downloadBtnText={t.hero.downloadBtn}
+        downloadLink={`/vivo-pay-case-${pdfLang}.pdf`}
+        image={vivoHero}
+        altText="A Jornada VivoPay"
+      />
 
       {/* ─── VISÃO GERAL ─── */}
-      <div className="case-overview">
-        <div className="case-overview-inner">
-          {t.overview.items.map(item => (
-            <div key={item.label} className="case-overview-item">
-              <div className="case-overview-label">{item.label}</div>
-              <div className="case-overview-value">{item.value}</div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <CaseOverview items={t.overview.items} />
 
       {/* ─── CONTENT ─── */}
       <div className="case-content">
@@ -244,14 +217,13 @@ const VivoPay = () => {
 
       {/* ─── CTA FINAL ─── */}
       <InView>
-        <section className="case-cta">
-          <h2>{t.cta.title}</h2>
-          <p>{t.cta.p1}</p>
-          <div className="case-cta-buttons">
-            <a href={`/vivo-pay-case-${pdfLang}.pdf`} download className="case-cta-btn-primary">{t.cta.btnDown}</a>
-            <a href="mailto:victor9009@gmail.com" className="case-cta-btn-secondary">{t.cta.btnTalk}</a>
-          </div>
-        </section>
+        <CaseCTA
+          title={t.cta.title}
+          p1={t.cta.p1}
+          btnDown={t.cta.btnDown}
+          btnTalk={t.cta.btnTalk}
+          downloadLink={`/vivo-pay-case-${pdfLang}.pdf`}
+        />
       </InView>
 
     </div>
