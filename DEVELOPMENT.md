@@ -38,9 +38,18 @@ src/
 │   ├── profile/        victor.jpg
 │   └── projects/       b2b_portal.png, design_system.png, ecosystem.png, globo_tools.png, vivo.png
 ├── components/
+│   ├── CaseCTA.jsx
+│   ├── CaseHeader.jsx
+│   ├── CaseHero.jsx
+│   ├── CaseOverview.jsx
+│   ├── ExperienceSection.jsx
 │   ├── Footer.jsx      global — montado no App.jsx fora das routes
 │   ├── Header.jsx      só na Home (estático)
-│   └── LanguageCard.jsx
+│   ├── HeroProfile.jsx
+│   ├── InView.jsx
+│   ├── LanguageCard.jsx
+│   ├── ProjectsGallery.jsx
+│   └── Statement.jsx
 ├── data/
 │   └── vivoPayData.js  exporta: vivoPayTags[], vivoPayDescription (só usado pelo PT-BR)
 ├── pages/
@@ -88,49 +97,31 @@ src/
 
 ### `PortuguesePortfolio.jsx` / `EnglishPortfolio.jsx` / `SpanishPortfolio.jsx`
 
-Mesma estrutura. Export name tem sufixo V2 (ex: `PortuguesePortfolioV2`) — artefato de refactor, não afeta funcionamento.
+Mesma estrutura, operando como camadas de orquestração. Não possuem mais marcação complexa.
 
-State:
+State (gerenciado e repassado para `ProjectsGallery.jsx`):
 ```jsx
 const [activeTag, setActiveTag] = useState(null);
-const [isContactOpen, setIsContactOpen] = useState(false);
-const [isLangOpen, setIsLangOpen] = useState(false);
 const [showAll, setShowAll] = useState(false);
 ```
 
-Lógica de projetos:
-```jsx
-const VISIBLE_LIMIT = 9;
-const allTags = [...new Set(projects.flatMap(p => p.tags))];
-const filtered = activeTag ? projects.filter(p => p.tags.includes(activeTag)) : projects;
-const visible = (!showAll && filtered.length > VISIBLE_LIMIT) ? filtered.slice(0, VISIBLE_LIMIT) : filtered;
-const hasMore = !showAll && filtered.length > VISIBLE_LIMIT;
-```
+As páginas importam os dados de `projectsData.js` e `Locales` (para traduções estáticas) e os distribuem via *props* para `HeroProfile`, `ProjectsGallery`, `ExperienceSection` e `Statement`.
 
-Array `projects`: `{ title, description, tags[], image, link?, wip? }`
-- Cards com `wip: true` mostram apenas 1 tag "Em construção" / "Coming soon" / "Próximamente"
-- Só Vivo tem `link` ativo
-- Clique no card usa `useNavigate(project.link)` — toda a div é clicável
-- Os 3 idiomas (PT-BR, EN, ES) usam descrições e tags inline exportadas de `projectsData.js`.
+### Páginas de Cases (`VivoPay.jsx`, etc.)
 
-Diferença de delays nas animações do hero:
-- PT-BR: tagline 0.22, chips 0.27, bio 0.32, links 0.34 (mais espaçado)
-- EN/ES: tagline 0.08, chips 0.14, bio 0.20, links 0.26 (mais rápido)
+Refatoradas para serem orientadas a componentes, consumindo seções reutilizáveis para garantir consistência visual em todas as páginas:
 
-### `VivoPay.jsx`
+- `CaseHero`: Imagem de capa, tags, gradiente de fundo customizável.
+- `CaseOverview`: Bloco de confidencialidade (NDA) e lista de informações técnicas do case.
+- `CaseCTA`: Bloco de rodapé para baixar o PDF ou mandar e-mail.
 
 ```jsx
 useEffect(() => { window.scrollTo(0, 0); }, []);  // scroll to top ao montar
 ```
 
 - `useParams()` → `lang` (default: 'pt-br')
-- `langMeta`: `{ 'pt-br': { flag, label }, 'en': {...}, 'es': {...} }`
-- `backLabel` por idioma: "← Projetos" / "← Projects" / "← Proyectos"
-- `otherLangs`: filtra `langMeta` excluindo o lang atual para o dropdown
-- `Img` component local: `<div className="case-img-placeholder {className}">{label}</div>`
-- `InView` component local: wrapper Framer Motion para scroll animations
-- **Conteúdo multi-idioma.** `t` mapeia de `vivoPayLocales.jsx` usando o parâmetro `lang`.
-- Hero gradient Vivo Pay definido via `style={}` inline, sobrescreve o default do `.case-hero`.
+- **Conteúdo multi-idioma.** `t` mapeia do respectivo Locales (`vivoPayLocales.jsx`, etc.) usando o parâmetro `lang`.
+- Os gradientes de cada case são repassados via prop `gradient` ao `CaseHero`.
 
 
 
