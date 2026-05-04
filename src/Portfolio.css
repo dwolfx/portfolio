@@ -399,6 +399,8 @@
   border: 1px solid #eef0f4;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -413,7 +415,12 @@
   display: block;
 }
 
-.project-body { padding: 24px 28px 28px; }
+.project-body { 
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 .project-tags {
   display: flex;
@@ -467,7 +474,8 @@
 
 .project-cta {
   display: inline-block;
-  margin-top: 16px;
+  margin-top: auto;
+  padding-top: 16px;
   font-size: 13px;
   font-weight: 700;
   color: #6366f1;

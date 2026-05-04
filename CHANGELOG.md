@@ -4,6 +4,13 @@ Ordem: mais recente primeiro.
 
 ---
 
+## [2026-05-04] - Refatoração Orientada a Componentes
+- **Extração de Componentes da Home**: Lógica repetitiva das três páginas de idioma (PT, EN, ES) foi abstraída em `ProjectsGallery.jsx`, `ExperienceSection.jsx` e `Statement.jsx`.
+- **Extração de Componentes de Cases**: Seções padrão dos estudos de caso foram abstraídas em `CaseHero.jsx`, `CaseOverview.jsx` e `CaseCTA.jsx`.
+- **Limpeza de Código**: As páginas principais (ex: `PortuguesePortfolio.jsx`) e de Cases (ex: `VivoPay.jsx`) agora atuam como meras camadas de orquestração, consumindo os componentes reutilizáveis. Isso eliminou centenas de linhas de código duplicado.
+
+---
+
 ## [dev] VivoPay completo + internacionalização — Abr/2026
 
 - **Imagens reais** em todas as seções do VivoPay: hero, conceituação (v0 idea + validation), validação (virtual+pdf), entrega (home, Biometria, fatura, faturaTotal)
