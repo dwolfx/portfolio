@@ -4,7 +4,7 @@ export const sportingbetLocales = {
   'pt-br': {
     hero: {
       tag: 'Estudo de Caso · Sportingbet (Entain)',
-      tags: ['Betting', 'Regulamentação', 'KYC', 'UI/UX', 'Mobile'],
+      tags: ['Betting', 'B2C', 'Research', 'Mobile First', 'Legal'],
       subtitle: 'Tropicalização e Liderança: Como participei do design para garantir a primeira licença oficial de operação no mercado brasileiro.',
       downloadBtn: '⬇ Baixar este case em PDF'
     },
@@ -26,8 +26,8 @@ export const sportingbetLocales = {
     context: {
       eyebrow: '01 · Contexto',
       title: 'A Corrida pela Regulamentação Global',
-      p1: 'Em 2024, com a nova Lei de Apostas no Brasil, fui selecionado para integrar um grupo de elite de 10 especialistas na Entain (Sportingbet, BetMGM e Betboo). Minha missão foi participar da tropicalização dessas marcas, atuando como ponte entre nós e os times técnicos que ficavam na Índia e Canadá.',
-      p2: 'A dinâmica exigiu comunicação fluida em inglês e gestão intercultural para manter o padrão global do grupo enquanto adaptávamos o produto para a realidade brasileira.'
+      p1: <>Em 2024, com a nova Lei de Apostas no Brasil, fui selecionado para integrar um grupo de elite de 10 especialistas na Entain (Sportingbet, BetMGM e Betboo). Atuei como o <b>elo estratégico</b> entre os requisitos de negócio da matriz e os times técnicos na Índia e Canadá.</>,
+      p2: <>Minha responsabilidade era garantir que a complexidade da regulamentação brasileira fosse traduzida em especificações técnicas precisas, eliminando ruídos de comunicação e garantindo a paridade entre o padrão global e a necessidade local.</>
     },
     mobile: {
       eyebrow: '02 · Estratégia Mobile-First',
@@ -38,8 +38,8 @@ export const sportingbetLocales = {
     role: {
       eyebrow: '03 · Meu Papel',
       title: 'KYC e Segurança Transacional',
-      p1: 'Estive em frentes críticas para a viabilidade do negócio, com foco especial na Localização de Pagamentos (PIX).',
-      p2: 'Como o PIX é uma exclusividade local, desenhei fluxos com amarras de segurança anti-fraude: depósitos e saques permitidos exclusivamente via contas vinculadas ao CPF do titular, combatendo a lavagem de dinheiro.',
+      p1: <>A adaptação do PIX não foi apenas uma troca de método de pagamento, mas uma <b>reengenharia de fluxo financeiro</b>. Implementamos validações de titularidade em tempo real que serviram como a primeira camada de defesa contra fraudes de identidade.</>,
+      p2: <>Como o PIX é uma exclusividade local, desenhei fluxos com amarras de segurança anti-fraude: depósitos e saques permitidos exclusivamente via contas vinculadas ao CPF do titular, combatendo a lavagem de dinheiro.</>,
       highlights: [
         { icon: '🆔', title: 'KYC Flow', desc: 'Estruturação rigorosa da verificação de identidade para conformidade governamental.' },
         { icon: '💸', title: 'PIX Strategy', desc: 'Adaptação do sistema de pagamentos com validação de titularidade em tempo real.' },
@@ -49,7 +49,7 @@ export const sportingbetLocales = {
     discovery: {
       eyebrow: '04 · Discovery & Validação',
       title: 'Dados que Direcionam o Design',
-      p1: 'Validei os fluxos e pude revisá-los usando o Maze, garantindo que as "travas" de segurança não fossem um problema ou subissem a taxa de usuários saindo da plataforma e que fosse compreendidas como um benefício de segurança e não uma barreira.',
+      p1: <>Utilizamos o <b>Maze</b> para rodar testes de usabilidade paralelos, permitindo que as iterações de design acontecessem em ciclos curtos, reduzindo o tempo de desenvolvimento e garantindo que o produto chegasse ao mercado com métricas de confiança validadas antes do lançamento oficial.</>,
       p2: 'Monitorei o comportamento via GA4, otimizando o funil de cadastro e o time-to-market do primeiro depósito. A integração com a Único para biometria facial tornou o KYC robusto e ágil.'
     },
     milestone: {
@@ -85,7 +85,7 @@ export const sportingbetLocales = {
   'en': {
     hero: {
       tag: 'Case Study · Sportingbet (Entain)',
-      tags: ['Betting', 'Regulation', 'KYC', 'UI/UX', 'Mobile'],
+      tags: ['Betting', 'B2C', 'Research', 'Mobile First', 'Legal'],
       subtitle: 'Tropicalization and Leadership: How I participated in the design to secure the first official operating license in the Brazilian market.',
       downloadBtn: '⬇ Download this case as PDF'
     },
@@ -107,8 +107,8 @@ export const sportingbetLocales = {
     context: {
       eyebrow: '01 · Context',
       title: 'The Race for Global Regulation',
-      p1: 'In 2024, with the new Betting Law in Brazil, I was selected to join an elite group of 10 specialists at Entain (Sportingbet, BetMGM, and Betboo). My mission was to participate in the tropicalization of these brands, acting as a bridge between us and the technical teams based in India and Canada.',
-      p2: 'The dynamic required fluent English communication and intercultural management to maintain the groups global standards while adapting the product to the Brazilian reality.'
+      p1: <>In 2024, with the new Betting Law in Brazil, I was selected to join an elite group of 10 specialists at Entain (Sportingbet, BetMGM, and Betboo). I acted as the <b>strategic link</b> between HQ business requirements and technical teams in India and Canada.</>,
+      p2: <>My responsibility was to ensure that the complexity of Brazilian regulations was translated into precise technical specifications, eliminating communication noise and ensuring parity between the global standard and local needs.</>
     },
     mobile: {
       eyebrow: '02 · Mobile-First Strategy',
@@ -119,8 +119,8 @@ export const sportingbetLocales = {
     role: {
       eyebrow: '03 · My Role',
       title: 'KYC and Transactional Security',
-      p1: 'I was in critical fronts for business viability, with a special focus on Payment Localization (PIX).',
-      p2: 'Since PIX is a local exclusivity, I designed flows with anti-fraud safeguards: deposits and withdrawals allowed exclusively via accounts linked to the holders CPF, combating money laundering.',
+      p1: <>The PIX adaptation was not just a change in payment method, but a <b>financial flow reengineering</b>. We implemented real-time ownership validations that served as the first line of defense against identity fraud.</>,
+      p2: <>Since PIX is a local exclusivity, I designed flows with anti-fraud safeguards: deposits and withdrawals allowed exclusively via accounts linked to the holders CPF, combating money laundering.</>,
       highlights: [
         { icon: '🆔', title: 'KYC Flow', desc: 'Rigorous identity verification structuring for government compliance.' },
         { icon: '💸', title: 'PIX Strategy', desc: 'Payment system adaptation with real-time ownership validation.' },
@@ -130,7 +130,7 @@ export const sportingbetLocales = {
     discovery: {
       eyebrow: '04 · Discovery & Validation',
       title: 'Data-Driven Design',
-      p1: 'I validated the flows and was able to review them using Maze, ensuring that security locks were not an issue or increased the churn rate, and were understood as a security benefit rather than a barrier.',
+      p1: <>We used <b>Maze</b> to run parallel usability tests, allowing design iterations to happen in short cycles, reducing development time and ensuring the product reached the market with validated confidence metrics before the official launch.</>,
       p2: 'I monitored behavior via GA4, optimizing the registration funnel and time-to-market of the first deposit. Integration with Único for facial biometrics made the KYC robust and agile.'
     },
     milestone: {
@@ -166,7 +166,7 @@ export const sportingbetLocales = {
   'es': {
     hero: {
       tag: 'Estudio de Caso · Sportingbet (Entain)',
-      tags: ['Betting', 'Regulación', 'KYC', 'UI/UX', 'Mobile'],
+      tags: ['Betting', 'B2C', 'Research', 'Mobile First', 'Legal'],
       subtitle: 'Tropicalización y Liderazgo: Cómo participé en el diseño para asegurar la primera licencia oficial de operación en el mercado brasileño.',
       downloadBtn: '⬇ Descargar este caso en PDF'
     },
@@ -188,8 +188,8 @@ export const sportingbetLocales = {
     context: {
       eyebrow: '01 · Contexto',
       title: 'La Carrera por la Regulación Global',
-      p1: 'En 2024, con la nueva Ley de Apuestas en Brasil, fui seleccionado para integrar un grupo de élite de 10 especialistas en Entain (Sportingbet, BetMGM y Betboo). Mi misión fue participar en la tropicalización de estas marcas, actuando como puente entre nosotros y los equipos técnicos con sede en India y Canadá.',
-      p2: 'La dinámica exigió una comunicación fluida en inglés y una gestión intercultural para mantener el estándar global del grupo mientras adaptábamos el producto a la realidad brasileña.'
+      p1: <>En 2024, con la nueva Ley de Apuestas en Brasil, fui seleccionado para integrar un grupo de élite de 10 especialistas en Entain (Sportingbet, BetMGM y Betboo). Actué como el <b>enlace estratégico</b> entre los requisitos de negocio de la matriz y los equipos técnicos en India y Canadá.</>,
+      p2: <>Mi responsabilidad era garantizar que la complejidad de la regulación brasileña se tradujera en especificaciones técnicas precisas, eliminando ruidos de comunicación y asegurando la paridad entre el estándar global y la necesidad local.</>
     },
     mobile: {
       eyebrow: '02 · Estrategia Mobile-First',
@@ -200,8 +200,8 @@ export const sportingbetLocales = {
     role: {
       eyebrow: '03 · Mi Rol',
       title: 'KYC y Seguridad Transaccional',
-      p1: 'Estive en frentes críticos para la viabilidade del negocio, con un enfoque especial en la Localización de Pagos (PIX).',
-      p2: 'Como el PIX es uma exclusividad local, diseñé flujos con salvaguardas antifraude: depósitos y retiros permitidos exclusivamente a través de cuentas vinculadas al CPF del titular, combatiendo el lavado de dinero.',
+      p1: <>La adaptación de PIX no fue solo un cambio de método de pago, sino una <b>reingeniería de flujo financiero</b>. Implementamos validaciones de titularidad en tiempo real que sirvieron como la primera capa de defensa contra fraudes de identidad.</>,
+      p2: <>Como el PIX es uma exclusividad local, diseñé flujos con salvaguardas antifraude: depósitos y retiros permitidos exclusivamente a través de cuentas vinculadas al CPF del titular, combatiendo el lavado de dinero.</>,
       highlights: [
         { icon: '🆔', title: 'KYC Flow', desc: 'Estructuración rigurosa de la verificación de identidad para el cumplimiento gubernamental.' },
         { icon: '💸', title: 'PIX Strategy', desc: 'Adaptación del sistema de pagos con validación de titularidad en tempo real.' },
@@ -211,7 +211,7 @@ export const sportingbetLocales = {
     discovery: {
       eyebrow: '04 · Discovery & Validación',
       title: 'Diseño Basado en Datos',
-      p1: 'Validé los flujos y pude revisarlos usando Maze, asegurando que los bloqueos de seguridad no fueran um problema o aumentaran la tasa de abandono, y que se entendieran como um beneficio de seguridad y no como uma barrera.',
+      p1: <>Utilizamos <b>Maze</b> para realizar pruebas de usabilidad paralelas, lo que permitió que las iteraciones de diseño ocurrieran en ciclos cortos, reduciendo el tiempo de desarrollo y garantizando que el producto llegara al mercado con métricas de confianza validadas antes del lanzamiento oficial.</>,
       p2: 'Monitoreé el comportamiento a través de GA4, optimizando el embudo de registro y el time-to-market del primer depósito. La integración con Único para biometría facial hizo que el KYC fuera robusto y ágil.'
     },
     milestone: {

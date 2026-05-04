@@ -4,7 +4,7 @@ export const vivoPayLocales = {
   'pt-br': {
     hero: {
       tag: 'Estudo de Caso · VivoPay × ItaúCard',
-      tags: ['Fintech', 'Cartão de crédito', 'B2C', 'Mobile', 'App'],
+      tags: ['Fintech', 'B2C', 'Cartão de Crédito', 'Research', 'App'],
       subtitle: 'Como estruturei do zero a vertical financeira da Vivo e conduzi a integração do cartão de crédito em parceria com o Itaú',
       downloadBtn: '⬇ Baixar este case em PDF'
     },
@@ -38,14 +38,14 @@ export const vivoPayLocales = {
     discovery: {
       eyebrow: '03 · Discovery',
       title: 'Descobrindo o caminho certo',
-      p1: <>O <b>processo de discovery</b> revelou que o modelo white-label, padrão adotado por outros parceiros do Itaú, não entregaria o <b>SuperApp que a Vivo buscava.</b> Identifiquei isso no benchmark e levei para a mesa: chegamos a conclusão que a integração via API (third-party app) era o melhor caminho e que garantiria controle total da interface e manteria o usuário dentro do ecossistema.</>,
+      p1: <>O <b>processo de discovery</b> revelou que o modelo white-label, padrão adotado por outros parceiros do Itaú, não entregaria o <b>SuperApp que a Vivo buscava.</b> Identifiquei isso no benchmark e levei para a mesa uma vitória estratégica: a decisão pela <b>integração via API</b> (em vez de White-label). Isso garantiu que a Vivo mantivesse o controle sobre o <b>Data Analytics (GA4)</b> e a retenção do usuário, evitando a evasão para o ecossistema do parceiro.</>,
       decisionLabel: 'A decisão estratégica',
       decisionP: <>Nesse primeiro momento, as especificações técnicas das APIs eram definidas pelo Itaú, enquanto isso conduzi dinâmicas internas para responder: o que nossa solução precisa ser?<br />O resultado foi o <b>escopo do MVP</b>: Extrato, dados do cartão e pagamento de fatura.</>
     },
     concept: {
       eyebrow: '04 · Conceituação',
       title: 'Do conceito à realidade',
-      p1: <>A ideia inicial era um cartão grande e impactante dentro do app. Ao alinhar com o time de <b>DesignOps</b>, identifiquei que alterações estruturais no Design System global da Telefônica levariam meses para aprovação. Tomamos a decisão de trabalhar dentro dos componentes existentes, priorizando <b>time-to-market</b> sem gerar débito técnico de design.</>,
+      p1: <>A ideia inicial era um cartão grande e impactante dentro do app. Ao alinhar com o time de <b>DesignOps</b>, identifiquei que alterações estruturais no Design System global da Telefônica levariam meses para aprovação. Optamos por trabalhar com os <b>componentes atuais do Design System global</b> como uma escolha de <b>Time-to-Market</b>. Isso evitou um bloqueio burocrático de meses com o time de DesignOps internacional, permitindo que o MVP fosse lançado no prazo sem gerar débito técnico de design.</>,
       captions: ['Imaginação inicial da home', 'Tela final após validação de DesignOps']
     },
     validation: {
@@ -54,7 +54,7 @@ export const vivoPayLocales = {
       round: 'Rodada 1 de testes',
       p1: <>Com a V0 pronta, levamos ao público. Os testes <b>revelaram</b> que os usuários queriam mais do que apenas visualizar dados e <b>dois pontos críticos</b> emergiram: a necessidade de <b>Cartão Virtual</b> e de <b>exportação da fatura em PDF</b>.</>,
       cards: [
-        { title: '💳 Cartão Virtual', desc: 'O Itaú não conseguiria entregar a API a tempo. Implementamos um disclaimer estratégico no fluxo, com isso, na segunda rodada de testes, os usuários já não questionavam sobre a funcionalidade, eliminando frustração.' },
+        { title: '💳 Cartão Virtual', desc: 'O Itaú não conseguiria entregar a API a tempo. Implementamos um disclaimer estratégico no fluxo como uma estratégia de gestão de expectativa (UX Writing). Isso neutralizou a frustração do usuário enquanto a engenharia do Itaú trabalhava na API, permitindo o lançamento do produto sem gaps de usabilidade percebida.' },
         { title: '📄 Exportação em PDF', desc: 'Articulamos com o Itaú a inclusão na API ainda para o MVP. O usuário nem perguntava, simplesmente usava. Sinal claro de que era esperado.' }
       ],
       imgAlt: 'Telas da v1 — Cartão Virtual e PDF'
@@ -96,7 +96,7 @@ export const vivoPayLocales = {
   'en': {
     hero: {
       tag: 'Case Study · VivoPay × ItaúCard',
-      tags: ['Fintech', 'Credit Card', 'B2C', 'Mobile', 'App'],
+      tags: ['Fintech', 'B2C', 'Credit Card', 'Research', 'App'],
       subtitle: 'How I structured Vivo\'s financial vertical from scratch and led the credit card integration in partnership with Itaú',
       downloadBtn: '⬇ Download this case as PDF'
     },
@@ -130,14 +130,14 @@ export const vivoPayLocales = {
     discovery: {
       eyebrow: '03 · Discovery',
       title: 'Discovering the right path',
-      p1: <>The <b>discovery process</b> revealed that the white-label model, the standard adopted by Itaú's other partners, wouldn't deliver the <b>SuperApp Vivo was looking for.</b> I identified this in the benchmark and brought it to the table: we concluded that API integration (third-party app) was the best path, guaranteeing total control over the interface and keeping the user within the ecosystem.</>,
+      p1: <>The <b>discovery process</b> revealed that the white-label model, the standard adopted by Itaú's other partners, wouldn't deliver the <b>SuperApp Vivo was looking for.</b> I identified this in the benchmark and brought a strategic victory to the table: the decision for <b>API integration</b> (instead of White-label). This ensured that Vivo maintained control over <b>Data Analytics (GA4)</b> and user retention, avoiding evasion to the partner's ecosystem.</>,
       decisionLabel: 'The strategic decision',
       decisionP: <>Initially, the technical specifications of the APIs were defined by Itaú, while I led internal dynamics to answer: what does our solution need to be?<br />The result was the <b>MVP scope</b>: Statement, card details, and invoice payment.</>
     },
     concept: {
       eyebrow: '04 · Concept',
       title: 'From concept to reality',
-      p1: <>The initial idea was a large, impactful card within the app. After aligning with the <b>DesignOps</b> team, I identified that structural changes to Telefónica's global Design System would take months to approve. We decided to work within existing components, prioritizing <b>time-to-market</b> without generating design technical debt.</>,
+      p1: <>The initial idea was a large, impactful card within the app. After aligning with the <b>DesignOps</b> team, I identified that structural changes to Telefónica's global Design System would take months to approve. We opted to work with the <b>current components of the global Design System</b> as a <b>Time-to-Market</b> choice. This avoided a bureaucratic bottleneck of months with the international DesignOps team, allowing the MVP to launch on time without generating design technical debt.</>,
       captions: ['Initial home concept', 'Final screen after DesignOps validation']
     },
     validation: {
@@ -146,7 +146,7 @@ export const vivoPayLocales = {
       round: 'Round 1 of testing',
       p1: <>With V0 ready, we took it to the public. Testing <b>revealed</b> that users wanted more than just visualizing data, and <b>two critical points</b> emerged: the need for a <b>Virtual Card</b> and <b>PDF invoice export</b>.</>,
       cards: [
-        { title: '💳 Virtual Card', desc: 'Itaú wouldn\'t be able to deliver the API in time. We implemented a strategic disclaimer in the flow, so in the second testing round, users no longer questioned the feature, eliminating frustration.' },
+        { title: '💳 Virtual Card', desc: 'Itaú wouldn\'t be able to deliver the API in time. We implemented a strategic disclaimer in the flow as an expectation management strategy (UX Writing). This neutralized user frustration while Itaú\'s engineering worked on the API, allowing the product to launch without gaps in perceived usability.' },
         { title: '📄 PDF Export', desc: 'We coordinated with Itaú to include it in the API for the MVP. Users didn\'t even ask, they simply used it. A clear sign it was expected.' }
       ],
       imgAlt: 'V1 Screens — Virtual Card and PDF'
@@ -188,7 +188,7 @@ export const vivoPayLocales = {
   'es': {
     hero: {
       tag: 'Estudio de Caso · VivoPay × ItaúCard',
-      tags: ['Fintech', 'Tarjeta de crédito', 'B2C', 'Mobile', 'App'],
+      tags: ['Fintech', 'B2C', 'Tarjeta de Crédito', 'Research', 'App'],
       subtitle: 'Cómo estructuré desde cero la vertical financiera de Vivo y lideré la integración de tarjetas de crédito en asociación con Itaú',
       downloadBtn: '⬇ Descargar este caso en PDF'
     },
@@ -222,14 +222,14 @@ export const vivoPayLocales = {
     discovery: {
       eyebrow: '03 · Discovery',
       title: 'Descubriendo el camino correcto',
-      p1: <>El <b>proceso de discovery</b> reveló que el modelo white-label, el estándar adoptado por otros socios de Itaú, no entregaría la <b>SuperApp que Vivo buscaba.</b> Identifiqué esto en el benchmark y lo llevé a la mesa: llegamos a la conclusión de que la integración vía API (third-party app) era el mejor camino, garantizando control total de la interfaz y manteniendo al usuario en el ecosistema.</>,
+      p1: <>El <b>proceso de discovery</b> reveló que el modelo white-label, el estándar adoptado por otros socios de Itaú, no entregaría la <b>SuperApp que Vivo buscaba.</b> Identifiqué esto en el benchmark y llevé a la mesa una victoria estratégica: la decisión por la <b>integración vía API</b> (en lugar de White-label). Esto garantizó que Vivo mantuviera el control sobre el <b>Data Analytics (GA4)</b> y la retención del usuario, evitando la evasión al ecosistema del socio.</>,
       decisionLabel: 'La decisión estratégica',
       decisionP: <>Inicialmente, las especificaciones técnicas de las APIs fueron definidas por Itaú, mientras lideraba dinámicas internas para responder: ¿qué necesita ser nuestra solución?<br />El resultado fue el <b>alcance del MVP</b>: Extracto, datos de la tarjeta y pago de factura.</>
     },
     concept: {
       eyebrow: '04 · Concepto',
       title: 'Del concepto a la realidad',
-      p1: <>La idea inicial era una tarjeta grande e impactante dentro de la app. Tras alinearme con el equipo de <b>DesignOps</b>, identifiqué que cambios estructurales al Design System global de Telefónica tardarían meses en aprobarse. Decidimos trabajar con los componentes existentes, priorizando el <b>time-to-market</b> sin generar deuda técnica de diseño.</>,
+      p1: <>La idea inicial era una tarjeta grande e impactante dentro de la app. Tras alinearme con el equipo de <b>DesignOps</b>, identifiqué que cambios estructurales al Design System global de Telefónica tardarían meses en aprobarse. Optamos por trabajar con los <b>componentes actuales del Design System global</b> como una elección de <b>Time-to-Market</b>. Esto evitó un bloqueo burocrático de meses con el equipo de DesignOps internacional, permitiendo que el MVP se lanzara a tiempo sin generar deuda técnica de diseño.</>,
       captions: ['Concepto inicial de la home', 'Pantalla final tras validación de DesignOps']
     },
     validation: {
@@ -238,7 +238,7 @@ export const vivoPayLocales = {
       round: 'Ronda 1 de pruebas',
       p1: <>Con la V0 lista, la llevamos al público. Las pruebas <b>revelaron</b> que los usuarios querían más que solo visualizar datos, y surgieron <b>dos puntos críticos</b>: la necesidad de una <b>Tarjeta Virtual</b> y <b>exportación de la factura en PDF</b>.</>,
       cards: [
-        { title: '💳 Tarjeta Virtual', desc: 'Itaú no podría entregar la API a tiempo. Implementamos un aviso estratégico en el flujo, así en la segunda ronda de pruebas, los usuarios ya no cuestionaban la funcionalidad, eliminando la frustración.' },
+        { title: '💳 Tarjeta Virtual', desc: 'Itaú no podría entregar la API a tiempo. Implementamos un aviso estratégico en el flujo como una estrategia de gestión de expectativas (UX Writing). Esto neutralizó la frustración del usuario mientras la ingeniería de Itaú trabajaba en la API, permitiendo el lanzamiento del producto sin brechas de usabilidad percibida.' },
         { title: '📄 Exportación en PDF', desc: 'Coordinamos con Itaú para incluirlo en la API para el MVP. El usuario ni preguntaba, simplemente lo usaba. Señal clara de que era esperado.' }
       ],
       imgAlt: 'Pantallas v1 — Tarjeta Virtual y PDF'
