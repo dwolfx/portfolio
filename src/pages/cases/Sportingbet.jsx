@@ -3,9 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../../CaseStudy.css';
 import { sportingbetLocales } from '../../data/sportingbetLocales';
-import brFlag from '../../assets/flags/br_flag.jpg';
-import ukFlag from '../../assets/flags/uk_flag.jpg';
-import esFlag from '../../assets/flags/es_flag.jpg';
+import CaseHeader from '../../components/CaseHeader';
 import sportingbetHero from '../../assets/cases/sportingbet-hero.png';
 
 const fadeUp = {
@@ -13,31 +11,13 @@ const fadeUp = {
   visible: (d = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94], delay: d } })
 };
 
-const langMeta = {
-  'pt-br': { flag: brFlag, label: 'Português' },
-  'en': { flag: ukFlag, label: 'English' },
-  'es': { flag: esFlag, label: 'Español' },
-};
-
 const Sportingbet = () => {
   const { lang = 'pt-br' } = useParams();
-  const [isLangOpen, setIsLangOpen] = useState(false);
-  const langRef = useRef(null);
 
   useEffect(() => { 
     window.scrollTo(0, 0); 
     document.title = 'Victor Morais | Case Sportingbet'; 
   }, []);
-
-  useEffect(() => {
-    if (!isLangOpen) return;
-    const handle = (e) => { if (langRef.current && !langRef.current.contains(e.target)) setIsLangOpen(false); };
-    document.addEventListener('mousedown', handle);
-    return () => document.removeEventListener('mousedown', handle);
-  }, [isLangOpen]);
-
-  const otherLangs = Object.entries(langMeta).filter(([l]) => l !== lang);
-  const backLabel = lang === 'en' ? '← Projects' : lang === 'es' ? '← Proyectos' : '← Projetos';
   const t = sportingbetLocales[lang] || sportingbetLocales['pt-br'];
   const pdfLang = lang === 'pt-br' ? 'pt' : lang;
 
@@ -45,26 +25,7 @@ const Sportingbet = () => {
     <div className="case">
 
       {/* ─── NAV ─── */}
-      <nav className="case-nav">
-        <Link to={`/${lang}`} className="case-nav-logo">Victor Morais</Link>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <Link to={`/${lang}`} className="case-back">{backLabel}</Link>
-          <div className="contact-wrap" ref={langRef}>
-            <button className="lang-btn" onClick={() => setIsLangOpen(o => !o)}>
-              <img src={langMeta[lang]?.flag} alt={lang} /> ▾
-            </button>
-            {isLangOpen && (
-              <div className="contact-dropdown">
-                {otherLangs.map(([l, meta]) => (
-                  <Link key={l} to={`/${l}/cases/sportingbet`} className="contact-item" onClick={() => setIsLangOpen(false)}>
-                    <img src={meta.flag} alt={meta.label} /> {meta.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </nav>
+      <CaseHeader lang={lang} caseSlug="sportingbet" />
 
       {/* ─── HERO ─── */}
       <header className="case-hero" style={{ background: 'linear-gradient(135deg, #001f3f 0%, #003366 35%, #004080 65%, #0056b3 100%)' }}>

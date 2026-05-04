@@ -7,6 +7,8 @@ import EnglishPortfolio from './pages/EnglishPortfolio';
 import SpanishPortfolio from './pages/SpanishPortfolio';
 import VivoPay from './pages/cases/VivoPay';
 import Sportingbet from './pages/cases/Sportingbet';
+import TradersClub from './pages/cases/TradersClub';
+import Bradesco from './pages/cases/Bradesco';
 import Footer from './components/Footer';
 
 const LanguageRouter = () => {
@@ -26,6 +28,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/:lang/cases/vivo-pay" element={<VivoPay />} />
             <Route path="/:lang/cases/sportingbet" element={<Sportingbet />} />
+            <Route path="/:lang/cases/traders-club" element={<TradersClub />} />
+            <Route path="/:lang/cases/bradesco" element={<Bradesco />} />
             <Route path="/:lang" element={<LanguageRouter />} />
           </Routes>
         </div>
