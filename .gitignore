@@ -1,6 +1,16 @@
-node_modules/
+﻿node_modules/
 dist/
 .env
 .env.local
 .DS_Store
 .vite/
+
+
+# Protecoes de Seguranca Locais
+.env*
+.env.*.local
+*.env
+.venv/
+
+
+# Protecoes Locais de Seguranca
