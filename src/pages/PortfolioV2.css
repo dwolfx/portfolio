@@ -230,53 +230,59 @@
   color: #38BDF8;
 }
 
-.v2-hero-ctas {
+/* Social buttons com ícones na Hero */
+.v2-social-buttons {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
 }
 
-.v2-btn-primary {
-  background: #0066FF;
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 12px 24px;
+.v2-social-btn {
+  background: #10131B;
+  border: 1px solid #1E2536;
+  color: #CBD5E1;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
   border-radius: 12px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   transition: all 0.2s ease;
+}
+
+.v2-social-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.v2-social-btn:hover {
+  background: #161B26;
+  border-color: rgba(0, 102, 255, 0.5);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(0, 102, 255, 0.2);
+}
+
+.v2-social-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.v2-social-btn--cv {
+  background: #0066FF;
+  border-color: #0066FF;
+  color: #FFFFFF;
+  font-weight: 700;
   box-shadow: 0 10px 24px -6px rgba(0, 102, 255, 0.4);
 }
 
-.v2-btn-primary:hover {
+.v2-social-btn--cv:hover {
   background: #0052CC;
-  transform: translateY(-2px);
-}
-
-.v2-btn-secondary {
-  background: #10131B;
-  border: 1px solid #1E2536;
-  color: #CBD5E1;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 11px 18px;
-  border-radius: 12px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-.v2-btn-secondary:hover {
-  background: #161B26;
-  border-color: rgba(0, 102, 255, 0.4);
+  border-color: #0052CC;
   color: #FFFFFF;
-  transform: translateY(-1px);
+  box-shadow: 0 14px 28px -6px rgba(0, 102, 255, 0.6);
 }
 
 /* Foto do Victor com moldura e glow */
@@ -406,98 +412,152 @@
   font-weight: 900;
   color: #FFFFFF;
   letter-spacing: -0.5px;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
-/* ─── EXPERIENCE CARDS ─── */
-.v2-exp-stack {
+/* ─── EXPERIÊNCIA: LINHA DO TEMPO AUTORAL (COBALT TIMELINE) ─── */
+.v2-timeline-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.v2-timeline {
   display: flex;
   flex-direction: column;
-  gap: 18px;
 }
 
-.v2-exp-card {
-  background: #10131B;
-  border: 1px solid #1C2333;
-  border-radius: 20px;
-  padding: 26px 30px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.v2-timeline-item {
+  display: grid;
+  grid-template-columns: 110px 32px 1fr;
+  gap: 0;
+  padding-bottom: 44px;
+  position: relative;
 }
 
-.v2-exp-card:hover {
-  border-color: rgba(0, 102, 255, 0.5);
-  transform: translateY(-3px);
-  box-shadow: 0 16px 36px -10px rgba(0, 102, 255, 0.18);
+.v2-timeline-item:last-of-type {
+  padding-bottom: 0;
 }
 
-.v2-exp-header {
+.v2-timeline-period {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.v2-exp-company {
-  font-size: 19px;
-  font-weight: 800;
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.v2-exp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #0066FF;
-}
-
-.v2-exp-period {
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 3px;
+  gap: 2px;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   font-weight: 700;
   color: #38BDF8;
-  background: rgba(0, 102, 255, 0.14);
-  border: 1px solid rgba(0, 102, 255, 0.3);
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
 }
 
-.v2-exp-role {
+.v2-timeline-period-end {
+  color: #64748B;
+  font-weight: 500;
+}
+
+.v2-timeline-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.v2-timeline-bullet {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #0066FF;
+  border: 2px solid #06070B;
+  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.4), 0 0 12px rgba(0, 102, 255, 0.6);
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.v2-timeline-item:hover .v2-timeline-bullet {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.6), 0 0 18px rgba(0, 102, 255, 0.9);
+}
+
+.v2-timeline-line {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(0, 102, 255, 0.45) 0%, rgba(28, 35, 51, 0.3) 100%);
+  margin-top: 6px;
+}
+
+.v2-timeline-body {
+  padding-left: 20px;
+}
+
+.v2-timeline-company {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.v2-timeline-role {
   font-size: 13px;
   font-weight: 700;
   color: #0066FF;
-  margin-bottom: 12px;
   font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 10px;
 }
 
-.v2-exp-desc {
+.v2-timeline-desc {
   font-size: 15px;
   color: #94A3B8;
   line-height: 1.6;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-.v2-exp-link {
+.v2-timeline-case-btn {
+  background: none;
+  border: none;
+  padding: 0;
   font-size: 13px;
   font-weight: 700;
   color: #38BDF8;
-  text-decoration: none;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  transition: all 0.2s ease;
+  transition: color 0.2s, transform 0.2s;
+  text-decoration: none;
 }
 
-.v2-exp-link:hover {
+.v2-timeline-case-btn:hover {
   color: #0066FF;
   transform: translateX(4px);
 }
 
-/* ─── PROJECTS ─── */
+/* Responsividade da timeline */
+@media (max-width: 768px) {
+  .v2-timeline-item {
+    grid-template-columns: 1fr;
+    padding-bottom: 36px;
+  }
+  .v2-timeline-connector {
+    display: none;
+  }
+  .v2-timeline-period {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .v2-timeline-period-start::after {
+    content: '–';
+    margin-left: 6px;
+  }
+  .v2-timeline-body {
+    padding-left: 0;
+  }
+}
+
+/* ─── PROJETOS EM DESTAQUE COM MOCKUPS/FOTOS REAIS ─── */
 .v2-filters {
   display: flex;
   flex-wrap: wrap;
@@ -532,7 +592,7 @@
 .v2-projects-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 28px;
 }
 
 @media (min-width: 768px) {
@@ -541,22 +601,56 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .v2-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
 .v2-project-card {
   background: #10131B;
   border: 1px solid #1C2333;
   border-radius: 20px;
-  padding: 28px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .v2-project-card:hover {
   border-color: rgba(0, 102, 255, 0.55);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -10px rgba(0, 102, 255, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(0, 102, 255, 0.22);
+}
+
+.v2-project-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+  background: #0A0D14;
+}
+
+.v2-project-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.v2-project-card:hover .v2-project-thumb-img {
+  transform: scale(1.05);
+}
+
+.v2-project-body {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .v2-project-tags {
@@ -569,9 +663,18 @@
 .v2-project-tag {
   font-size: 11px;
   font-weight: 700;
-  color: #0066FF;
+  color: #38BDF8;
+  background: rgba(0, 102, 255, 0.12);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
   font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase;
+}
+
+.v2-project-tag--wip {
+  color: #64748B;
+  background: #151922;
+  border-color: #1E2330;
 }
 
 .v2-project-title {
@@ -591,6 +694,7 @@
   color: #94A3B8;
   line-height: 1.6;
   margin-bottom: 24px;
+  flex: 1;
 }
 
 .v2-project-cta {
@@ -601,41 +705,74 @@
   align-items: center;
   gap: 6px;
   transition: transform 0.2s ease;
+  margin-top: auto;
 }
 
 .v2-project-card:hover .v2-project-cta {
   transform: translateX(4px);
+  color: #0066FF;
 }
 
-/* ─── FOOTER ─── */
+/* ─── FOOTER AUTORAL COMPLETO (COM ÍCONES E DADOS) ─── */
 .v2-footer {
   background: #05060A;
-  border-top: 1px solid #121620;
-  padding: 50px 24px;
-  text-align: center;
+  border-top: 1px solid #141A26;
+  padding: 60px 24px 40px;
 }
 
-.v2-footer-links {
+.v2-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.v2-footer-main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 24px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #121622;
 }
 
-.v2-footer-link {
-  color: #38BDF8;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  transition: color 0.2s ease;
+.v2-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.v2-footer-link:hover {
+.v2-footer-name {
+  font-size: 18px;
+  font-weight: 800;
   color: #FFFFFF;
+  letter-spacing: -0.3px;
 }
 
-.v2-footer-copy {
+.v2-footer-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 13px;
+  color: #8C9BAE;
+}
+
+.v2-footer-flag {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.v2-footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.v2-footer-copyright {
+  padding-top: 32px;
+  text-align: center;
+  font-size: 12px;
   color: #556376;
+  line-height: 1.7;
 }
