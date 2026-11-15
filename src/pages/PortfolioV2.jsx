@@ -157,36 +157,40 @@ const PortfolioV2 = () => {
             initial="hidden" animate="visible" variants={fadeUp} custom={0.05}
           >
             <span className="v2-ping"></span>
-            Product Designer Especialista · Front-end Developer
+            Senior Product Designer · Front-end Developer
           </motion.div>
 
           <motion.h1
-            className="v2-headline"
-            initial="hidden" animate="visible" variants={fadeUp} custom={0.12}
+            className="v2-name"
+            initial="hidden" animate="visible" variants={fadeUp} custom={0.1}
           >
-            Transformando problemas complexos em produtos prontos para as pessoas<span>.</span>
+            Victor Morais<span>.</span>
           </motion.h1>
+
+          <motion.p
+            className="v2-tagline"
+            initial="hidden" animate="visible" variants={fadeUp} custom={0.15}
+          >
+            Transformando problemas complexos em produtos reais, escaláveis e focados em pessoas.
+          </motion.p>
 
           <motion.div
             className="v2-chips"
-            initial="hidden" animate="visible" variants={fadeUp} custom={0.18}
+            initial="hidden" animate="visible" variants={fadeUp} custom={0.2}
           >
-            <span className="v2-chip primary">Product Designer</span>
-            <span className="v2-chip">Data Driven</span>
-            <span className="v2-chip">IA Driven</span>
             <span className="v2-chip mono">São Paulo, SP</span>
             <span className="v2-chip mono">Belo Horizonte, MG</span>
           </motion.div>
 
           <motion.div
             className="v2-bio"
-            initial="hidden" animate="visible" variants={fadeUp} custom={0.24}
+            initial="hidden" animate="visible" variants={fadeUp} custom={0.25}
           >
             <p>
               Product Designer com <strong>visão estratégica</strong> e <strong>background técnico</strong>, focado em criar soluções que equilibram as necessidades do usuário com os objetivos de negócio.
             </p>
             <p>
-              Com passagens por <strong className="highlight">Entain, Rede Globo, Vivo e Bradesco</strong>, utilizo <strong>dados, IA e pesquisas</strong> para acelerar a entrega de valor e transformar problemas complexos em produtos reais e escaláveis.
+              Com passagens por <strong className="highlight">Entain, Rede Globo, Vivo e Bradesco</strong>, utilizo <strong>pesquisas e engenharia de design</strong> para acelerar a entrega de valor e transformar problemas complexos em produtos reais e escaláveis.
             </p>
           </motion.div>
 
@@ -229,10 +233,6 @@ const PortfolioV2 = () => {
           <div className="v2-photo-card">
             <div className="v2-photo-img-wrapper">
               <img src={victorProfile} alt="Victor Morais" className="v2-photo-img" />
-            </div>
-            <div className="v2-photo-badge">
-              <span className="v2-photo-badge-dot"></span>
-              <span className="v2-photo-badge-text">Victor Hugo · Disponível</span>
             </div>
           </div>
         </motion.div>
