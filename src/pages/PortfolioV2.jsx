@@ -218,7 +218,7 @@ const PortfolioV2 = () => {
           </motion.div>
         </div>
 
-        {/* Foto do Victor com moldura Cobalto */}
+        {/* Foto do Victor com Presença Monumental e Efeito Fusão Editorial */}
         <motion.div
           className="v2-photo-container"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -227,7 +227,9 @@ const PortfolioV2 = () => {
         >
           <div className="v2-photo-glow"></div>
           <div className="v2-photo-card">
-            <img src={victorProfile} alt="Victor Morais" className="v2-photo-img" />
+            <div className="v2-photo-img-wrapper">
+              <img src={victorProfile} alt="Victor Morais" className="v2-photo-img" />
+            </div>
             <div className="v2-photo-badge">
               <span className="v2-photo-badge-dot"></span>
               <span className="v2-photo-badge-text">Victor Hugo · Disponível</span>
