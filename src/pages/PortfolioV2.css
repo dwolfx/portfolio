@@ -222,6 +222,117 @@
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.v2-mobile-nav-link.highlight {
+  color: #38BDF8;
+  font-weight: 700;
+}
+
+/* ─── CASE STUDY SPECIFIC NAVBAR ─── */
+.v2-case-nav-center {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .v2-case-nav-center {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.v2-case-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.2s ease;
+}
+
+.v2-case-back-link:hover {
+  color: #FFFFFF;
+  border-color: rgba(0, 102, 255, 0.5);
+  background: rgba(0, 102, 255, 0.08);
+  transform: translateX(-2px);
+}
+
+.v2-case-lang-wrap {
+  position: relative;
+}
+
+.v2-lang-btn {
+  background: #0C0F17;
+  border: 1px solid #1A202E;
+  color: #CBD5E1;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.v2-lang-btn:hover {
+  border-color: rgba(0, 102, 255, 0.5);
+  color: #FFFFFF;
+}
+
+.v2-flag-icon {
+  width: 16px;
+  height: 12px;
+  border-radius: 2px;
+  object-fit: cover;
+  display: block;
+}
+
+.v2-chevron {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.v2-lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #0E121B;
+  border: 1px solid #1C2333;
+  border-radius: 10px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 130px;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.7);
+  z-index: 50;
+}
+
+.v2-lang-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #CBD5E1;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.v2-lang-dropdown-item:hover {
+  background: rgba(0, 102, 255, 0.15);
+  color: #FFFFFF;
+}
+
 /* ─── HERO ─── */
 .v2-hero {
   max-width: 1200px;

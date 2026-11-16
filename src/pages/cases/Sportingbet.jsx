@@ -3,10 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../../CaseStudy.css';
 import { sportingbetLocales } from '../../data/sportingbetLocales';
-import CaseHeader from '../../components/CaseHeader';
 import CaseHero from '../../components/CaseHero';
 import CaseOverview from '../../components/CaseOverview';
 import CaseCTA from '../../components/CaseCTA';
+import Navbar from '../../components/Navbar';
 import ImageLightbox from '../../components/ImageLightbox';
 import sportingbetHero from '../../assets/cases/sportingbet-hero.png';
 
@@ -24,8 +24,8 @@ const Sportingbet = () => {
   return (
     <div className="case">
 
-      {/* ─── NAV ─── */}
-      <CaseHeader lang={lang} caseSlug="sportingbet" />
+      {/* ─── NAV UNIFICADA ─── */}
+      <Navbar isCase={true} caseSlug="sportingbet" lang={lang} />
 
       {/* ─── HERO ─── */}
       <CaseHero
@@ -139,9 +139,8 @@ const Sportingbet = () => {
       <ImageLightbox
         isOpen={!!lightbox}
         onClose={() => setLightbox(null)}
-        src={lightbox?.src}
-        alt={lightbox?.alt}
-        caption={lightbox?.caption}
+        images={lightbox ? [lightbox] : []}
+        currentIndex={0}
       />
 
     </div>

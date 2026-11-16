@@ -6,6 +6,7 @@ import './PortfolioV2.css';
 import victorProfile from '../assets/profile/victor.jpg';
 import brFlag from '../assets/flags/br_flag.jpg';
 import { projectsPtBr } from '../data/projectsData';
+import Navbar from '../components/Navbar';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -52,7 +53,6 @@ const DownloadIcon = () => (
 const PortfolioV2 = () => {
   const navigate = useNavigate();
   const [activeTag, setActiveTag] = useState(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     document.title = 'Victor Morais · Product Designer Especialista';
@@ -116,113 +116,8 @@ const PortfolioV2 = () => {
   return (
     <div className="portfolio-v2">
       
-      {/* ─── FLOATING NAVBAR ─── */}
-      <div className="v2-nav-wrapper">
-        <motion.header
-          className="v2-nav"
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Link to="/" className="v2-logo">
-            Victor Morais<span>.</span>
-          </Link>
-
-          {/* Desktop Nav Links */}
-          <nav className="v2-nav-links">
-            <a href="#experiencia" className="v2-nav-link">Experiência</a>
-            <a href="#projetos" className="v2-nav-link">Projetos em Destaque</a>
-            <a href="#contato" className="v2-nav-link">Contato</a>
-          </nav>
-
-          {/* Desktop Actions */}
-          <div className="v2-nav-actions">
-            <div className="v2-lang-pill">
-              <span className="v2-lang-active">PT</span> · EN · ES
-            </div>
-            <a
-              href="https://wa.me/5511951565851"
-              target="_blank"
-              rel="noreferrer"
-              className="v2-contact-btn"
-            >
-              Contato →
-            </a>
-          </div>
-
-          {/* Mobile Menu Toggle Button */}
-          <button
-            className="v2-mobile-toggle"
-            onClick={() => setIsMobileMenuOpen(prev => !prev)}
-            aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-          >
-            {isMobileMenuOpen ? (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            ) : (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-            )}
-          </button>
-        </motion.header>
-
-        {/* Mobile Dropdown Menu com Framer Motion */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              className="v2-mobile-menu"
-              initial={{ opacity: 0, y: -10, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.98 }}
-              transition={{ duration: 0.2 }}
-            >
-              <nav className="v2-mobile-nav-links">
-                <a
-                  href="#experiencia"
-                  className="v2-mobile-nav-link"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Experiência
-                </a>
-                <a
-                  href="#projetos"
-                  className="v2-mobile-nav-link"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Projetos em Destaque
-                </a>
-                <a
-                  href="#contato"
-                  className="v2-mobile-nav-link"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contato
-                </a>
-              </nav>
-
-              <div className="v2-mobile-menu-footer">
-                <div className="v2-lang-pill">
-                  <span className="v2-lang-active">PT</span> · EN · ES
-                </div>
-                <a
-                  href="https://wa.me/5511951565851"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="v2-contact-btn"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  WhatsApp →
-                </a>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      {/* ─── FLOATING NAVBAR COMPONENTIZADA ─── */}
+      <Navbar />
 
       {/* ─── HERO PROFILE ─── */}
       <section className="v2-hero">

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../../CaseStudy.css';
 import { bradescoLocales } from '../../data/bradescoLocales';
-import CaseHeader from '../../components/CaseHeader';
+import Navbar from '../../components/Navbar';
 import CaseHero from '../../components/CaseHero';
 import CaseOverview from '../../components/CaseOverview';
 import CaseCTA from '../../components/CaseCTA';
@@ -33,8 +33,8 @@ const Bradesco = () => {
   return (
     <div className="case">
 
-      {/* ─── NAV ─── */}
-      <CaseHeader lang={lang} caseSlug="bradesco" />
+      {/* ─── NAV UNIFICADA ─── */}
+      <Navbar isCase={true} caseSlug="bradesco" lang={lang} />
 
       {/* ─── HERO ─── */}
       <CaseHero
@@ -142,9 +142,8 @@ const Bradesco = () => {
       <ImageLightbox
         isOpen={!!lightbox}
         onClose={() => setLightbox(null)}
-        src={lightbox?.src}
-        alt={lightbox?.alt}
-        caption={lightbox?.caption}
+        images={lightbox ? [lightbox] : []}
+        currentIndex={0}
       />
 
     </div>

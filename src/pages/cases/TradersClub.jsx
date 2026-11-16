@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../../CaseStudy.css';
 import { tradersClubLocales } from '../../data/tradersClubLocales';
-import CaseHeader from '../../components/CaseHeader';
+import Navbar from '../../components/Navbar';
 import CaseHero from '../../components/CaseHero';
 import CaseOverview from '../../components/CaseOverview';
 import CaseCTA from '../../components/CaseCTA';
@@ -33,8 +33,8 @@ const TradersClub = () => {
   return (
     <div className="case">
 
-      {/* ─── NAV ─── */}
-      <CaseHeader lang={lang} caseSlug="traders-club" />
+      {/* ─── NAV UNIFICADA ─── */}
+      <Navbar isCase={true} caseSlug="traders-club" lang={lang} />
 
       {/* ─── HERO ─── */}
       <CaseHero
@@ -145,9 +145,8 @@ const TradersClub = () => {
       <ImageLightbox
         isOpen={!!lightbox}
         onClose={() => setLightbox(null)}
-        src={lightbox?.src}
-        alt={lightbox?.alt}
-        caption={lightbox?.caption}
+        images={lightbox ? [lightbox] : []}
+        currentIndex={0}
       />
 
     </div>
