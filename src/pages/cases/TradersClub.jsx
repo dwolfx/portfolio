@@ -7,6 +7,7 @@ import CaseHeader from '../../components/CaseHeader';
 import CaseHero from '../../components/CaseHero';
 import CaseOverview from '../../components/CaseOverview';
 import CaseCTA from '../../components/CaseCTA';
+import ImageLightbox from '../../components/ImageLightbox';
 
 import heroImg from '../../assets/projects/traders.png';
 
@@ -23,6 +24,7 @@ const InView = ({ children, delay = 0 }) => (
 
 const TradersClub = () => {
   const { lang = 'pt-br' } = useParams();
+  const [lightbox, setLightbox] = useState(null);
 
   useEffect(() => { window.scrollTo(0, 0); document.title = 'Victor Morais | Case TradersClub'; }, []);
   const t = tradersClubLocales[lang] || tradersClubLocales['pt-br'];
@@ -46,6 +48,7 @@ const TradersClub = () => {
         downloadLink={`/traders-club-case-${pdfLang}.pdf`}
         image={heroImg}
         altText="TradersClub"
+        onImageClick={(src, alt, cap) => setLightbox({ src, alt, caption: cap })}
       />
 
       {/* ─── OVERVIEW & NDA ─── */}
@@ -137,6 +140,15 @@ const TradersClub = () => {
           downloadLink={`/traders-club-case-${pdfLang}.pdf`}
         />
       </InView>
+
+      {/* ─── LIGHTBOX MODAL ─── */}
+      <ImageLightbox
+        isOpen={!!lightbox}
+        onClose={() => setLightbox(null)}
+        src={lightbox?.src}
+        alt={lightbox?.alt}
+        caption={lightbox?.caption}
+      />
 
     </div>
   );

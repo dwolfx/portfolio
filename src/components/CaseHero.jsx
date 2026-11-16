@@ -16,7 +16,8 @@ const CaseHero = ({
   downloadBtnText,
   downloadLink,
   image,
-  altText
+  altText,
+  onImageClick
 }) => {
   return (
     <header className="case-hero" style={{ background: gradient }}>
@@ -44,7 +45,13 @@ const CaseHero = ({
         </motion.div>
 
         <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0.28}>
-          <img src={image} alt={altText} className="case-hero-img" />
+          <img
+            src={image}
+            alt={altText}
+            className={`case-hero-img ${onImageClick ? 'case-zoomable' : ''}`}
+            onClick={() => onImageClick && onImageClick(image, altText, altText)}
+            title={onImageClick ? 'Clique para ampliar' : undefined}
+          />
         </motion.div>
       </div>
     </header>

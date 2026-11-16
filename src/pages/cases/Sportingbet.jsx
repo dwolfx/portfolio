@@ -7,10 +7,12 @@ import CaseHeader from '../../components/CaseHeader';
 import CaseHero from '../../components/CaseHero';
 import CaseOverview from '../../components/CaseOverview';
 import CaseCTA from '../../components/CaseCTA';
+import ImageLightbox from '../../components/ImageLightbox';
 import sportingbetHero from '../../assets/cases/sportingbet-hero.png';
 
 const Sportingbet = () => {
   const { lang = 'pt-br' } = useParams();
+  const [lightbox, setLightbox] = useState(null);
 
   useEffect(() => { 
     window.scrollTo(0, 0); 
@@ -37,6 +39,7 @@ const Sportingbet = () => {
         downloadLink={`/sportingbet-case-${pdfLang}.pdf`}
         image={sportingbetHero}
         altText="Tropicalização Sportingbet"
+        onImageClick={(src, alt, cap) => setLightbox({ src, alt, caption: cap })}
       />
 
       {/* ─── OVERVIEW & NDA ─── */}
@@ -130,6 +133,15 @@ const Sportingbet = () => {
         btnDown={t.cta.btnDown}
         btnTalk={t.cta.btnTalk}
         downloadLink={`/sportingbet-case-${pdfLang}.pdf`}
+      />
+
+      {/* ─── LIGHTBOX MODAL ─── */}
+      <ImageLightbox
+        isOpen={!!lightbox}
+        onClose={() => setLightbox(null)}
+        src={lightbox?.src}
+        alt={lightbox?.alt}
+        caption={lightbox?.caption}
       />
 
     </div>

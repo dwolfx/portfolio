@@ -8,6 +8,7 @@ import CaseHeader from '../../components/CaseHeader';
 import CaseHero from '../../components/CaseHero';
 import CaseOverview from '../../components/CaseOverview';
 import CaseCTA from '../../components/CaseCTA';
+import ImageLightbox from '../../components/ImageLightbox';
 import vivoHero from '../../assets/cases/vivo/hero.png';
 import vivoV0 from '../../assets/cases/vivo/v0 idea.png';
 import vivoVirtualPdf from '../../assets/cases/vivo/virtual+pdf.png';
@@ -35,10 +36,15 @@ const Img = ({ label, className = '' }) => (
 
 const VivoPay = () => {
   const { lang = 'pt-br' } = useParams();
+  const [lightbox, setLightbox] = useState(null);
 
   useEffect(() => { window.scrollTo(0, 0); document.title = 'Victor Morais | Case VivoPay'; }, []);
   const t = vivoPayLocales[lang] || vivoPayLocales['pt-br'];
   const pdfLang = lang === 'pt-br' ? 'pt' : lang;
+
+  const openLightbox = (src, alt, caption) => {
+    setLightbox({ src, alt, caption });
+  };
 
   return (
     <div className="case">
@@ -58,6 +64,7 @@ const VivoPay = () => {
         downloadLink={`/vivo-pay-case-${pdfLang}.pdf`}
         image={vivoHero}
         altText="A Jornada VivoPay"
+        onImageClick={(src, alt, cap) => openLightbox(src, alt, cap)}
       />
 
       {/* ─── VISÃO GERAL ─── */}
@@ -116,11 +123,23 @@ const VivoPay = () => {
             <p>{t.concept.p1}</p>
             <div className="case-two-col" style={{ marginTop: 32 }}>
               <figure className="case-figure">
-                <img src={vivoV0} alt={t.concept.captions[0]} className="case-section-img" />
+                <img
+                  src={vivoV0}
+                  alt={t.concept.captions[0]}
+                  className="case-section-img case-zoomable"
+                  onClick={() => openLightbox(vivoV0, t.concept.captions[0], t.concept.captions[0])}
+                  title="Clique para ampliar"
+                />
                 <figcaption>{t.concept.captions[0]}</figcaption>
               </figure>
               <figure className="case-figure">
-                <img src={vivoValidation} alt={t.concept.captions[1]} className="case-section-img" />
+                <img
+                  src={vivoValidation}
+                  alt={t.concept.captions[1]}
+                  className="case-section-img case-zoomable"
+                  onClick={() => openLightbox(vivoValidation, t.concept.captions[1], t.concept.captions[1])}
+                  title="Clique para ampliar"
+                />
                 <figcaption>{t.concept.captions[1]}</figcaption>
               </figure>
             </div>
@@ -132,7 +151,7 @@ const VivoPay = () => {
           <div className="case-section">
             <span className="case-eyebrow">{t.validation.eyebrow}</span>
             <h2>{t.validation.title}</h2>
-            <p style={{ fontWeight: 600, color: '#0d1117', marginBottom: 8 }}>{t.validation.round}</p>
+            <p style={{ fontWeight: 600, color: '#FFFFFF', marginBottom: 8 }}>{t.validation.round}</p>
             <p>{t.validation.p1}</p>
             <div className="case-feedback-grid">
               {t.validation.cards.map(c => (
@@ -143,7 +162,13 @@ const VivoPay = () => {
               ))}
             </div>
             <div style={{ marginTop: 32 }}>
-              <img src={vivoVirtualPdf} alt={t.validation.imgAlt} className="case-section-img" />
+              <img
+                src={vivoVirtualPdf}
+                alt={t.validation.imgAlt}
+                className="case-section-img case-zoomable"
+                onClick={() => openLightbox(vivoVirtualPdf, t.validation.imgAlt, t.validation.imgAlt)}
+                title="Clique para ampliar"
+              />
             </div>
           </div>
         </InView>
@@ -166,19 +191,43 @@ const VivoPay = () => {
 
             <div className="case-screenshots" style={{ marginTop: 32 }}>
               <figure className="case-figure">
-                <img src={vivoCardHome} alt={t.delivery.captions[0]} className="case-screen-img" />
+                <img
+                  src={vivoCardHome}
+                  alt={t.delivery.captions[0]}
+                  className="case-screen-img case-zoomable"
+                  onClick={() => openLightbox(vivoCardHome, t.delivery.captions[0], t.delivery.captions[0])}
+                  title="Clique para ampliar"
+                />
                 <figcaption>{t.delivery.captions[0]}</figcaption>
               </figure>
               <figure className="case-figure">
-                <img src={vivoBiometria} alt={t.delivery.captions[1]} className="case-screen-img" />
+                <img
+                  src={vivoBiometria}
+                  alt={t.delivery.captions[1]}
+                  className="case-screen-img case-zoomable"
+                  onClick={() => openLightbox(vivoBiometria, t.delivery.captions[1], t.delivery.captions[1])}
+                  title="Clique para ampliar"
+                />
                 <figcaption>{t.delivery.captions[1]}</figcaption>
               </figure>
               <figure className="case-figure">
-                <img src={vivoFaturaTotal} alt={t.delivery.captions[2]} className="case-screen-img" />
+                <img
+                  src={vivoFaturaTotal}
+                  alt={t.delivery.captions[2]}
+                  className="case-screen-img case-zoomable"
+                  onClick={() => openLightbox(vivoFaturaTotal, t.delivery.captions[2], t.delivery.captions[2])}
+                  title="Clique para ampliar"
+                />
                 <figcaption>{t.delivery.captions[2]}</figcaption>
               </figure>
               <figure className="case-figure">
-                <img src={vivoFatura} alt={t.delivery.captions[3]} className="case-screen-img" />
+                <img
+                  src={vivoFatura}
+                  alt={t.delivery.captions[3]}
+                  className="case-screen-img case-zoomable"
+                  onClick={() => openLightbox(vivoFatura, t.delivery.captions[3], t.delivery.captions[3])}
+                  title="Clique para ampliar"
+                />
                 <figcaption>{t.delivery.captions[3]}</figcaption>
               </figure>
             </div>
@@ -225,6 +274,15 @@ const VivoPay = () => {
           downloadLink={`/vivo-pay-case-${pdfLang}.pdf`}
         />
       </InView>
+
+      {/* ─── LIGHTBOX MODAL ─── */}
+      <ImageLightbox
+        isOpen={!!lightbox}
+        onClose={() => setLightbox(null)}
+        src={lightbox?.src}
+        alt={lightbox?.alt}
+        caption={lightbox?.caption}
+      />
 
     </div>
   );

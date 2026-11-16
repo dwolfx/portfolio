@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../../CaseStudy.css';
@@ -7,6 +7,7 @@ import CaseHeader from '../../components/CaseHeader';
 import CaseHero from '../../components/CaseHero';
 import CaseOverview from '../../components/CaseOverview';
 import CaseCTA from '../../components/CaseCTA';
+import ImageLightbox from '../../components/ImageLightbox';
 
 import heroImg from '../../assets/projects/bradesco.png';
 
@@ -23,6 +24,7 @@ const InView = ({ children, delay = 0 }) => (
 
 const Bradesco = () => {
   const { lang = 'pt-br' } = useParams();
+  const [lightbox, setLightbox] = useState(null);
 
   useEffect(() => { window.scrollTo(0, 0); document.title = 'Victor Morais | Case Bradesco'; }, []);
   const t = bradescoLocales[lang] || bradescoLocales['pt-br'];
@@ -46,6 +48,7 @@ const Bradesco = () => {
         downloadLink={`/bradesco-case-${pdfLang}.pdf`}
         image={heroImg}
         altText="Bradesco"
+        onImageClick={(src, alt, cap) => setLightbox({ src, alt, caption: cap })}
       />
 
       {/* ─── OVERVIEW & NDA ─── */}
@@ -134,6 +137,15 @@ const Bradesco = () => {
           downloadLink={`/bradesco-case-${pdfLang}.pdf`}
         />
       </InView>
+
+      {/* ─── LIGHTBOX MODAL ─── */}
+      <ImageLightbox
+        isOpen={!!lightbox}
+        onClose={() => setLightbox(null)}
+        src={lightbox?.src}
+        alt={lightbox?.alt}
+        caption={lightbox?.caption}
+      />
 
     </div>
   );
