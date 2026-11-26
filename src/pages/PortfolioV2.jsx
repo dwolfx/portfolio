@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import './PortfolioV2.css';
 
-import victorCutout from '../assets/profile/victor-cutout.png';
+import victorProfile from '../assets/profile/victor.jpg';
 import brFlag from '../assets/flags/br_flag.jpg';
 import vivoThumb from '../assets/projects/vivo.png';
 import { portfolioV2Locales } from '../data/portfolioV2Locales';
@@ -161,17 +161,17 @@ const PortfolioV2 = () => {
 
             <motion.div
               className="v2-hero-portrait"
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 1.04 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.0, ease: easeOutExpo, delay: 0.2 }}
             >
-              <div className="v2-portrait-rimlight" aria-hidden="true" />
               <div className="v2-portrait-frame">
                 <img
-                  src={victorCutout}
+                  src={victorProfile}
                   alt="Victor Morais"
                   className="v2-portrait-img"
                 />
+                <div className="v2-portrait-vignette" aria-hidden="true" />
               </div>
             </motion.div>
           </div>
