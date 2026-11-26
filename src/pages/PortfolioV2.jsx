@@ -6,7 +6,7 @@ import './PortfolioV2.css';
 import victorProfile from '../assets/profile/victor.jpg';
 import brFlag from '../assets/flags/br_flag.jpg';
 import vivoThumb from '../assets/projects/vivo.png';
-import { projectsPtBr } from '../data/projectsData';
+import { portfolioV2Locales } from '../data/portfolioV2Locales';
 import Navbar from '../components/Navbar';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 
@@ -29,7 +29,6 @@ const maskReveal = {
   })
 };
 
-// Ícones SVG Oficiais (peso visual unificado)
 const WhatsAppIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path fillRule="evenodd" clipRule="evenodd" d="M20.5031 3.48759C18.267 1.24757 15.223 -0.0083771 12.0504 4.20563e-05C5.46339 4.20563e-05 0.102563 5.33457 0.100272 11.8917C0.0974582 13.9786 0.647687 16.0292 1.69545 17.837L0 24L6.3349 22.3463C8.08683 23.2964 10.0502 23.7941 12.0453 23.7941H12.0504C18.6363 23.7941 23.9976 18.459 23.9999 11.902C24.0102 8.74496 22.751 5.71509 20.5031 3.48759ZM17.4983 14.3796C17.1998 14.2307 15.7318 13.5123 15.4579 13.4102C15.184 13.3082 14.9852 13.2614 14.7864 13.559C14.5876 13.8567 14.0152 14.5256 13.841 14.7241C13.6668 14.9224 13.4926 14.9469 13.194 14.7982C12.8955 14.6493 11.844 14.364 10.678 13.324C9.773 12.518 9.158 11.524 8.981 11.22C8.803 10.916 8.955 10.751 9.106 10.6C9.243 10.465 9.41 10.246 9.562 10.068C9.715 9.891 9.765 9.764 9.866 9.561C9.967 9.358 9.916 9.18 9.841 9.028C9.765 8.718 9.156 7.224 8.9 6.617C8.653 6.025 8.403 6.105 8.215 6.096C8.04 6.088 7.838 6.087 7.635 6.087C7.432 6.087 7.103 6.163 6.824 6.467C6.545 6.771 5.757 7.505 5.757 8.998C5.757 10.491 6.84 11.933 6.992 12.135C7.144 12.338 9.143 15.4 12.199 16.714C12.926 17.026 13.483 17.211 13.924 17.351C14.651 17.581 15.316 17.547 15.842 17.468C16.426 17.381 17.643 16.735 17.896 16.027C18.149 15.319 18.149 14.711 18.073 14.585" />
@@ -69,68 +68,42 @@ const ArrowUpRightIcon = () => (
   </svg>
 );
 
-const experiences = [
-  {
-    company: 'Entain (SportingBet)',
-    role: 'Product Designer Especialista',
-    start: 'Ago 2024',
-    end: 'Jan 2026',
-    desc: 'Tropicalizei a plataforma global da SportingBet para o mercado brasileiro. Fui um dos responsáveis pelo design do KYC e Onboarding que garantiu a primeira homologação governamental de uma casa de apostas no Brasil, equilibrando compliance regulatório com UX de alta conversão.',
-    link: '/pt-br/cases/sportingbet'
-  },
-  {
-    company: 'Vivo (Telefônica)',
-    role: 'Product Designer Especialista',
-    start: 'Mar 2023',
-    end: 'Jun 2024',
-    desc: 'Fui um dos fundadores do design da Vivo Fintech e responsável pelos produtos de cartão de crédito, seguros e conta digital. Construímos o VivoPay do zero! Atuei como ponte de UX na integração Vivo + Itaú e desenhei jornadas de confiança seguindo a LGPD.',
-    link: '/pt-br/cases/vivo-pay'
-  },
-  {
-    company: 'Bradesco',
-    role: 'Product Designer Sênior',
-    start: 'Dez 2022',
-    end: 'Fev 2023',
-    desc: 'Projeto pontual via terceirizada. Liderei o redesign do Autoline, ferramenta B2B de financiamento de veículos para revendedoras, simplificando fichas cadastrais complexas sem comprometer o compliance bancário.',
-    link: '/pt-br/cases/bradesco'
-  },
-  {
-    company: 'Gen (General Shopping)',
-    role: 'Product Designer Sênior',
-    start: 'Jul 2022',
-    end: 'Dez 2022',
-    desc: 'Liderei o rebranding da plataforma B2B de gestão para lojistas. Introduzi e padronizei o Ant Design System, conduzi pesquisa com lojistas para eliminar gargalos operacionais e colaborei com engenharia para adoção escalável.'
-  },
-  {
-    company: 'TradersClub (TC)',
-    role: 'Product Designer Pleno',
-    start: 'Mar 2021',
-    end: 'Jun 2022',
-    desc: 'Atuação híbrida (design + código React): construí o Design System para B2B e B2C e desenvolvi um sistema de automação que reduziu o tempo de criação de relatórios de semanas para apenas 15 minutos.',
-    link: '/pt-br/cases/traders-club'
-  },
-  {
-    company: 'Rede Globo',
-    role: 'Product Designer Jr · Front-end Especialista',
-    start: 'Mar 2017',
-    end: 'Set 2020',
-    desc: 'Onde migrei para a área. Trabalhei na intersecção entre design e front-end para G1, GE, GShow e Globo.com. Criei os formatos Parallax e FlyCarpet, adotados pelo Google como padrão de mercado, com aumento de 20% no CTR via design orientado por dados.'
-  }
-];
-
 const PortfolioV2 = () => {
   const navigate = useNavigate();
+  const [lang, setLang] = useState(() => {
+    try {
+      const saved = localStorage.getItem('vm_portfolio_lang');
+      return saved && portfolioV2Locales[saved] ? saved : 'pt-br';
+    } catch {
+      return 'pt-br';
+    }
+  });
   const [activeTag, setActiveTag] = useState(null);
 
   useSmoothScroll();
 
+  const t = portfolioV2Locales[lang] || portfolioV2Locales['pt-br'];
+
   useEffect(() => {
-    document.title = 'Victor Morais — Senior Product Designer & Front-end Engineer';
+    document.title = t.docTitle;
+  }, [t.docTitle]);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const featuredProjects = projectsPtBr.filter((p) => !p.wip);
-  const upcomingProjects = projectsPtBr.filter((p) => p.wip);
+  const handleLangChange = (newLang) => {
+    setLang(newLang);
+    setActiveTag(null);
+    try {
+      localStorage.setItem('vm_portfolio_lang', newLang);
+    } catch {
+      // ignore storage errors
+    }
+  };
+
+  const featuredProjects = t.projects.items.filter((p) => !p.wip);
+  const upcomingProjects = t.projects.items.filter((p) => p.wip);
 
   const allTags = [...new Set(featuredProjects.flatMap((p) => p.tags))];
   const filteredFeatured = activeTag
@@ -139,16 +112,14 @@ const PortfolioV2 = () => {
 
   return (
     <div className="portfolio-v2">
-      {/* Textura Cinematográfica Sutil */}
       <div className="v2-grain" aria-hidden="true" />
 
-      {/* ─── NAVBAR UNIFICADA ─── */}
-      <Navbar />
+      {/* ─── NAVBAR UNIFICADA COM SELETOR DE IDIOMA ─── */}
+      <Navbar lang={lang} onLangChange={handleLangChange} />
 
       {/* ─── HERO CINEMATOGRÁFICO ─── */}
       <section className="v2-hero">
         <div className="v2-hero-stage">
-          {/* Eyebrow + Coordenadas */}
           <motion.div
             className="v2-hero-meta"
             initial="hidden"
@@ -156,11 +127,10 @@ const PortfolioV2 = () => {
             variants={revealUp}
             custom={0.05}
           >
-            <span>SENIOR PRODUCT DESIGNER · FRONT-END ENGINEER</span>
-            <span className="v2-hero-meta-loc">SÃO PAULO / BELO HORIZONTE — BR</span>
+            <span>{t.hero.role}</span>
+            <span className="v2-hero-meta-loc">{t.hero.location}</span>
           </motion.div>
 
-          {/* Composição Monumental: Tipografia + Retrato Integrado */}
           <div className="v2-hero-composition">
             <h1 className="v2-hero-display" aria-label="Victor Morais">
               <span className="v2-mask-line">
@@ -204,7 +174,6 @@ const PortfolioV2 = () => {
             </motion.div>
           </div>
 
-          {/* Barra Inferior do Hero: Manifesto, Ações e Preview */}
           <div className="v2-hero-footer">
             <motion.div
               className="v2-hero-manifesto"
@@ -213,11 +182,11 @@ const PortfolioV2 = () => {
               variants={revealUp}
               custom={0.32}
             >
-              <p className="v2-manifesto-lead">
-                Transformando problemas complexos em produtos reais, escaláveis e focados em pessoas.
-              </p>
+              <p className="v2-manifesto-lead">{t.hero.lead}</p>
               <p className="v2-manifesto-sub">
-                Com passagens por <strong>Entain, Rede Globo, Vivo e Bradesco</strong>, uno visão estratégica, pesquisa e engenharia de front-end para acelerar entrega de valor.
+                {t.hero.subPrefix}
+                <strong>{t.hero.subHighlight}</strong>
+                {t.hero.subSuffix}
               </p>
 
               <div className="v2-social-buttons">
@@ -237,9 +206,9 @@ const PortfolioV2 = () => {
                   <EmailIcon />
                   <span>Email</span>
                 </a>
-                <a href="/Victor-Morais-ptbr.pdf" download className="v2-social-btn v2-social-btn--cv">
+                <a href={t.hero.cvFile} download className="v2-social-btn v2-social-btn--cv">
                   <DownloadIcon />
-                  <span>Baixar Currículo</span>
+                  <span>{t.hero.cvLabel}</span>
                 </a>
               </div>
             </motion.div>
@@ -254,22 +223,22 @@ const PortfolioV2 = () => {
               <button
                 type="button"
                 className="v2-hero-spotlight"
-                onClick={() => navigate('/pt-br/cases/vivo-pay')}
+                onClick={() => navigate(t.hero.spotlightLink)}
               >
                 <div className="v2-spotlight-thumb">
-                  <img src={vivoThumb} alt="Destaque VivoPay" />
+                  <img src={vivoThumb} alt={t.hero.spotlightTitle} />
                 </div>
                 <div className="v2-spotlight-info">
-                  <span className="v2-spotlight-num">DESTAQUE · 01</span>
-                  <span className="v2-spotlight-title">VivoPay × Itaú</span>
+                  <span className="v2-spotlight-num">{t.hero.spotlightEyebrow}</span>
+                  <span className="v2-spotlight-title">{t.hero.spotlightTitle}</span>
                   <span className="v2-spotlight-cta">
-                    Ver estudo de caso <ArrowUpRightIcon />
+                    {t.hero.spotlightCta} <ArrowUpRightIcon />
                   </span>
                 </div>
               </button>
 
               <a href="#projetos" className="v2-scroll-cue">
-                <span>SCROLL PARA EXPLORAR</span>
+                <span>{t.hero.scrollCue}</span>
                 <span className="v2-scroll-line" aria-hidden="true" />
               </a>
             </motion.div>
@@ -286,17 +255,23 @@ const PortfolioV2 = () => {
           viewport={{ once: true, margin: '-80px' }}
           variants={revealUp}
         >
-          <span className="v2-eyebrow">01 · FILOSOFIA</span>
+          <span className="v2-eyebrow">{t.statement.eyebrow}</span>
           <blockquote className="v2-quote">
-            “Design que não serve a quem realmente importa é <em>esforço sem destino</em>.”
+            {t.statement.quoteStart}
+            <em>{t.statement.quoteEm}</em>
+            {t.statement.quoteEnd}
           </blockquote>
           <p className="v2-statement-desc">
-            Acredito que o papel do designer é ser a <strong>ponte</strong> entre o que o usuário precisa e o que o negócio almeja. Em vez de apenas desenhar interfaces, projeto caminhos que entregam <strong>valor real</strong> em cada etapa da jornada.
+            {t.statement.desc1}
+            <strong>{t.statement.descStrong1}</strong>
+            {t.statement.desc2}
+            <strong>{t.statement.descStrong2}</strong>
+            {t.statement.desc3}
           </p>
         </motion.div>
       </section>
 
-      {/* ─── PROJETOS EM DESTAQUE (GALERIA EDITORIAL) ─── */}
+      {/* ─── PROJETOS EM DESTAQUE ─── */}
       <section id="projetos" className="v2-section">
         <div className="v2-section-header">
           <motion.div
@@ -305,18 +280,17 @@ const PortfolioV2 = () => {
             viewport={{ once: true, margin: '-60px' }}
             variants={revealUp}
           >
-            <span className="v2-eyebrow">02 · SELECTED WORK</span>
-            <h2 className="v2-section-title">Projetos em Destaque</h2>
+            <span className="v2-eyebrow">{t.projects.eyebrow}</span>
+            <h2 className="v2-section-title">{t.projects.title}</h2>
           </motion.div>
 
-          {/* Filtros Minimalistas */}
-          <div className="v2-filters" role="tablist" aria-label="Filtrar projetos por área">
+          <div className="v2-filters" role="tablist" aria-label={t.projects.title}>
             <button
               type="button"
               className={`v2-filter-btn ${activeTag === null ? 'active' : ''}`}
               onClick={() => setActiveTag(null)}
             >
-              Todos
+              {t.projects.allFilter}
               {activeTag === null && <motion.span layoutId="filterUnderline" className="v2-filter-underline" />}
             </button>
             {allTags.map((tag) => (
@@ -333,7 +307,6 @@ const PortfolioV2 = () => {
           </div>
         </div>
 
-        {/* Grid Editorial 2 Colunas (Desktop) / 1 Coluna (Mobile) */}
         <div className="v2-projects-grid">
           <AnimatePresence mode="popLayout">
             {filteredFeatured.map((proj, idx) => (
@@ -353,7 +326,7 @@ const PortfolioV2 = () => {
                   <div className="v2-project-media-overlay">
                     <span className="v2-project-index">0{idx + 1}</span>
                     <span className="v2-project-open-pill">
-                      Explorar Case <ArrowUpRightIcon />
+                      {t.projects.exploreCase} <ArrowUpRightIcon />
                     </span>
                   </div>
                 </div>
@@ -367,17 +340,17 @@ const PortfolioV2 = () => {
                   </div>
                   <p className="v2-project-desc">{proj.description}</p>
                   <div className="v2-project-tags">
-                    {proj.tags.map((t) => (
+                    {proj.tags.map((tag) => (
                       <button
                         type="button"
-                        key={t}
+                        key={tag}
                         className="v2-project-tag"
                         onClick={(e) => {
                           e.stopPropagation();
-                          setActiveTag(t);
+                          setActiveTag(tag);
                         }}
                       >
-                        {t}
+                        {tag}
                       </button>
                     ))}
                   </div>
@@ -387,12 +360,11 @@ const PortfolioV2 = () => {
           </AnimatePresence>
         </div>
 
-        {/* Próximos Estudos de Caso (Lista Editorial Limpa) */}
         {!activeTag && (
           <div className="v2-upcoming">
             <div className="v2-upcoming-header">
-              <span className="v2-eyebrow">EM PRODUÇÃO · ARQUIVO</span>
-              <span className="v2-upcoming-sub">Novos estudos de caso sendo documentados</span>
+              <span className="v2-eyebrow">{t.projects.upcomingEyebrow}</span>
+              <span className="v2-upcoming-sub">{t.projects.upcomingSub}</span>
             </div>
             <div className="v2-upcoming-list">
               {upcomingProjects.map((proj, i) => (
@@ -400,7 +372,7 @@ const PortfolioV2 = () => {
                   <span className="v2-upcoming-num">0{featuredProjects.length + i + 1}</span>
                   <span className="v2-upcoming-title">{proj.title}</span>
                   <span className="v2-upcoming-tags">{proj.tags.join(' · ')}</span>
-                  <span className="v2-upcoming-badge">Em breve</span>
+                  <span className="v2-upcoming-badge">{t.projects.soonBadge}</span>
                 </div>
               ))}
             </div>
@@ -417,12 +389,12 @@ const PortfolioV2 = () => {
             viewport={{ once: true, margin: '-60px' }}
             variants={revealUp}
           >
-            <span className="v2-eyebrow">03 · TRAJETÓRIA</span>
-            <h2 className="v2-section-title">Histórico Profissional</h2>
+            <span className="v2-eyebrow">{t.experience.eyebrow}</span>
+            <h2 className="v2-section-title">{t.experience.title}</h2>
           </motion.div>
 
           <div className="v2-timeline">
-            {experiences.map((item, i, arr) => (
+            {t.experience.items.map((item, i, arr) => (
               <motion.div
                 key={item.company}
                 className="v2-timeline-item"
@@ -454,7 +426,7 @@ const PortfolioV2 = () => {
                       onClick={() => navigate(item.link)}
                       className="v2-timeline-case-btn"
                     >
-                      <span>Ver case completo</span>
+                      <span>{t.experience.viewCase}</span>
                       <ArrowUpRightIcon />
                     </button>
                   )}
@@ -475,9 +447,11 @@ const PortfolioV2 = () => {
             viewport={{ once: true, margin: '-60px' }}
             variants={revealUp}
           >
-            <span className="v2-eyebrow">04 · CONTATO</span>
+            <span className="v2-eyebrow">{t.footer.eyebrow}</span>
             <h2 className="v2-footer-headline">
-              Vamos construir algo <em>memorável</em>.
+              {t.footer.headlineStart}
+              <em>{t.footer.headlineEm}</em>
+              {t.footer.headlineEnd}
             </h2>
             <a href="mailto:victor9009@gmail.com" className="v2-footer-email">
               victor9009@gmail.com
@@ -511,16 +485,16 @@ const PortfolioV2 = () => {
                 <EmailIcon />
                 <span>Email</span>
               </a>
-              <a href="/Victor-Morais-ptbr.pdf" download className="v2-social-btn v2-social-btn--cv">
+              <a href={t.hero.cvFile} download className="v2-social-btn v2-social-btn--cv">
                 <DownloadIcon />
-                <span>Currículo</span>
+                <span>{t.footer.cvLabel}</span>
               </a>
             </div>
           </div>
 
           <div className="v2-footer-copyright">
-            <p>© 2026 Victor Morais — Product Designer & Front-end Engineer. Todos os direitos reservados.</p>
-            <p>Os dados e métricas dos projetos foram protegidos respeitando termos de confidencialidade (NDA).</p>
+            <p>{t.footer.copyright}</p>
+            <p>{t.footer.ndaNote}</p>
           </div>
         </div>
       </footer>
