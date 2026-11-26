@@ -55,7 +55,7 @@ const PortfolioHeader = ({ lang = 'pt-br' }) => {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.223 0H1.771C.792 0 0 .774 0 1.729V22.271C0 23.227.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0H22.223ZM7.119 20.452H3.555V9H7.119V20.452ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.401 4.23 7.401 5.368C7.401 6.507 6.476 7.433 5.337 7.433ZM20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447Z" /></svg>
                 LinkedIn
               </a>
-              <a href="mailto:victor9009@gmail.com" className="contact-item" onClick={() => setIsContactOpen(false)}>
+              <a href="mailto:victorhnmorais@gmail.com" className="contact-item" onClick={() => setIsContactOpen(false)}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4H2C.9 4 0 4.9 0 6V18C0 19.1.9 20 2 20H22C23.1 20 24 19.1 24 18V6C24 4.9 23.1 4.01 22 4.01V4ZM22 8L12 14.5L2 8V6L12 12.5L22 6V8Z" /></svg>
                 Email
               </a>

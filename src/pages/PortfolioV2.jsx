@@ -202,7 +202,7 @@ const PortfolioV2 = () => {
                   <GitHubIcon />
                   <span>GitHub</span>
                 </a>
-                <a href="mailto:victor9009@gmail.com" className="v2-social-btn">
+                <a href="mailto:victorhnmorais@gmail.com" className="v2-social-btn">
                   <EmailIcon />
                   <span>Email</span>
                 </a>
@@ -453,8 +453,8 @@ const PortfolioV2 = () => {
               <em>{t.footer.headlineEm}</em>
               {t.footer.headlineEnd}
             </h2>
-            <a href="mailto:victor9009@gmail.com" className="v2-footer-email">
-              victor9009@gmail.com
+            <a href="mailto:victorhnmorais@gmail.com" className="v2-footer-email">
+              victorhnmorais@gmail.com
               <ArrowUpRightIcon />
             </a>
           </motion.div>

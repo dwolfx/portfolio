@@ -12,7 +12,7 @@ const CaseCTA = ({ title, p1, btnDown, btnTalk, downloadLink }) => {
           <Download size={16} strokeWidth={2} aria-hidden="true" />
           <span>{stripDownloadArrow(btnDown)}</span>
         </a>
-        <a href="mailto:victor9009@gmail.com" className="case-cta-btn-secondary">
+        <a href="mailto:victorhnmorais@gmail.com" className="case-cta-btn-secondary">
           <Mail size={16} strokeWidth={1.9} aria-hidden="true" />
           <span>{btnTalk}</span>
         </a>

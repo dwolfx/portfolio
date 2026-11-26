@@ -39,7 +39,7 @@ const Footer = () => {
                         LinkedIn
                     </a>
                     {/* Email */}
-                    <a href="mailto:victor9009@gmail.com" className="social-btn" rel="noreferrer">
+                    <a href="mailto:victorhnmorais@gmail.com" className="social-btn" rel="noreferrer">
                         <svg className="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22 4H2C0.9 4 0 4.9 0 6V18C0 19.1 0.9 20 2 20H22C23.1 20 24 19.1 24 18V6C24 4.9 23.1 4.01 22 4.01V4ZM22 8L12 14.5L2 8V6L12 12.5L22 6V8Z" fill="currentColor" />
                         </svg>
