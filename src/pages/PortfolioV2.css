@@ -14,9 +14,9 @@
   --accent-champagne: #e5d5b7;
   --hairline: rgba(242, 239, 233, 0.1);
   --hairline-strong: rgba(242, 239, 233, 0.22);
-  --font-display: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-serif: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -520,13 +520,13 @@ header.v2-nav-wrapper.is-scrolled {
   color: var(--accent-champagne);
 }
 
-/* Composição Tipografia + Retrato */
+/* Composição Tipografia + Retrato Capa de Revista (Estilo 2) */
 .v2-hero-composition {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 8px 0;
+  gap: 8px;
+  padding: 8px 0 0;
 }
 
 @media (min-width: 960px) {
@@ -534,28 +534,28 @@ header.v2-nav-wrapper.is-scrolled {
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    min-height: clamp(320px, 44vh, 480px);
-    padding: 12px 0;
+    min-height: clamp(390px, 50vh, 540px);
+    padding: 16px 0 0;
   }
 }
 
 .v2-hero-display {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(3rem, 13.5vw, 10.5rem);
+  font-size: clamp(3.1rem, 14vw, 11.4rem);
   font-weight: 800;
   line-height: 0.88;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.055em;
   color: var(--ink-primary);
   position: relative;
-  z-index: 3;
+  z-index: 2;
   text-transform: uppercase;
   pointer-events: none;
 }
 
 @media (min-width: 960px) {
   .v2-hero-display {
-    font-size: clamp(5.2rem, 10.6vw, 10.4rem);
+    font-size: clamp(5.8rem, 11.4vw, 11.4rem);
   }
 }
 
@@ -567,7 +567,7 @@ header.v2-nav-wrapper.is-scrolled {
 
 @media (min-width: 960px) {
   .v2-mask-line--indent {
-    padding-left: 6vw;
+    padding-left: 5vw;
   }
 }
 
@@ -579,58 +579,53 @@ header.v2-nav-wrapper.is-scrolled {
   color: var(--accent-champagne);
 }
 
-/* Retrato Integrado (Fusão Editorial sem Caixinha) */
+/* Retrato Recortado em Escala Monumental (na frente do texto) */
 .v2-hero-portrait {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
-  max-width: 380px;
-  margin: 0 auto;
+  max-width: 310px;
+  margin: -18px auto -28px;
+  pointer-events: none;
 }
 
 @media (min-width: 960px) {
   .v2-hero-portrait {
     position: absolute;
     right: 2%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: clamp(290px, 28vw, 410px);
+    bottom: -32px;
+    width: clamp(330px, 30vw, 460px);
     max-width: none;
     margin: 0;
-    z-index: 2;
+    z-index: 3;
   }
+}
+
+.v2-portrait-rimlight {
+  position: absolute;
+  inset: 12% 8% 8% 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 213, 183, 0.14) 0%, rgba(229, 213, 183, 0.04) 45%, transparent 72%);
+  filter: blur(36px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .v2-portrait-frame {
   position: relative;
-  aspect-ratio: 4 / 5;
+  z-index: 1;
   width: 100%;
-  overflow: hidden;
-  border-radius: 2px;
-  mask-image: radial-gradient(ellipse 86% 86% at 50% 46%, #000 62%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 86% 86% at 50% 46%, #000 62%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
 }
 
 .v2-portrait-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   display: block;
-  filter: grayscale(35%) contrast(1.08) brightness(0.92);
-  transition: filter 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.v2-portrait-frame:hover .v2-portrait-img {
-  filter: grayscale(0%) contrast(1.04) brightness(1);
-  transform: scale(1.03);
-}
-
-.v2-portrait-vignette {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(8, 8, 10, 0.12) 0%, transparent 35%, rgba(8, 8, 10, 0.82) 100%);
+  object-fit: contain;
+  filter: contrast(1.06) saturate(0.86) drop-shadow(0 24px 48px rgba(0, 0, 0, 0.65));
+  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Barra Inferior do Hero */
@@ -879,16 +874,16 @@ header.v2-nav-wrapper.is-scrolled {
 
 .v2-quote {
   margin: 0 0 28px;
-  font-family: var(--font-serif);
-  font-size: clamp(2.1rem, 5.4vw, 4.6rem);
-  font-weight: 400;
-  line-height: 1.06;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.4vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
   color: var(--ink-primary);
 }
 
 .v2-quote em {
-  font-style: italic;
+  font-style: normal;
   color: var(--accent-champagne);
 }
 
@@ -1441,9 +1436,9 @@ header.v2-nav-wrapper.is-scrolled {
 }
 
 .v2-footer-headline em {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 800;
   color: var(--accent-champagne);
 }
 
