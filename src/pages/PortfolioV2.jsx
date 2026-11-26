@@ -8,6 +8,7 @@ import brFlag from '../assets/flags/br_flag.jpg';
 import vivoThumb from '../assets/projects/vivo.png';
 import { portfolioV2Locales } from '../data/portfolioV2Locales';
 import Navbar from '../components/Navbar';
+import CinematicBackground from '../components/CinematicBackground';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 
 const easeOutExpo = [0.16, 1, 0.3, 1];
@@ -112,6 +113,7 @@ const PortfolioV2 = () => {
 
   return (
     <div className="portfolio-v2">
+      <CinematicBackground />
       <div className="v2-grain" aria-hidden="true" />
 
       {/* ─── NAVBAR UNIFICADA COM SELETOR DE IDIOMA ─── */}
