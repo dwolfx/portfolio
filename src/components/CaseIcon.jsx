@@ -23,7 +23,17 @@ import {
   CircleDollarSign,
   Rocket,
   Download,
-  Sparkles
+  Sparkles,
+  Smartphone,
+  Mic,
+  Cpu,
+  Shirt,
+  Printer,
+  Layers,
+  Code2,
+  Database,
+  RefreshCw,
+  Receipt
 } from 'lucide-react';
 
 const ICON_MAP = {
@@ -54,6 +64,28 @@ const ICON_MAP = {
   '💰': CircleDollarSign,
   '🚀': Rocket,
   '⬇': Download,
+  smartphone: Smartphone,
+  mic: Mic,
+  cpu: Cpu,
+  shirt: Shirt,
+  printer: Printer,
+  layers: Layers,
+  code: Code2,
+  database: Database,
+  refresh: RefreshCw,
+  receipt: Receipt,
+  shield: ShieldCheck,
+  credit: CreditCard,
+  file: FileText,
+  check: CheckCircle2,
+  zap: Zap,
+  target: Target,
+  brain: Brain,
+  users: Users,
+  lock: Lock,
+  trending: TrendingUp,
+  rocket: Rocket,
+  sparkles: Sparkles,
 };
 
 const EMOJI_PREFIX_RE = /^([\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{2300}-\u{23FF}]\uFE0F?)\s*/u;

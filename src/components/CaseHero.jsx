@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download } from 'lucide-react';
+import { Download, ExternalLink } from 'lucide-react';
 import { stripDownloadArrow } from './CaseIcon';
 
 const fadeUp = {
@@ -17,6 +17,8 @@ const CaseHero = ({
   subtitle,
   downloadBtnText,
   downloadLink,
+  externalUrl,
+  externalBtnText,
   image,
   altText,
   onImageClick
@@ -42,12 +44,21 @@ const CaseHero = ({
           {subtitle}
         </motion.p>
 
-        <motion.div className="case-hero-actions" initial="hidden" animate="visible" variants={fadeUp} custom={0.24}>
-          <a href={downloadLink} download className="case-hero-btn">
-            <Download size={16} strokeWidth={2} aria-hidden="true" />
-            <span>{stripDownloadArrow(downloadBtnText)}</span>
-          </a>
-        </motion.div>
+        {(downloadLink || externalUrl) && (
+          <motion.div className="case-hero-actions" initial="hidden" animate="visible" variants={fadeUp} custom={0.24}>
+            {externalUrl ? (
+              <a href={externalUrl} target="_blank" rel="noreferrer" className="case-hero-btn">
+                <ExternalLink size={16} strokeWidth={2} aria-hidden="true" />
+                <span>{externalBtnText || downloadBtnText}</span>
+              </a>
+            ) : (
+              <a href={downloadLink} download className="case-hero-btn">
+                <Download size={16} strokeWidth={2} aria-hidden="true" />
+                <span>{stripDownloadArrow(downloadBtnText)}</span>
+              </a>
+            )}
+          </motion.div>
+        )}
 
         <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0.28}>
           <img

@@ -1,4 +1,11 @@
-import { projectsPtBr, projectsEn, projectsEs } from './projectsData';
+import {
+  projectsPtBr,
+  projectsEn,
+  projectsEs,
+  personalProjectsPtBr,
+  personalProjectsEn,
+  personalProjectsEs
+} from './projectsData';
 
 export const portfolioV2Locales = {
   'pt-br': {
@@ -49,6 +56,12 @@ export const portfolioV2Locales = {
       upcomingSub: 'Novos estudos de caso sendo documentados',
       soonBadge: 'Em breve',
       items: projectsPtBr
+    },
+    personalProjects: {
+      eyebrow: '02B · LAB & AUTORAIS',
+      title: 'Produtos Autorais & Independentes',
+      subtitle: 'Projetos onde atuo de ponta a ponta — da concepção de produto e UX à engenharia full-stack.',
+      items: personalProjectsPtBr
     },
     experience: {
       eyebrow: '03 · TRAJETÓRIA',
@@ -163,6 +176,12 @@ export const portfolioV2Locales = {
       soonBadge: 'Coming soon',
       items: projectsEn
     },
+    personalProjects: {
+      eyebrow: '02B · LAB & INDEPENDENT',
+      title: 'Self-Initiated & Side Products',
+      subtitle: 'End-to-end products built from scratch — from product strategy and UX to full-stack engineering.',
+      items: personalProjectsEn
+    },
     experience: {
       eyebrow: '03 · TRACK RECORD',
       title: 'Professional History',
@@ -275,6 +294,12 @@ export const portfolioV2Locales = {
       upcomingSub: 'Nuevos casos de estudio en documentación',
       soonBadge: 'Próximamente',
       items: projectsEs
+    },
+    personalProjects: {
+      eyebrow: '02B · LAB & PROPIOS',
+      title: 'Productos Propios & Lab',
+      subtitle: 'Proyectos desarrollados de principio a fin — desde la estrategia de producto y UX hasta la ingeniería.',
+      items: personalProjectsEs
     },
     experience: {
       eyebrow: '03 · TRAYECTORIA',

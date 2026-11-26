@@ -58,6 +58,14 @@ npm test
 | **SportingBet (Entain)** | Betting, B2C, KYC, Compliance, Mobile First | Completo (PT/EN/ES) |
 | **Bradesco** | Fintech, B2B, Research | Completo (PT/EN/ES) |
 | **TradersClub (TC)** | Fintech, B2B, Design System, Automação | Completo (PT/EN/ES) |
+| **CONSAgrado (`consagrado.app`)** | SaaS Multi-App, FoodTech / Fintech, React 19 + Supabase | Completo (PT/EN/ES) |
+| **Vocalis** | Desktop AI App (Windows), Python/Qt, faster-whisper, Audio UX | Completo (PT/EN/ES · Landing em breve) |
+| **Amazin Trages a Rigor** | Sistema Web & Motor Jurídico, Next.js 15 + TypeScript | Completo (PT/EN/ES) |
+
+---
+
+## To-Do Mapeado
+- [ ] **Hero / Primeira Seção:** Revisitar e restaurar o detalhe visual do `VM` da versão inicial da primeira seção conforme alinhado.
 
 ---
 

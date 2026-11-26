@@ -569,6 +569,14 @@
   position: relative;
 }
 
+.case-figure--spaced {
+  margin-top: 32px;
+}
+
+.case-paragraph-gap {
+  margin-top: 16px;
+}
+
 .case-figure figcaption {
   font-size: 12px;
   font-weight: 600;

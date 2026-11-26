@@ -4,6 +4,10 @@ import { vivoPayLocales } from '../src/data/vivoPayLocales.jsx';
 import { sportingbetLocales } from '../src/data/sportingbetLocales.jsx';
 import { bradescoLocales } from '../src/data/bradescoLocales.jsx';
 import { tradersClubLocales } from '../src/data/tradersClubLocales.jsx';
+import { consagradoLocales } from '../src/data/consagradoLocales.jsx';
+import { vocalisLocales } from '../src/data/vocalisLocales.jsx';
+import { amazinLocales } from '../src/data/amazinLocales.jsx';
+import { personalProjectsPtBr, personalProjectsEn, personalProjectsEs } from '../src/data/projectsData.js';
 
 describe('Suíte de Testes: Integridade e Dados dos Estudos de Caso', () => {
 
@@ -62,6 +66,34 @@ describe('Suíte de Testes: Integridade e Dados dos Estudos de Caso', () => {
       expect(proximo(3)).toBe(0);
       expect(anterior(0)).toBe(3);
       expect(anterior(2)).toBe(1);
+    });
+  });
+
+  describe('Projetos Autorais (CONSAgrado, Vocalis e Amazin Trages a Rigor)', () => {
+    it('deve conter traduções completas (pt-br, en, es) para os três novos cases', () => {
+      ['pt-br', 'en', 'es'].forEach((idioma) => {
+        expect(consagradoLocales[idioma]?.hero?.subtitle).toBeTruthy();
+        expect(consagradoLocales[idioma]?.ecosystem?.apps?.length).toBe(4);
+
+        expect(vocalisLocales[idioma]?.hero?.subtitle).toBeTruthy();
+        expect(vocalisLocales[idioma]?.audio?.highlights?.length).toBe(3);
+
+        expect(amazinLocales[idioma]?.hero?.subtitle).toBeTruthy();
+        expect(amazinLocales[idioma]?.ux?.highlights?.length).toBe(3);
+      });
+    });
+
+    it('deve listar os três projetos autorais separados na Home em todos os idiomas', () => {
+      [personalProjectsPtBr, personalProjectsEn, personalProjectsEs].forEach((lista) => {
+        expect(lista.length).toBe(3);
+        expect(lista.map((p) => p.link)).toEqual(
+          expect.arrayContaining([
+            expect.stringContaining('/cases/consagrado'),
+            expect.stringContaining('/cases/vocalis'),
+            expect.stringContaining('/cases/amazin-trajes'),
+          ])
+        );
+      });
     });
   });
 

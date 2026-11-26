@@ -10,6 +10,9 @@ import VivoPay from './pages/cases/VivoPay';
 import Sportingbet from './pages/cases/Sportingbet';
 import TradersClub from './pages/cases/TradersClub';
 import Bradesco from './pages/cases/Bradesco';
+import Consagrado from './pages/cases/Consagrado';
+import Vocalis from './pages/cases/Vocalis';
+import Amazin from './pages/cases/Amazin';
 import Footer from './components/Footer';
 
 const LanguageRouter = () => {
@@ -41,6 +44,9 @@ const AppContent = () => {
           <Route path="/:lang/cases/sportingbet" element={<Sportingbet />} />
           <Route path="/:lang/cases/traders-club" element={<TradersClub />} />
           <Route path="/:lang/cases/bradesco" element={<Bradesco />} />
+          <Route path="/:lang/cases/consagrado" element={<Consagrado />} />
+          <Route path="/:lang/cases/vocalis" element={<Vocalis />} />
+          <Route path="/:lang/cases/amazin-trajes" element={<Amazin />} />
           <Route path="/:lang" element={<LanguageRouter />} />
         </Routes>
       </div>

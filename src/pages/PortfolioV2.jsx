@@ -382,6 +382,63 @@ const PortfolioV2 = () => {
         )}
       </section>
 
+      {/* ─── PROJETOS AUTORAIS & LAB ─── */}
+      <section id="autorais" className="v2-section v2-section--border">
+        <div className="v2-section-header">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            variants={revealUp}
+          >
+            <span className="v2-eyebrow">{t.personalProjects.eyebrow}</span>
+            <h2 className="v2-section-title">{t.personalProjects.title}</h2>
+            <p className="v2-section-subtitle">{t.personalProjects.subtitle}</p>
+          </motion.div>
+        </div>
+
+        <div className="v2-projects-grid v2-projects-grid--three">
+          {t.personalProjects.items.map((proj, idx) => (
+            <motion.article
+              key={proj.title}
+              className="v2-project-card"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.65, ease: easeOutExpo, delay: idx * 0.06 }}
+              onClick={() => navigate(proj.link)}
+            >
+              <div className="v2-project-media">
+                <img src={proj.image} alt={proj.title} className="v2-project-img" loading="lazy" />
+                <div className="v2-project-media-overlay">
+                  <span className="v2-project-index">0{idx + 1}</span>
+                  <span className="v2-project-open-pill">
+                    {t.projects.exploreCase} <ArrowUpRightIcon />
+                  </span>
+                </div>
+              </div>
+
+              <div className="v2-project-body">
+                <div className="v2-project-top">
+                  <h3 className="v2-project-title">{proj.title}</h3>
+                  <span className="v2-project-arrow">
+                    <ArrowUpRightIcon />
+                  </span>
+                </div>
+                <p className="v2-project-desc">{proj.description}</p>
+                <div className="v2-project-tags">
+                  {proj.tags.map((tag) => (
+                    <span key={tag} className="v2-project-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
       {/* ─── EXPERIÊNCIA: LINHA DO TEMPO EDITORIAL ─── */}
       <section id="experiencia" className="v2-section v2-section--border">
         <div className="v2-timeline-container">
@@ -483,7 +540,7 @@ const PortfolioV2 = () => {
                 <GitHubIcon />
                 <span>GitHub</span>
               </a>
-              <a href="mailto:victor9009@gmail.com" className="v2-social-btn">
+              <a href="mailto:victorhnmorais@gmail.com" className="v2-social-btn">
                 <EmailIcon />
                 <span>Email</span>
               </a>

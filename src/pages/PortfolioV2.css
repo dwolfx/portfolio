@@ -1048,6 +1048,14 @@ header.v2-nav-wrapper.is-scrolled {
   color: var(--ink-primary);
 }
 
+.v2-section-subtitle {
+  margin: 14px 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+  max-width: 620px;
+}
+
 /* ─── FILTROS MINIMALISTAS ─── */
 .v2-filters {
   display: flex;
@@ -1096,6 +1104,11 @@ header.v2-nav-wrapper.is-scrolled {
   .v2-projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 56px 36px;
+  }
+
+  .v2-projects-grid--three {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 44px 28px;
   }
 }
 
