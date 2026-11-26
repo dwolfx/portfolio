@@ -14,9 +14,9 @@
   --accent-champagne: #e5d5b7;
   --hairline: rgba(242, 239, 233, 0.1);
   --hairline-strong: rgba(242, 239, 233, 0.22);
-  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Syne', 'Plus Jakarta Sans', sans-serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Syne', 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -579,13 +579,13 @@ header.v2-nav-wrapper.is-scrolled {
   color: var(--accent-champagne);
 }
 
-/* Retrato Recortado em Escala Monumental (na frente do texto) */
+/* Retrato Recortado em Escala Monumental (P&B Cinematográfico Quente) */
 .v2-hero-portrait {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 310px;
-  margin: -18px auto -28px;
+  max-width: 265px;
+  margin: 14px auto -24px;
   pointer-events: none;
 }
 
@@ -603,7 +603,7 @@ header.v2-nav-wrapper.is-scrolled {
 
 .v2-portrait-rimlight {
   position: absolute;
-  inset: 12% 8% 8% 8%;
+  inset: 14% 10% 10% 10%;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(229, 213, 183, 0.14) 0%, rgba(229, 213, 183, 0.04) 45%, transparent 72%);
   filter: blur(36px);
@@ -615,8 +615,8 @@ header.v2-nav-wrapper.is-scrolled {
   position: relative;
   z-index: 1;
   width: 100%;
-  mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
 }
 
 .v2-portrait-img {
@@ -624,7 +624,7 @@ header.v2-nav-wrapper.is-scrolled {
   height: auto;
   display: block;
   object-fit: contain;
-  filter: contrast(1.06) saturate(0.86) drop-shadow(0 24px 48px rgba(0, 0, 0, 0.65));
+  filter: grayscale(92%) sepia(8%) contrast(1.12) brightness(0.95) drop-shadow(0 24px 48px rgba(0, 0, 0, 0.75));
   transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
