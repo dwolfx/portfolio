@@ -213,35 +213,61 @@
 }
 
 .case-nda-wrapper {
-  background: rgba(245, 158, 11, 0.05);
-  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
-  padding: 24px 20px;
+  background: #0C0C10;
+  border-bottom: 1px solid rgba(242, 239, 233, 0.08);
+  padding: 28px 20px;
 }
 
 .case-nda-inner {
-  max-width: 820px;
+  max-width: 1000px;
   margin: 0 auto;
-  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 10px;
+  background: rgba(229, 213, 183, 0.05);
+  border: 1px solid rgba(229, 213, 183, 0.2);
+  border-left: 3px solid #E5D5B7;
+  text-align: left;
+}
+
+.case-nda-icon {
+  color: #E5D5B7;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-nda-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.case-nda-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E5D5B7;
 }
 
 .case-nda-text {
   font-size: 14px;
-  color: #FCD34D;
+  color: #F2EFE9;
   line-height: 1.6;
   margin: 0;
 }
 
-.case-nda-title {
-  color: #FBBF24;
-  font-weight: 700;
-}
-
 .case-nda-sub {
-  display: block;
-  margin-top: 8px;
   font-size: 13px;
-  color: #FDE68A;
-  opacity: 0.9;
+  color: #9C9A94;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .case-overview-inner {
@@ -403,8 +429,21 @@
 }
 
 .case-highlight-icon {
-  font-size: 24px;
-  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(229, 213, 183, 0.08);
+  border: 1px solid rgba(229, 213, 183, 0.2);
+  color: #E5D5B7;
+  margin-bottom: 16px;
+}
+
+.case-inline-icon {
+  color: #E5D5B7;
+  flex-shrink: 0;
 }
 
 .case-highlight h4 {
@@ -543,12 +582,6 @@
   gap: 6px;
 }
 
-.case-figure figcaption::after {
-  content: '🔍';
-  font-size: 10px;
-  opacity: 0.6;
-}
-
 /* ─── SCREENSHOTS GRID ──────────────────── */
 .case-screenshots {
   display: grid;
@@ -580,9 +613,16 @@
 }
 
 .case-metric-icon {
-  font-size: 26px;
-  margin-bottom: 12px;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: rgba(229, 213, 183, 0.08);
+  border: 1px solid rgba(229, 213, 183, 0.22);
+  color: #E5D5B7;
+  margin: 0 auto 14px;
 }
 
 .case-metric-value {
@@ -642,24 +682,38 @@
 }
 
 /* ─── HERO BUTTON ───────────────────────── */
+.case-tags--centered {
+  justify-content: center;
+}
+
+.case-hero-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
 .case-hero-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
   background: #E5D5B7;
-  color: #FFFFFF;
+  color: #08080A;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   font-weight: 700;
-  padding: 12px 26px;
-  border-radius: 10px;
+  padding: 13px 28px;
+  border-radius: 999px;
+  border: 1px solid #E5D5B7;
   text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 8px 20px -4px rgba(229, 213, 183, 0.4);
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .case-hero-btn:hover {
-  background: #0052CC;
-  transform: translateY(-1px);
+  background: #F2EFE9;
+  border-color: #F2EFE9;
+  color: #08080A;
+  transform: translateY(-2px);
 }
 
 /* ─── CTA FINAL ─────────────────────────── */
@@ -695,38 +749,51 @@
 }
 
 .case-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   background: #E5D5B7;
-  color: #FFFFFF;
+  color: #08080A;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   font-weight: 700;
-  padding: 12px 28px;
-  border-radius: 10px;
+  padding: 13px 28px;
+  border-radius: 999px;
+  border: 1px solid #E5D5B7;
   text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 8px 20px -4px rgba(229, 213, 183, 0.4);
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .case-cta-btn-primary:hover {
-  background: #0052CC;
-  transform: translateY(-1px);
+  background: #F2EFE9;
+  border-color: #F2EFE9;
+  color: #08080A;
+  transform: translateY(-2px);
 }
 
 .case-cta-btn-secondary {
-  background: #141419;
-  color: #CBD5E1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(242, 239, 233, 0.04);
+  color: #F2EFE9;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
-  font-weight: 700;
-  padding: 12px 28px;
-  border-radius: 10px;
+  font-weight: 600;
+  padding: 13px 28px;
+  border-radius: 999px;
   text-decoration: none;
-  border: 1px solid rgba(242, 239, 233, 0.12);
-  transition: all 0.2s ease;
+  border: 1px solid rgba(242, 239, 233, 0.24);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .case-cta-btn-secondary:hover {
-  border-color: rgba(229, 213, 183, 0.5);
-  color: #FFFFFF;
-  transform: translateY(-1px);
+  background: #F2EFE9;
+  border-color: #F2EFE9;
+  color: #08080A;
+  transform: translateY(-2px);
 }
 
 /* ─── LIGHTBOX MODAL ────────────────────── */

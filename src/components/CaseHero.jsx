@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Download } from 'lucide-react';
+import { stripDownloadArrow } from './CaseIcon';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -30,7 +32,7 @@ const CaseHero = ({
           {titlePrefix}<span>{titleHighlight}</span>
         </motion.h1>
 
-        <motion.div className="case-tags" style={{ justifyContent: 'center' }} initial="hidden" animate="visible" variants={fadeUp} custom={0.14}>
+        <motion.div className="case-tags case-tags--centered" initial="hidden" animate="visible" variants={fadeUp} custom={0.14}>
           {tags.map(t => (
             <span key={t} className="case-tag">{t}</span>
           ))}
@@ -40,8 +42,11 @@ const CaseHero = ({
           {subtitle}
         </motion.p>
 
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0.24} style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
-          <a href={downloadLink} download className="case-hero-btn">{downloadBtnText}</a>
+        <motion.div className="case-hero-actions" initial="hidden" animate="visible" variants={fadeUp} custom={0.24}>
+          <a href={downloadLink} download className="case-hero-btn">
+            <Download size={16} strokeWidth={2} aria-hidden="true" />
+            <span>{stripDownloadArrow(downloadBtnText)}</span>
+          </a>
         </motion.div>
 
         <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0.28}>

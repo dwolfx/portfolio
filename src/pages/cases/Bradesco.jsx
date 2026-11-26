@@ -8,6 +8,7 @@ import CaseHero from '../../components/CaseHero';
 import CaseOverview from '../../components/CaseOverview';
 import CaseCTA from '../../components/CaseCTA';
 import ImageLightbox from '../../components/ImageLightbox';
+import CaseIcon from '../../components/CaseIcon';
 
 import heroImg from '../../assets/projects/bradesco.png';
 
@@ -99,7 +100,9 @@ const Bradesco = () => {
             <div className="case-highlights" style={{ marginTop: 32 }}>
               {t.discovery.highlights.map(b => (
                 <div key={b.title} className="case-highlight">
-                  <div className="case-highlight-icon">{b.icon}</div>
+                  <div className="case-highlight-icon">
+                    <CaseIcon icon={b.icon} size={22} />
+                  </div>
                   <h4>{b.title}</h4>
                   <p>{b.desc}</p>
                 </div>
@@ -117,7 +120,9 @@ const Bradesco = () => {
             <div className="case-metrics-grid" style={{ marginTop: 32 }}>
               {t.results.metrics.map(m => (
                 <div key={m.value} className="case-metric">
-                  <span className="case-metric-icon">{m.icon}</span>
+                  <span className="case-metric-icon">
+                    <CaseIcon icon={m.icon} size={24} />
+                  </span>
                   <div className="case-metric-value">{m.value}</div>
                 </div>
               ))}

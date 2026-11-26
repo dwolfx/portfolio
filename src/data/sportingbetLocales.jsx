@@ -55,7 +55,7 @@ export const sportingbetLocales = {
     milestone: {
       eyebrow: '05 · Marco Histórico',
       title: '1º Lugar na Aprovação',
-      p1: 'O rigor técnico no design resultou em um marco sem precedentes: a Sportingbet foi a 1ª casa de apostas a ser oficialmente aprovada para operar no Brasil em 1º de janeiro de 2025. 🥇',
+      p1: 'O rigor técnico no design resultou em um marco sem precedentes: a Sportingbet foi a 1ª casa de apostas a ser oficialmente aprovada para operar no Brasil em 1º de janeiro de 2025.',
       p2: 'Fomos a 4ª a ser avaliada, mas a primeira a receber o sinal verde, graças à precisão dos fluxos de conformidade apresentados ao governo.'
     },
     casino: {
@@ -136,7 +136,7 @@ export const sportingbetLocales = {
     milestone: {
       eyebrow: '05 · Historical Milestone',
       title: '1st Place in Approval',
-      p1: 'The technical rigor in the design resulted in an unprecedented milestone: Sportingbet was the 1st betting house to be officially approved to operate in Brazil on January 1, 2025. 🥇',
+      p1: 'The technical rigor in the design resulted in an unprecedented milestone: Sportingbet was the 1st betting house to be officially approved to operate in Brazil on January 1, 2025.',
       p2: 'We were the 4th to be evaluated by the government but the first to receive the green light, thanks to the precision of the compliance flows presented.'
     },
     casino: {
@@ -217,7 +217,7 @@ export const sportingbetLocales = {
     milestone: {
       eyebrow: '05 · Hito Histórico',
       title: '1º Lugar en la Aprobación',
-      p1: 'El rigor técnico en el diseño resultó en un hito sin precedentes: Sportingbet fue la 1ª casa de apuestas aprobada oficialmente para operar en Brasil el 1 de enero de 2025. 🥇',
+      p1: 'El rigor técnico en el diseño resultó en un hito sin precedentes: Sportingbet fue la 1ª casa de apuestas aprobada oficialmente para operar en Brasil el 1 de enero de 2025.',
       p2: 'Fuimos los cuartos en ser evaluados por el gobierno, mas los primeros en recibir luz verde, gracias a la precisión de los flujos de cumplimiento presentados.'
     },
     casino: {

@@ -10,6 +10,7 @@ import CaseCTA from '../../components/CaseCTA';
 import Navbar from '../../components/Navbar';
 import ImageLightbox from '../../components/ImageLightbox';
 import CaseCarousel from '../../components/CaseCarousel';
+import CaseIcon, { parseEmojiTitle } from '../../components/CaseIcon';
 import vivoHero from '../../assets/cases/vivo/hero.png';
 import vivoV0 from '../../assets/cases/vivo/v0 idea.png';
 import vivoVirtualPdf from '../../assets/cases/vivo/virtual+pdf.png';
@@ -110,7 +111,9 @@ const VivoPay = () => {
             <div className="case-highlights">
               {t.role.highlights.map(b => (
                 <div key={b.title} className="case-highlight">
-                  <div className="case-highlight-icon">{b.icon}</div>
+                  <div className="case-highlight-icon">
+                    <CaseIcon icon={b.icon} size={22} />
+                  </div>
                   <h4>{b.title}</h4>
                   <p>{b.desc}</p>
                 </div>
@@ -171,12 +174,18 @@ const VivoPay = () => {
             <p style={{ fontWeight: 600, color: '#FFFFFF', marginBottom: 8 }}>{t.validation.round}</p>
             <p>{t.validation.p1}</p>
             <div className="case-feedback-grid">
-              {t.validation.cards.map(c => (
-                <div key={c.title} className="case-feedback-card">
-                  <h4>{c.title}</h4>
-                  <p>{c.desc}</p>
-                </div>
-              ))}
+              {t.validation.cards.map(c => {
+                const { emoji, label } = parseEmojiTitle(c.title);
+                return (
+                  <div key={c.title} className="case-feedback-card">
+                    <h4>
+                      {emoji && <CaseIcon icon={emoji} size={18} className="case-inline-icon" />}
+                      <span>{label}</span>
+                    </h4>
+                    <p>{c.desc}</p>
+                  </div>
+                );
+              })}
             </div>
             <div style={{ marginTop: 32 }}>
               <img
@@ -224,7 +233,9 @@ const VivoPay = () => {
             <div className="case-metrics-grid">
               {t.results.metrics.map(m => (
                 <div key={m.value} className="case-metric">
-                  <span className="case-metric-icon">{m.icon}</span>
+                  <span className="case-metric-icon">
+                    <CaseIcon icon={m.icon} size={24} />
+                  </span>
                   <div className="case-metric-value">{m.value}</div>
                 </div>
               ))}
