@@ -17,7 +17,7 @@ export const portfolioV2Locales = {
     hero: {
       role: 'SENIOR PRODUCT DESIGNER · FRONT-END ENGINEER',
       location: 'SÃO PAULO / BELO HORIZONTE — BR',
-      lead: 'Transformando problemas complexos em produtos reais, escaláveis e focados em pessoas.',
+      lead: 'Entendo problemas e crio produtos feitos para pessoas reais.',
       subPrefix: 'Com passagens por ',
       subHighlight: 'Entain, Rede Globo, Vivo e Bradesco',
       subSuffix: ', uno visão estratégica, pesquisa e engenharia de front-end para acelerar entrega de valor.',
@@ -130,7 +130,7 @@ export const portfolioV2Locales = {
     hero: {
       role: 'SENIOR PRODUCT DESIGNER · FRONT-END ENGINEER',
       location: 'SÃO PAULO / BELO HORIZONTE — BR',
-      lead: 'Turning complex problems into real, scalable, human-centered products.',
+      lead: 'I understand problems and build products made for real people.',
       subPrefix: 'Having worked at ',
       subHighlight: 'Entain, Rede Globo, Vivo, and Bradesco',
       subSuffix: ', I combine strategic vision, research, and front-end engineering to accelerate value delivery.',
@@ -243,7 +243,7 @@ export const portfolioV2Locales = {
     hero: {
       role: 'SENIOR PRODUCT DESIGNER · FRONT-END ENGINEER',
       location: 'SÃO PAULO / BELO HORIZONTE — BR',
-      lead: 'Transformando problemas complejos en productos reales, escalables y centrados en las personas.',
+      lead: 'Entiendo problemas y creo productos hechos para personas reales.',
       subPrefix: 'Con trayectoria en ',
       subHighlight: 'Entain, Rede Globo, Vivo y Bradesco',
       subSuffix: ', combino visión estratégica, investigación e ingeniería front-end para acelerar la entrega de valor.',

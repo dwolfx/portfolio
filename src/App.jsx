@@ -22,19 +22,21 @@ const LanguageRouter = () => {
 
 const AppContent = () => {
   const location = useLocation();
-  const isV2Host = typeof window !== 'undefined' && (
-    window.location.hostname.startsWith('v2.') ||
-    window.location.hostname.includes('v2-')
+  const isV1Host = typeof window !== 'undefined' && (
+    window.location.hostname.startsWith('v1.') ||
+    window.location.hostname.includes('v1-')
   );
-  const isV2Route = location.pathname.startsWith('/v2');
-  const showV2 = isV2Host || isV2Route;
+  const isV1Route = location.pathname.startsWith('/v1');
+  const showLegacyV1 = isV1Host || isV1Route;
+  const isCaseRoute = location.pathname.includes('/cases/');
 
   return (
     <div className="app-container">
       <div className="main-content">
         <Routes>
+          <Route path="/v1" element={<Home />} />
           <Route path="/v2" element={<PortfolioV2 />} />
-          <Route path="/" element={showV2 ? <PortfolioV2 /> : <Home />} />
+          <Route path="/" element={showLegacyV1 ? <Home /> : <PortfolioV2 />} />
           <Route path="/:lang/cases/vivo-pay" element={<VivoPay />} />
           <Route path="/:lang/cases/sportingbet" element={<Sportingbet />} />
           <Route path="/:lang/cases/traders-club" element={<TradersClub />} />
@@ -42,7 +44,7 @@ const AppContent = () => {
           <Route path="/:lang" element={<LanguageRouter />} />
         </Routes>
       </div>
-      {!showV2 && <Footer />}
+      {showLegacyV1 && !isCaseRoute && <Footer />}
     </div>
   );
 };

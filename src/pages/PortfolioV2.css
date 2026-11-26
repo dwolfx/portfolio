@@ -728,7 +728,7 @@ header.v2-nav-wrapper.is-scrolled {
 .v2-hero-footer {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 36px;
   padding-top: 24px;
   border-top: 1px solid var(--hairline);
   position: relative;
@@ -770,7 +770,7 @@ header.v2-nav-wrapper.is-scrolled {
 .v2-social-buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 16px;
 }
 
 @media (min-width: 640px) {
@@ -778,7 +778,7 @@ header.v2-nav-wrapper.is-scrolled {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
 }
 
@@ -786,17 +786,26 @@ header.v2-nav-wrapper.is-scrolled {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 11px 16px;
+  gap: 9px;
+  min-height: 48px;
+  padding: 13px 18px;
   border-radius: 999px;
   border: 1px solid var(--hairline-strong);
   background: rgba(242, 239, 233, 0.03);
   color: var(--ink-primary);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .v2-social-btn {
+    min-height: 44px;
+    padding: 11px 18px;
+    font-size: 13px;
+  }
 }
 
 .v2-social-btn:hover {
@@ -1605,14 +1614,14 @@ header.v2-nav-wrapper.is-scrolled {
 .v2-footer-socials {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 16px;
 }
 
 @media (min-width: 640px) {
   .v2-footer-socials {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
   }
 }
 
